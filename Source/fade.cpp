@@ -80,9 +80,6 @@ HRESULT CFade::Init(D3DXVECTOR3 pos)
 		pDevice = pRenderer->GetDevice();
 	}
 
-	// テクスチャの生成
-	//D3DXCreateTextureFromFile(pDevice, PLAYER_NAME, &m_pTexture);
-
 	// 頂点バッファの生成
 	pDevice->CreateVertexBuffer(sizeof(VERTEX_2D) * 4,	// 確保するバッファのサイズ
 		D3DUSAGE_WRITEONLY,

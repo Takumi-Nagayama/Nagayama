@@ -52,6 +52,7 @@ CShadow *CPlayer::m_pShadow = NULL;
 // マクロ定義
 //*****************************************************************************
 #define MOVE_PLAYER				(3.0f)									//プレイヤー移動量
+#define MOVE_INERTIA			(1.0f)									//プレイヤーの慣性
 #define PLAYER_COLLISION		(D3DXVECTOR3(15.0f, 60.0f, 15.0f))		//プレイヤーの当たり判定
 #define ITEM_COLLISION			(40.0f)									//アイテムの当たり判定
 #define IRONBLOCK_COLLISION		(45.0f)									//鉄のブロックの当たり判定
@@ -61,7 +62,7 @@ CShadow *CPlayer::m_pShadow = NULL;
 #define ATTACK_KEY				(2)										//当たり判定を適応させるキー
 #define BLOCK_SIZE				(50.0f)									// ブロックの大きさ
 #define BLOCKPOS_SIZE			(25.0f)									// ブロックを置く場所の大きさ
-#define BLOCK_RANGE				(70.0f)									// プレイヤーとブロックの距離
+#define BLOCK_RANGE				(65.0f)									// プレイヤーとブロックの距離
 #define BLOCK_DECREASE			(30)
 #define LIFE					(3)										// 体力
 #define SCORE_COIN				(1500)									// コイン獲得時のスコア
@@ -221,7 +222,9 @@ HRESULT CPlayer::Init(void)
 	m_SetBlockPos.z = (float)(round(m_BlockPos.z / BLOCK_SIZE) * BLOCK_SIZE);
 
 	// ブロックの生成
-	CBlockPos::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), BLOCKPOS_SIZE, BLOCKPOS_SIZE, 1.0f, 1.0f, D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+	CBlockPos::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z));
+
+	//CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_PLAYER);
 
 	m_pShadow = CShadow::Create(m_pos);
 
@@ -266,100 +269,17 @@ void CPlayer::Uninit(void)
 //=============================================================================
 void CPlayer::Update(void)
 {
-	// 入力情報を取得
-	CInputKeyboard *pInputKeyboard;
-	pInputKeyboard = CManager::GetInputKeyboard();
-
-	// 入力情報を取得
-	CInputJoypad *pInputJoypad;
-	pInputJoypad = CManager::GetInputJoypad();
-
-	// モードを取得
-	CManager::MODE mode;
-	mode = CManager::GetMode();
+	// ブロックの設置
+	SetBlock();
 
 	// プレイヤーの動き
 	Move();
 
 	m_pShadow->SetPos(m_pos);
 
-	// モデルとの当たり判定
-	CollisonModel(&m_pos, &D3DXVECTOR3(m_posOld.x, m_posOld.y + 1.0f, m_posOld.z), &m_move, PLAYER_COLLISION);
+	CollisonAll();
 
-	// ゴールとの当たり判定
-	CollisionGoal(&m_pos, &m_posOld, &m_move, PLAYER_COLLISION);
-
-	// 背景オブジェクトとの当たり判定
-	CollisionSceneObj(&m_pos, &m_posOld, &m_move, PLAYER_COLLISION);
-
-	// コインとの当たり判定
-	CollisonCoin(&POS_BODY, ITEM_COLLISION);
-
-	// ポリゴンとの当たり判定
-	CollisonPolygon(&m_pos, PLAYER_COLLISION);
-
-	if (pInputKeyboard->GetPress(DIK_9) && pInputKeyboard->GetPress(DIK_0) == true)
-	{
-		// コインとの当たり判定
-		CollisonCoin(&POS_BODY, ITEM_COLLISION * 100.0f);
-	}
-
-	// 宝石との当たり判定
-	CollisonGem(&POS_BODY, ITEM_COLLISION);
-
-	if (m_State == STATE_BREAK || m_State == STATE_UPBREAK)
-	{// ブロックの破壊判定
-		CollisonBlock(&POS_HAND, BLOCK_SIZE);
-		CollisonIronBlock(&POS_HAND, IRONBLOCK_COLLISION);
-		CollisonWoodBlock(&POS_HAND, WOODLOCK_COLLISION);
-	}
-
-	// 残機取得
-	CLife *pLife = NULL;
-
-	if (mode == CManager::MODE_TUTORIAL)
-	{
-		pLife = CTutorial::GetLife();
-		if (m_pos.y <= -PLAYER_FALL)
-		{// 床から落ちた時
-			m_bGameOver = true;	// ゲームオーバーにする
-		}
-	}
-	else if (mode == CManager::MODE_GAME)
-	{
-		pLife = CGame::GetLife();
-		if (m_pos.y <= -PLAYER_FALL)
-		{// 床から落ちた時
-			m_nLife--;
-
-			if (m_nLife <= 0)
-			{
-				m_bGameOver = true;	// ゲームオーバーにする
-			}
-			else
-			{
-				pLife->AddLife(-1);
-				m_pos = RESPAWN_POS;
-				m_bWaterSound = true;
-			}
-		}
-	}
-
-	// ブロックの位置を保存
-	m_BlockPos = D3DXVECTOR3((sinf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.x, m_pos.y, (cosf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.z);
-
-	// マス目ごとに設置
-	m_SetBlockPos.x = (float)(round(m_BlockPos.x / BLOCK_SIZE) * BLOCK_SIZE);
-	m_SetBlockPos.y = (float)(round(m_BlockPos.y / BLOCK_SIZE) * BLOCK_SIZE);
-	m_SetBlockPos.z = (float)(round(m_BlockPos.z / BLOCK_SIZE) * BLOCK_SIZE);
-
-	if (pInputKeyboard->GetPress(DIK_F) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RB))
-	{
-		if (m_bPolygonLand == false)
-		{
-			m_SetBlockPos.y -= BLOCK_SIZE;
-		}
-	}
+	Life();
 
 	// モーション
 	UpdateMotion();
@@ -410,8 +330,6 @@ void CPlayer::Update(void)
 void CPlayer::Draw(void)
 {
 	D3DXMATRIX mtxRot, mtxTrans;				// 計算用マトリックス
-	//D3DMATERIAL9 matDef;						// 現在のマテリアル保存用
-	//D3DXMATERIAL *pMat;					// マテリアルデータへのポインタ
 
 	// レンダラーを取得
 	CRenderer *pRenderer;
@@ -492,118 +410,203 @@ void CPlayer::Move(void)
 
 	if (CCamera::GetGem() == false)
 	{
-		if (m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK)
+
+		if (pInputKeyboard->GetPress(DIK_X) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LB))
 		{
-			// ジョイパット
-			if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_UP) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_DOWN) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_RIGHT) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_LEFT) == true)
-			{// 左スティック
-				m_move.x -= sinf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
-				m_move.z -= cosf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
-
-				m_fDestAngle = cameraRot.y - pInputJoypad->GetLeftAxiz();
-			}
-
-			if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_UP) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_DOWN) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RIGHT) == true ||
-				pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LEFT) == true)
-			{// 十字キー
-				m_move.x += sinf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
-				m_move.z += cosf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
-
-				m_fDestAngle = cameraRot.y + pInputJoypad->GetRadian() - D3DX_PI;
-			}
-
-			//任意のキー←
-			if (pInputKeyboard->GetPress(DIK_A) == true)
+			fMovePlayer = MOVE_PLAYER * 0.5f;
+			if (m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK)
 			{
-				if (pInputKeyboard->GetPress(DIK_W) == true)
-				{//左上移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y + D3DX_PI * 0.75f);
+				// ジョイパット
+				if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_UP) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_DOWN) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_RIGHT) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_LEFT) == true)
+				{// 左スティック
+					m_move.x -= sinf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
+					m_move.z -= cosf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
 				}
-				else if (pInputKeyboard->GetPress(DIK_S) == true)
-				{//左下移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y + D3DX_PI * 0.25f);
+
+				if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_UP) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_DOWN) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RIGHT) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LEFT) == true)
+				{// 十字キー
+					m_move.x += sinf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
+					m_move.z += cosf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
 				}
-				else
+
+				//任意のキー←
+				if (pInputKeyboard->GetPress(DIK_A) == true)
+				{
+					if (pInputKeyboard->GetPress(DIK_W) == true)
+					{//左上移動
+					 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
+					}
+					else if (pInputKeyboard->GetPress(DIK_S) == true)
+					{//左下移動
+					 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
+					}
+					else
+					{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
+					}
+				}
+				//任意のキー→
+				else if (pInputKeyboard->GetPress(DIK_D) == true)
+				{
+					if (pInputKeyboard->GetPress(DIK_W) == true)
+					{//右上移動
+					 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
+					}
+					else if (pInputKeyboard->GetPress(DIK_S) == true)
+					{//右下移動
+					 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
+					}
+					else
+					{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
+					}
+				}
+				//任意のキー↑
+				else if (pInputKeyboard->GetPress(DIK_W) == true)
 				{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y + D3DX_PI * 0.5f);
+					m_move.x += sinf(cameraRot.y) * fMovePlayer;
+					m_move.z += cosf(cameraRot.y) * fMovePlayer;
 				}
-			}
-			//任意のキー→
-			else if (pInputKeyboard->GetPress(DIK_D) == true)
-			{
-				if (pInputKeyboard->GetPress(DIK_W) == true)
-				{//右上移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y - D3DX_PI * 0.75f);
-				}
+				//任意のキー↓
 				else if (pInputKeyboard->GetPress(DIK_S) == true)
-				{//右下移動
-				 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y - D3DX_PI * 0.25f);
-				}
-				else
-				{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-					m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
-					m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
-					m_fDestAngle = (cameraRot.y - D3DX_PI * 0.5f);
+				{
+					//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+					m_move.x -= sinf(cameraRot.y) * fMovePlayer;
+					m_move.z -= cosf(cameraRot.y) * fMovePlayer;
 				}
 			}
-			//任意のキー↑
-			else if (pInputKeyboard->GetPress(DIK_W) == true)
-			{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-				m_move.x += sinf(cameraRot.y) * fMovePlayer;
-				m_move.z += cosf(cameraRot.y) * fMovePlayer;
-				m_fDestAngle = (cameraRot.y + D3DX_PI * 1.0f);
-			}
-			//任意のキー↓
-			else if (pInputKeyboard->GetPress(DIK_S) == true)
+		}
+		else
+		{
+			if (m_State != STATE_BLOCK && m_State != STATE_BREAK && m_State != STATE_UPBREAK)
 			{
-				//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
-				m_move.x -= sinf(cameraRot.y) * fMovePlayer;
-				m_move.z -= cosf(cameraRot.y) * fMovePlayer;
-				m_fDestAngle = (cameraRot.y + D3DX_PI * 0.0f);
+				// ジョイパット
+				if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_UP) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_DOWN) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_RIGHT) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LS_LEFT) == true)
+				{// 左スティック
+					m_move.x -= sinf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
+					m_move.z -= cosf(cameraRot.y - pInputJoypad->GetLeftAxiz()) * (fMovePlayer * 1.0f);
+
+					m_fDestAngle = cameraRot.y - pInputJoypad->GetLeftAxiz();
+				}
+
+				if (pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_UP) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_DOWN) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RIGHT) == true ||
+					pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_LEFT) == true)
+				{// 十字キー
+					m_move.x += sinf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
+					m_move.z += cosf(cameraRot.y + pInputJoypad->GetRadian()) * (fMovePlayer * 1.0f);
+
+					m_fDestAngle = cameraRot.y + pInputJoypad->GetRadian() - D3DX_PI;
+				}
+
+				//任意のキー←
+				if (pInputKeyboard->GetPress(DIK_A) == true)
+				{
+					if (pInputKeyboard->GetPress(DIK_W) == true)
+					{//左上移動
+					 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.75f) * fMovePlayer;
+						m_fDestAngle = (cameraRot.y + D3DX_PI * 0.75f);
+					}
+					else if (pInputKeyboard->GetPress(DIK_S) == true)
+					{//左下移動
+					 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.25f) * fMovePlayer;
+						m_fDestAngle = (cameraRot.y + D3DX_PI * 0.25f);
+					}
+					else
+					{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y + D3DX_PI * 0.5f) * fMovePlayer;
+						m_fDestAngle = (cameraRot.y + D3DX_PI * 0.5f);
+					}
+				}
+				//任意のキー→
+				else if (pInputKeyboard->GetPress(DIK_D) == true)
+				{
+					if (pInputKeyboard->GetPress(DIK_W) == true)
+					{//右上移動
+					 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.75f) * fMovePlayer;
+						m_fDestAngle = (cameraRot.y - D3DX_PI * 0.75f);
+					}
+					else if (pInputKeyboard->GetPress(DIK_S) == true)
+					{//右下移動
+					 //モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.25f) * fMovePlayer;
+						m_fDestAngle = (cameraRot.y - D3DX_PI * 0.25f);
+					}
+					else
+					{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+						m_move.x -= sinf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
+						m_move.z -= cosf(cameraRot.y - D3DX_PI * 0.5f) * fMovePlayer;
+						m_fDestAngle = (cameraRot.y - D3DX_PI * 0.5f);
+					}
+				}
+				//任意のキー↑
+				else if (pInputKeyboard->GetPress(DIK_W) == true)
+				{	//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+					m_move.x += sinf(cameraRot.y) * fMovePlayer;
+					m_move.z += cosf(cameraRot.y) * fMovePlayer;
+					m_fDestAngle = (cameraRot.y + D3DX_PI * 1.0f);
+				}
+				//任意のキー↓
+				else if (pInputKeyboard->GetPress(DIK_S) == true)
+				{
+					//モデルの移動	モデルの移動する角度(カメラの向き + 角度) * 移動量
+					m_move.x -= sinf(cameraRot.y) * fMovePlayer;
+					m_move.z -= cosf(cameraRot.y) * fMovePlayer;
+					m_fDestAngle = (cameraRot.y + D3DX_PI * 0.0f);
+				}
 			}
-		}
 
-		//向きの慣性
-		m_fDiffAngle = m_fDestAngle - m_rot.y;
+			//向きの慣性
+			m_fDiffAngle = m_fDestAngle - m_rot.y;
 
-		//角度の設定
-		if (m_fDiffAngle > D3DX_PI)
-		{
-			m_fDiffAngle -= D3DX_PI* 2.0f;
-		}
-		if (m_fDiffAngle < -D3DX_PI)
-		{
-			m_fDiffAngle += D3DX_PI* 2.0f;
-		}
+			//角度の設定
+			if (m_fDiffAngle > D3DX_PI)
+			{
+				m_fDiffAngle -= D3DX_PI* 2.0f;
+			}
+			if (m_fDiffAngle < -D3DX_PI)
+			{
+				m_fDiffAngle += D3DX_PI* 2.0f;
+			}
 
-		m_rot.y += m_fDiffAngle * 0.1f;
+			m_rot.y += m_fDiffAngle * 0.1f;
 
-		if (m_rot.y > D3DX_PI)
-		{
-			m_rot.y -= D3DX_PI* 2.0f;
-		}
-		if (m_rot.y < -D3DX_PI)
-		{
-			m_rot.y += D3DX_PI* 2.0f;
+			if (m_rot.y > D3DX_PI)
+			{
+				m_rot.y -= D3DX_PI* 2.0f;
+			}
+			if (m_rot.y < -D3DX_PI)
+			{
+				m_rot.y += D3DX_PI* 2.0f;
+			}
 		}
 
 		if (m_bJump == false && m_pos.y >= 0)
@@ -651,262 +654,7 @@ void CPlayer::Move(void)
 			}
 		}
 
-		//==========================================================================
-		// アクション
-		//==========================================================================
-		if (m_State == STATE_BLOCK)
-		{// ブロックが出るパーティクル
-			// サイズを1～5の間にする
-			float fSize = BLOCK_PARTICLE_SIZE + (float)(rand() % 5);
-			CParticle3D::Create(BLOCK_PARTICLE_POS, 
-				D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
-				D3DXCOLOR(1.0f, 1.0f, 0.0f, 1.0f),
-				fSize,
-				fSize,
-				BLOCK_PARTICLE_LIFE,
-				CParticle3D::TYPE_UP,
-				CParticle3D::TYPE_EFFECT);
-
-			// サイズを1～5の間にする
-			fSize = BLOCK_PARTICLE_SIZE + (float)(rand() % 5);
-
-			CParticle3D::Create(BLOCK_PARTICLE_POS,
-				D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
-				D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f),
-				fSize,
-				fSize,
-				BLOCK_PARTICLE_LIFE,
-				CParticle3D::TYPE_UP,
-				CParticle3D::TYPE_EFFECT);
-
-			// サイズを1～5の間にする
-			fSize = BLOCK_PARTICLE_SIZE + (float)(rand() % 5);
-
-			CParticle3D::Create(BLOCK_PARTICLE_POS,
-				D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
-				D3DXCOLOR((float)(rand() % 10) / 10.0f, (float)(rand() % 10) / 10.0f, (float)(rand() % 10) / 10.0f, 1.0f),
-				fSize,
-				fSize,
-				BLOCK_PARTICLE_LIFE,
-				CParticle3D::TYPE_UP,
-				CParticle3D::TYPE_EFFECT);
-
-			// サイズを1～5の間にする
-			fSize = BLOCK_PARTICLE_SIZE + (float)(rand() % 5);
-
-			CParticle3D::Create(BLOCK_PARTICLE_POS,
-				D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
-				D3DXCOLOR((float)(rand() % 10) / 10.0f, (float)(rand() % 10) / 10.0f, (float)(rand() % 10) / 10.0f, 1.0f),
-				fSize,
-				fSize,
-				BLOCK_PARTICLE_LIFE,
-				CParticle3D::TYPE_UP,
-				CParticle3D::TYPE_EFFECT);
-		}
-
-		// ブロックの数取得
-		CNumBlock *pNumBlock = NULL;
-
-		if (mode == CManager::MODE_GAME)
-		{
-			pNumBlock = CGame::GetNumBlock();
-		}
-		else if (mode == CManager::MODE_TUTORIAL)
-		{
-			pNumBlock = CTutorial::GetNumBlock();
-		}
-
-		if (m_nNumBlock < MAX_SET_BLOCK)
-		{// 10個まで設置できる
-
-			if (pInputKeyboard->GetPress(DIK_F) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RB))
-			{// 下に設置
-				if (m_bPolygonLand == false)
-				{
-					if (pInputKeyboard->GetTrigger(DIK_J) == true && m_State != STATE_JUMP && m_State != STATE_BLOCK && m_State != STATE_BREAK)
-					{
-						pSound->PlaySound(CSound::SOUND_LABEL_SE_BLOCKSET);
-
-						// キーとフレームを0にする
-						m_nKey = 0;
-						m_nCountMotion = 0;
-						// ブロック設置状態
-						m_State = STATE_BLOCK;
-
-						// ブロックの位置を保存
-						m_BlockPos = D3DXVECTOR3((sinf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.x, m_pos.y - BLOCK_RANGE, (cosf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.z);
-
-						// マス目ごとに設置
-						m_SetBlockPos.x = (float)(round(m_BlockPos.x / BLOCK_SIZE) * BLOCK_SIZE);
-						m_SetBlockPos.y = (float)(round(m_BlockPos.y / BLOCK_SIZE) * BLOCK_SIZE);
-						m_SetBlockPos.z = (float)(round(m_BlockPos.z / BLOCK_SIZE) * BLOCK_SIZE);
-
-						// ブロックの生成
-						CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_NORMAL);
-
-						// 設置したブロックの数をカウント
-						m_nNumBlock++;
-
-						// ブロック加算
-						pNumBlock->AddBlock(-1);
-					}
-					else if (pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_X) == true && m_State != STATE_JUMP && m_State != STATE_BLOCK && m_State != STATE_BREAK)
-					{
-						pSound->PlaySound(CSound::SOUND_LABEL_SE_BLOCKSET);
-
-						// キーとフレームを0にする
-						m_nKey = 0;
-						m_nCountMotion = 0;
-						// ブロック設置状態
-						m_State = STATE_BLOCK;
-
-						// ブロックの位置を保存
-						m_BlockPos = D3DXVECTOR3((sinf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.x, m_pos.y - BLOCK_RANGE, (cosf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.z);
-
-						// マス目ごとに設置
-						m_SetBlockPos.x = (float)(round(m_BlockPos.x / BLOCK_SIZE) * BLOCK_SIZE);
-						m_SetBlockPos.y = (float)(round(m_BlockPos.y / BLOCK_SIZE) * BLOCK_SIZE);
-						m_SetBlockPos.z = (float)(round(m_BlockPos.z / BLOCK_SIZE) * BLOCK_SIZE);
-
-						// ブロックの生成
-						CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_NORMAL);
-
-						// 設置したブロックの数をカウント
-						m_nNumBlock++;
-
-						// ブロック加算
-						pNumBlock->AddBlock(-1);
-					}
-				}
-			}
-			else if (pInputKeyboard->GetTrigger(DIK_J) == true && m_State != STATE_JUMP && m_State != STATE_BLOCK && m_State != STATE_BREAK)
-			{
-				pSound->PlaySound(CSound::SOUND_LABEL_SE_BLOCKSET);
-
-				// キーとフレームを0にする
-				m_nKey = 0;
-				m_nCountMotion = 0;
-				// ブロック設置状態
-				m_State = STATE_BLOCK;
-
-				// ブロックの位置を保存
-				m_BlockPos = D3DXVECTOR3((sinf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.x, m_pos.y, (cosf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.z);
-
-				// マス目ごとに設置
-				m_SetBlockPos.x = (float)(round(m_BlockPos.x / BLOCK_SIZE) * BLOCK_SIZE);
-				m_SetBlockPos.y = (float)(round(m_BlockPos.y / BLOCK_SIZE) * BLOCK_SIZE);
-				m_SetBlockPos.z = (float)(round(m_BlockPos.z / BLOCK_SIZE) * BLOCK_SIZE);
-
-				// ブロックの生成
-				CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_NORMAL);
-
-				// 設置したブロックの数をカウント
-				m_nNumBlock++;
-
-				// ブロック加算
-				pNumBlock->AddBlock(-1);
-			}
-			else if (pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_X) == true && m_State != STATE_JUMP && m_State != STATE_BLOCK && m_State != STATE_BREAK)
-			{
-				pSound->PlaySound(CSound::SOUND_LABEL_SE_BLOCKSET);
-
-				// キーとフレームを0にする
-				m_nKey = 0;
-				m_nCountMotion = 0;
-				// ブロック設置状態
-				m_State = STATE_BLOCK;
-
-				// ブロックの位置を保存
-				m_BlockPos = D3DXVECTOR3((sinf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.x, m_pos.y, (cosf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.z);
-
-				// マス目ごとに設置
-				m_SetBlockPos.x = (float)(round(m_BlockPos.x / BLOCK_SIZE) * BLOCK_SIZE);
-				m_SetBlockPos.y = (float)(round(m_BlockPos.y / BLOCK_SIZE) * BLOCK_SIZE);
-				m_SetBlockPos.z = (float)(round(m_BlockPos.z / BLOCK_SIZE) * BLOCK_SIZE);
-
-				// ブロックの生成
-				CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_NORMAL);
-
-				// 設置したブロックの数をカウント
-				m_nNumBlock++;
-
-				// ブロック加算
-				pNumBlock->AddBlock(-1);
-			}
-		}
-
-		if (m_State == STATE_BLOCK && m_nKey == m_aMotionInfo[STATE_BLOCK].nNumKey - 1)
-		{// ブロック設置のモーションが終わったら通常様態に戻す
-			m_State = STATE_NORMAL;
-			// キーとフレームを0にする
-			m_nKey = 0;
-			m_nCountMotion = 0;
-		}
-
-		if (pInputKeyboard->GetPress(DIK_I) == true)
-		{
-			if (pInputKeyboard->GetTrigger(DIK_L) == true && m_State != STATE_JUMP && m_State != STATE_BREAK && m_State != STATE_BLOCK && m_State != STATE_UPBREAK)
-			{// ブロック破壊
-				m_bAttackSound = true;
-
-				// キーとフレームを0にする
-				m_nKey = 0;
-				m_nCountMotion = 0;
-
-				// ブロック破壊状態
-				m_State = STATE_UPBREAK;
-			}
-		}
-		else if (pInputKeyboard->GetTrigger(DIK_L) == true && m_State != STATE_JUMP && m_State != STATE_BREAK && m_State != STATE_BLOCK && m_State != STATE_UPBREAK)
-		{// ブロック破壊
-			m_bAttackSound = true;
-			m_nKey = 0;
-			m_nCountMotion = 0;
-
-			m_bIronSound = true;
-
-			// ブロック破壊状態
-			m_State = STATE_BREAK;
-		}
-		else if (pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_B) && m_State != STATE_JUMP && m_State != STATE_BREAK && m_State != STATE_BLOCK && m_State != STATE_UPBREAK)
-		{// ブロック破壊
-			m_bAttackSound = true;
-
-			// キーとフレームを0にする
-			m_nKey = 0;
-			m_nCountMotion = 0;
-
-			m_bIronSound = true;
-
-			// ブロック破壊状態
-			m_State = STATE_BREAK;
-		}
-
-		if (m_State == STATE_BREAK && m_nKey == ATTACK_KEY)
-		{
-			if (m_bAttackSound == true)
-			{
-				// 攻撃音
-				pSound->PlaySound(CSound::SOUND_LABEL_SE_ATTACK);
-				m_bAttackSound = false;
-			}
-		}
-
-		if (m_State == STATE_BREAK && m_nKey == m_aMotionInfo[STATE_BREAK].nNumKey - 1)
-		{// ブロック設置のモーションが終わったら通常様態に戻す
-			m_State = STATE_NORMAL;
-			// キーとフレームを0にする
-			m_nKey = 0;
-			m_nCountMotion = 0;
-		}
-
-		if (m_State == STATE_UPBREAK && m_nKey == m_aMotionInfo[STATE_BREAK].nNumKey - 1)
-		{// ブロック設置のモーションが終わったら通常様態に戻す
-			m_State = STATE_NORMAL;
-			// キーとフレームを0にする
-			m_nKey = 0;
-			m_nCountMotion = 0;
-		}
+		Action();
 
 		// 位置更新
 		m_pos.x += m_move.x;
@@ -914,12 +662,289 @@ void CPlayer::Move(void)
 		m_pos.y += m_move.y;
 
 		//減速
-		m_move.x += (0.0f - m_move.x) * 1.0f;
-		m_move.z += (0.0f - m_move.z) * 1.0f;
+		m_move.x += (0.0f - m_move.x) * MOVE_INERTIA;
+		m_move.z += (0.0f - m_move.z) * MOVE_INERTIA;
 
 		// 重力加算
 		m_move.y -= cosf(D3DX_PI * 0.0f) * GRAVITY;
 	}
+}
+
+//=============================================================================
+// プレイヤーが動く処理
+//=============================================================================
+void CPlayer::Action(void)
+{
+	// 入力情報を取得
+	CInputKeyboard *pInputKeyboard;
+	pInputKeyboard = CManager::GetInputKeyboard();
+
+	// 入力情報を取得
+	CInputJoypad *pInputJoypad;
+	pInputJoypad = CManager::GetInputJoypad();
+
+	// モードの取得
+	CManager::MODE mode;
+	mode = CManager::GetMode();
+
+	// 音楽情報を取得
+	CSound *pSound;
+	pSound = CManager::GetSound();
+	
+	if (pInputKeyboard->GetPress(DIK_F) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RB))
+	{
+		if (m_bPolygonLand == false)
+		{
+			m_SetBlockPos.y -= BLOCK_SIZE;
+		}
+	}
+
+	if (m_State == STATE_BLOCK)
+	{// ブロックが出るパーティクル
+	 // サイズを1～5の間にする
+		float fSize = BLOCK_PARTICLE_SIZE + (float)(rand() % 5);
+		CParticle3D::Create(BLOCK_PARTICLE_POS,
+			D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
+			D3DXCOLOR(1.0f, 1.0f, 0.0f, 1.0f),
+			fSize,
+			fSize,
+			BLOCK_PARTICLE_LIFE,
+			CParticle3D::TYPE_UP,
+			CParticle3D::TYPE_EFFECT);
+
+		// サイズを1～5の間にする
+		fSize = BLOCK_PARTICLE_SIZE + (float)(rand() % 5);
+
+		CParticle3D::Create(BLOCK_PARTICLE_POS,
+			D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
+			D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f),
+			fSize,
+			fSize,
+			BLOCK_PARTICLE_LIFE,
+			CParticle3D::TYPE_UP,
+			CParticle3D::TYPE_EFFECT);
+
+		// サイズを1～5の間にする
+		fSize = BLOCK_PARTICLE_SIZE + (float)(rand() % 5);
+
+		CParticle3D::Create(BLOCK_PARTICLE_POS,
+			D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
+			D3DXCOLOR((float)(rand() % 10) / 10.0f, (float)(rand() % 10) / 10.0f, (float)(rand() % 10) / 10.0f, 1.0f),
+			fSize,
+			fSize,
+			BLOCK_PARTICLE_LIFE,
+			CParticle3D::TYPE_UP,
+			CParticle3D::TYPE_EFFECT);
+
+		// サイズを1～5の間にする
+		fSize = BLOCK_PARTICLE_SIZE + (float)(rand() % 5);
+
+		CParticle3D::Create(BLOCK_PARTICLE_POS,
+			D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
+			D3DXCOLOR((float)(rand() % 10) / 10.0f, (float)(rand() % 10) / 10.0f, (float)(rand() % 10) / 10.0f, 1.0f),
+			fSize,
+			fSize,
+			BLOCK_PARTICLE_LIFE,
+			CParticle3D::TYPE_UP,
+			CParticle3D::TYPE_EFFECT);
+	}
+
+	// ブロックの数取得
+	CNumBlock *pNumBlock = NULL;
+
+	if (mode == CManager::MODE_GAME)
+	{
+		pNumBlock = CGame::GetNumBlock();
+	}
+	else if (mode == CManager::MODE_TUTORIAL)
+	{
+		pNumBlock = CTutorial::GetNumBlock();
+	}
+
+	if (m_nNumBlock < MAX_SET_BLOCK)
+	{// 10個まで設置できる
+
+		if (pInputKeyboard->GetPress(DIK_F) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RB))
+		{// 下に設置
+			if (m_bPolygonLand == false)
+			{
+				if (pInputKeyboard->GetTrigger(DIK_J) == true && m_State != STATE_JUMP && m_State != STATE_BLOCK && m_State != STATE_BREAK)
+				{
+					pSound->PlaySound(CSound::SOUND_LABEL_SE_BLOCKSET);
+
+					// キーとフレームを0にする
+					m_nKey = 0;
+					m_nCountMotion = 0;
+					// ブロック設置状態
+					m_State = STATE_BLOCK;
+
+					// ブロックの生成
+					CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_NORMAL);
+
+					// 設置したブロックの数をカウント
+					m_nNumBlock++;
+
+					// ブロック加算
+					pNumBlock->AddBlock(-1);
+				}
+				else if (pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_X) == true && m_State != STATE_JUMP && m_State != STATE_BLOCK && m_State != STATE_BREAK)
+				{
+					pSound->PlaySound(CSound::SOUND_LABEL_SE_BLOCKSET);
+
+					// キーとフレームを0にする
+					m_nKey = 0;
+					m_nCountMotion = 0;
+					// ブロック設置状態
+					m_State = STATE_BLOCK;
+
+					// ブロックの生成
+					CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_NORMAL);
+
+					// 設置したブロックの数をカウント
+					m_nNumBlock++;
+
+					// ブロック加算
+					pNumBlock->AddBlock(-1);
+				}
+			}
+		}
+		else if (pInputKeyboard->GetTrigger(DIK_J) == true && m_State != STATE_JUMP && m_State != STATE_BLOCK && m_State != STATE_BREAK)
+		{
+			pSound->PlaySound(CSound::SOUND_LABEL_SE_BLOCKSET);
+
+			// キーとフレームを0にする
+			m_nKey = 0;
+			m_nCountMotion = 0;
+			// ブロック設置状態
+			m_State = STATE_BLOCK;
+
+			// ブロックの設置位置
+			//SetBlock();
+
+			// ブロックの生成
+			CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_NORMAL);
+
+			// 設置したブロックの数をカウント
+			m_nNumBlock++;
+
+			// ブロック加算
+			pNumBlock->AddBlock(-1);
+		}
+		else if (pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_X) == true && m_State != STATE_JUMP && m_State != STATE_BLOCK && m_State != STATE_BREAK)
+		{
+			pSound->PlaySound(CSound::SOUND_LABEL_SE_BLOCKSET);
+
+			// キーとフレームを0にする
+			m_nKey = 0;
+			m_nCountMotion = 0;
+			// ブロック設置状態
+			m_State = STATE_BLOCK;
+
+			// ブロックの生成
+			CBlock::Create(D3DXVECTOR3(m_SetBlockPos.x, m_SetBlockPos.y, m_SetBlockPos.z), CBlock::STATE_NORMAL);
+
+			// 設置したブロックの数をカウント
+			m_nNumBlock++;
+
+			// ブロック加算
+			pNumBlock->AddBlock(-1);
+		}
+	}
+
+	if (m_State == STATE_BLOCK && m_nKey == m_aMotionInfo[STATE_BLOCK].nNumKey - 1)
+	{// ブロック設置のモーションが終わったら通常様態に戻す
+		m_State = STATE_NORMAL;
+		// キーとフレームを0にする
+		m_nKey = 0;
+		m_nCountMotion = 0;
+	}
+
+	if (pInputKeyboard->GetPress(DIK_I) == true)
+	{
+		if (pInputKeyboard->GetTrigger(DIK_L) == true && m_State != STATE_JUMP && m_State != STATE_BREAK && m_State != STATE_BLOCK && m_State != STATE_UPBREAK)
+		{// ブロック破壊
+			m_bAttackSound = true;
+
+			// キーとフレームを0にする
+			m_nKey = 0;
+			m_nCountMotion = 0;
+
+			// ブロック破壊状態
+			m_State = STATE_UPBREAK;
+		}
+	}
+	else if (pInputKeyboard->GetTrigger(DIK_L) == true && m_State != STATE_JUMP && m_State != STATE_BREAK && m_State != STATE_BLOCK && m_State != STATE_UPBREAK)
+	{// ブロック破壊
+		m_bAttackSound = true;
+		m_nKey = 0;
+		m_nCountMotion = 0;
+
+		m_bIronSound = true;
+
+		// ブロック破壊状態
+		m_State = STATE_BREAK;
+	}
+	else if (pInputJoypad->GetTrigger(CInputJoypad::DIJS_BUTTON_B) && m_State != STATE_JUMP && m_State != STATE_BREAK && m_State != STATE_BLOCK && m_State != STATE_UPBREAK)
+	{// ブロック破壊
+		m_bAttackSound = true;
+
+		// キーとフレームを0にする
+		m_nKey = 0;
+		m_nCountMotion = 0;
+
+		m_bIronSound = true;
+
+		// ブロック破壊状態
+		m_State = STATE_BREAK;
+	}
+
+	if (m_State == STATE_BREAK && m_nKey == ATTACK_KEY)
+	{
+		if (m_bAttackSound == true)
+		{
+			// 攻撃音
+			pSound->PlaySound(CSound::SOUND_LABEL_SE_ATTACK);
+			m_bAttackSound = false;
+		}
+	}
+
+	if (m_State == STATE_BREAK && m_nKey == m_aMotionInfo[STATE_BREAK].nNumKey - 1)
+	{// ブロック設置のモーションが終わったら通常様態に戻す
+		m_State = STATE_NORMAL;
+		// キーとフレームを0にする
+		m_nKey = 0;
+		m_nCountMotion = 0;
+	}
+
+	if (m_State == STATE_UPBREAK && m_nKey == m_aMotionInfo[STATE_BREAK].nNumKey - 1)
+	{// ブロック設置のモーションが終わったら通常様態に戻す
+		m_State = STATE_NORMAL;
+		// キーとフレームを0にする
+		m_nKey = 0;
+		m_nCountMotion = 0;
+	}
+}
+
+//=============================================================================
+// ブロックの位置
+//=============================================================================
+void CPlayer::SetBlock(void)
+{
+	// 入力情報を取得
+	CInputKeyboard *pInputKeyboard;
+	pInputKeyboard = CManager::GetInputKeyboard();
+
+	// 入力情報を取得
+	CInputJoypad *pInputJoypad;
+	pInputJoypad = CManager::GetInputJoypad();
+
+	// ブロックの位置を保存 
+	m_BlockPos = D3DXVECTOR3((sinf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.x, m_pos.y, (cosf(m_rot.y + D3DX_PI) * BLOCK_RANGE) + m_pos.z);
+
+	// マス目ごとに設置
+	m_SetBlockPos.x = (float)(round(m_BlockPos.x / BLOCK_SIZE) * BLOCK_SIZE);
+	m_SetBlockPos.y = (float)(round(m_BlockPos.y / BLOCK_SIZE) * BLOCK_SIZE);
+	m_SetBlockPos.z = (float)(round(m_BlockPos.z / BLOCK_SIZE) * BLOCK_SIZE);
 }
 
 //=============================================================================
@@ -2139,6 +2164,92 @@ void CPlayer::LoadMotion(void)
 		}
 
 		fclose(pFile);
+	}
+}
+
+//=============================================================================
+// 全ての当たり判定
+//=============================================================================
+void CPlayer::CollisonAll(void)
+{
+	// 入力情報を取得
+	CInputKeyboard *pInputKeyboard;
+	pInputKeyboard = CManager::GetInputKeyboard();
+
+	// 入力情報を取得
+	CInputJoypad *pInputJoypad;
+	pInputJoypad = CManager::GetInputJoypad();
+
+	// モデルとの当たり判定
+	CollisonModel(&m_pos, &D3DXVECTOR3(m_posOld.x, m_posOld.y + 1.0f, m_posOld.z), &m_move, PLAYER_COLLISION);
+
+	// ゴールとの当たり判定
+	CollisionGoal(&m_pos, &m_posOld, &m_move, PLAYER_COLLISION);
+
+	// 背景オブジェクトとの当たり判定
+	CollisionSceneObj(&m_pos, &m_posOld, &m_move, PLAYER_COLLISION);
+
+	// コインとの当たり判定
+	CollisonCoin(&POS_BODY, ITEM_COLLISION);
+
+	// ポリゴンとの当たり判定
+	CollisonPolygon(&m_pos, PLAYER_COLLISION);
+
+	if (pInputKeyboard->GetPress(DIK_9) && pInputKeyboard->GetPress(DIK_0) == true)
+	{
+		// コインとの当たり判定
+		CollisonCoin(&POS_BODY, ITEM_COLLISION * 100.0f);
+	}
+
+	// 宝石との当たり判定
+	CollisonGem(&POS_BODY, ITEM_COLLISION);
+
+	if (m_State == STATE_BREAK || m_State == STATE_UPBREAK)
+	{// ブロックの破壊判定
+		CollisonBlock(&POS_HAND, BLOCK_SIZE);
+		CollisonIronBlock(&POS_HAND, IRONBLOCK_COLLISION);
+		CollisonWoodBlock(&POS_HAND, WOODLOCK_COLLISION);
+	}
+}
+
+//=============================================================================
+// 残機処理
+//=============================================================================
+void CPlayer::Life(void)
+{
+	// モードを取得
+	CManager::MODE mode;
+	mode = CManager::GetMode();
+
+	// 残機取得
+	CLife *pLife = NULL;
+
+	if (mode == CManager::MODE_TUTORIAL)
+	{
+		pLife = CTutorial::GetLife();
+		if (m_pos.y <= -PLAYER_FALL)
+		{// 床から落ちた時
+			m_bGameOver = true;	// ゲームオーバーにする
+		}
+	}
+	else if (mode == CManager::MODE_GAME)
+	{
+		pLife = CGame::GetLife();
+		if (m_pos.y <= -PLAYER_FALL)
+		{// 床から落ちた時
+			m_nLife--;
+
+			if (m_nLife <= 0)
+			{
+				m_bGameOver = true;	// ゲームオーバーにする
+			}
+			else
+			{
+				pLife->AddLife(-1);
+				m_pos = RESPAWN_POS;
+				m_bWaterSound = true;
+			}
+		}
 	}
 }
 

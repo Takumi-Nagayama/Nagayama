@@ -86,7 +86,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		if (pManager != NULL)
 		{
-			pManager->Init(hInstance, hWnd, true);	// falseにしたらフルスクリーン
+			pManager->Init(hInstance, hWnd, false);	// falseにしたらフルスクリーン
 		}
 	}
 

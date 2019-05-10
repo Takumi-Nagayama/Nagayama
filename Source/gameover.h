@@ -24,7 +24,6 @@
 class CScene2D;
 class CScore;
 class CBlock;
-//class CRenderer;
 
 //=============================================================================
 // クラスの定義
@@ -46,6 +45,7 @@ public:
 	void Draw(void);				// タイトル描画処理
 
 	void LoadCharFall(void);				// 背景オブジェクトの読み込み
+	void Block(void);				// ブロック
 
 private:
 	static CBlock *m_pBlock[MAX_BLOCK];

@@ -26,7 +26,7 @@
 #include "particleX.h"
 #include "object.h"
 #include "logoBack.h"
-#include "NumBlock.h"
+#include "numBlock.h"
 #include "scoreLogo.h"
 #include "blockLogo.h"
 #include "lifeLogo.h"
@@ -54,6 +54,8 @@
 #define SCORE_WIDTH		(60.0f)								// スコアのサイズ
 #define NUMBLOCK_POS	(D3DXVECTOR3(1170.0f, 70.0f, 0.0f))	// ブロックの個数の位置
 #define NUMBLOCK_SIZE	(37.0f)								// ブロックの個数のサイズ
+#define NUMCOIN_POS	(D3DXVECTOR3(1170.0f, 200.0f, 0.0f))	// コインの個数の位置
+#define NUMCOIN_SIZE	(37.0f)								// コインの個数のサイズ
 #define NUMBLOCKLOGO_POS	(D3DXVECTOR3(1030.0f, 70.0f, 0.0f))	// ブロックの個数ロゴの位置
 #define NUMBLOCKLOGO_WIDTH	(50.0f)								// ブロックの個数ロゴのサイズ
 #define NUMBLOCKLOGO_HEIGHT	(30.0f)								// ブロックの個数ロゴのサイズ
@@ -110,69 +112,15 @@ CGame *CGame::Create()
 //=============================================================================
 HRESULT CGame::Init(void)
 {
-	// テクスチャを読み込む
-	// パーティクル
-	CParticle2D::Load();
-	CParticle3D::Load();
-	// 背景ロゴ
-	CLogoBack::Load();
-	// スコアロゴ
-	CScoreLogo::Load();
-	// ブロックロゴ
-	CBlockLogo::Load();
-	// 残機ロゴ
-	CLifeLogo::Load();
-	// ブロックの個数ロゴ
-	CBlockCross::Load();
-	// プレイヤーの残機ロゴ
-	CPlayerCross::Load();
-	// 地面テクスチャ
-	CHole::Load();
-	CFeild::Load();
-	// テクスチャの解放
-	CNumber::Load();
-	// ブロック出現位置
-	CBlockPos::Load();
-
-	// ブロックのモデルの読み込み
-	CBlock::LoadModel();
-	CBlock::LoadMat();
-	CWoodBlock::LoadModel();
-	CWoodBlock::LoadMat();
-	CIronBlock::LoadModel();
-	CIronBlock::LoadMat();
-
-	// パーティクルのモデルのロード
-	CParticleX::LoadModel();
-	CParticleX::LoadMat();
-
-	// コインのモデルの読み込み
-	CCoin::LoadModel();
-	// 宝石のモデルの読み込み
-	CGem::LoadModel();
-	// 小石のモデルの読み込み
-	CPebble::LoadModel();
-
-	// プレイヤーの生成
-	CPlayer::Create(D3DXVECTOR3(80.0f, 50.0f, 250.0f));
+	LoadTexture();
+	LoadModel();
+	LoadMat();
 
 	// コイン生成
 	LoadCoin();
 
-	// コイン生成
-	CCoin::Create(D3DXVECTOR3(450.0f, 65.0f, 1240.0f));
-	CCoin::Create(D3DXVECTOR3(880.0f, 130.0f, 1300.0f));
-	CCoin::Create(D3DXVECTOR3(880.0f, 130.0f, 1250.0f));
-	CCoin::Create(D3DXVECTOR3(880.0f, 130.0f, 1350.0f));
-
-	CCoin::Create(D3DXVECTOR3(450.0f, 150.0f, 120.0f));
-	CCoin::Create(D3DXVECTOR3(400.0f, 150.0f, 120.0f));
-	CCoin::Create(D3DXVECTOR3(500.0f, 150.0f, 120.0f));
-	CCoin::Create(D3DXVECTOR3(430.0f, 150.0f, 280.0f));
-	CCoin::Create(D3DXVECTOR3(480.0f, 150.0f, 280.0f));
-	CCoin::Create(D3DXVECTOR3(250.0f, 20.0f, 430.0f));
-	CCoin::Create(D3DXVECTOR3(250.0f, 20.0f, 400.0f));
-	CCoin::Create(D3DXVECTOR3(250.0f, 20.0f, 460.0f));
+	// プレイヤーの生成
+	CPlayer::Create(D3DXVECTOR3(80.0f, 50.0f, 250.0f));
 
 	// 宝石の生成
 	CGem::Create(D3DXVECTOR3(1160.0f, 0.0f, 720.0f));
@@ -181,55 +129,8 @@ HRESULT CGame::Init(void)
 	CObject *pObject = NULL;
 	pObject->LoadFile(0);
 
-	// 木のブロック生成
-	CWoodBlock::Create(D3DXVECTOR3(250.0f, 0.0f, 430.0f));
-	CWoodBlock::Create(D3DXVECTOR3(1000.0f, 0.0f, 280.0f));
-	CWoodBlock::Create(D3DXVECTOR3(1000.0f, 0.0f, 160.0f));
-
-	// 鉄ブロック生成
-	CIronBlock::Create(D3DXVECTOR3(830.0f, 0.0f, 1250.0f));
-	CIronBlock::Create(D3DXVECTOR3(830.0f, 0.0f, 1300.0f));
-	CIronBlock::Create(D3DXVECTOR3(830.0f, 0.0f, 1350.0f));
-	CIronBlock::Create(D3DXVECTOR3(880.0f, 0.0f, 1250.0f));
-	CIronBlock::Create(D3DXVECTOR3(880.0f, 0.0f, 1300.0f));
-	CIronBlock::Create(D3DXVECTOR3(880.0f, 0.0f, 1350.0f));
-	CIronBlock::Create(D3DXVECTOR3(830.0f, 50.0f, 1250.0f));
-	CIronBlock::Create(D3DXVECTOR3(830.0f, 50.0f, 1300.0f));
-	CIronBlock::Create(D3DXVECTOR3(830.0f, 50.0f, 1350.0f));
-	CIronBlock::Create(D3DXVECTOR3(880.0f, 50.0f, 1250.0f));
-	CIronBlock::Create(D3DXVECTOR3(880.0f, 50.0f, 1300.0f));
-	CIronBlock::Create(D3DXVECTOR3(880.0f, 50.0f, 1350.0f));
-	CIronBlock::Create(D3DXVECTOR3(450.0f, 80.0f, 280.0f));
-	CIronBlock::Create(D3DXVECTOR3(400.0f, 80.0f, 280.0f));
-	CIronBlock::Create(D3DXVECTOR3(500.0f, 80.0f, 280.0f));
-	CIronBlock::Create(D3DXVECTOR3(450.0f, 80.0f, 120.0f));
-	CIronBlock::Create(D3DXVECTOR3(400.0f, 80.0f, 120.0f));
-	CIronBlock::Create(D3DXVECTOR3(500.0f, 80.0f, 120.0f));
-
-	// 小石の生成
-	CPebble::Create(D3DXVECTOR3(50.0f, 0.0f, 890.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(140.0f, 0.0f, 880.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(-20.0f, 0.0f, 880.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(50.0f, 0.0f, 890.0f + 270.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(140.0f, 0.0f, 880.0f + 270.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(-20.0f, 0.0f, 880.0f + 270.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(285.0f, 0.0f, 1230.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(280.0f, 0.0f, 1320.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(300.0f, 0.0f, 1120.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(285.0f + 300.0f, 0.0f, 1230.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(280.0f + 300.0f, 0.0f, 1320.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(500.0f, 0.0f, 1060.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(420.0f, 0.0f, 1060.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(370.0f, 0.0f, 1060.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(875.0f, 0.0f, 744.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(825.0f, 0.0f, 734.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(785.0f, 0.0f, 754.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(747.0f, 0.0f, 730.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(900.0f, 0.0f, 744.0f - 300.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(825.0f, 0.0f, 734.0f - 300.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(785.0f, 0.0f, 754.0f - 300.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-	CPebble::Create(D3DXVECTOR3(747.0f, 0.0f, 730.0f - 300.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
-
+	BlockCreate();
+	FieldCreate();
 
 	if (m_pScore == NULL)
 	{
@@ -255,29 +156,6 @@ HRESULT CGame::Init(void)
 	// ブロックの個数ロゴの生成
 	CBlockCross::Create(NUMBLOCKLOGO_POS, NUMBLOCKLOGO_WIDTH, NUMBLOCKLOGO_HEIGHT);
 
-	// メッシュフィールドの生成
-	CMeshField::Create(D3DXVECTOR3(-200.0f, -1.5f, 1700.0f));
-
-	// メッシュシリンダーの生成
-	CMeshCylinder::Create(D3DXVECTOR3(-150.0f, 1500.0f, 500.0f), 2000.0f, 30.0f);
-
-	// ゴールのモデルの読み込み
-	CGoal::LoadModel();
-	// ゴールの生成
-	CGoal::Create(D3DXVECTOR3(1166.0f, 0.0f, 533.0f));
-
-	// 床ポリゴンの生成
-	CFeild::Create(D3DXVECTOR3(0.0f, 0.5f, 220.0f), 700.0f, 700.0f, 10.0f, 10.0f);
-	CFeild::Create(D3DXVECTOR3(30.0f, 0.5f, 1430.0f), 300.0f, 300.0f, 5.0f, 5.0f);
-	CFeild::Create(D3DXVECTOR3(1050.0f, 0.5f, 1200.0f), 500.0f, 500.0f, 8.0f, 8.0f);
-	CFeild::Create(D3DXVECTOR3(450.0f, 0.5f, 1000.0f), 90.0f, 270.0f, 5.0f, 5.0f);
-	CFeild::Create(D3DXVECTOR3(1000.0f, 0.5f, 200.0f), 300.0f, 300.0f, 5.0f, 5.0f);
-	CFeild::Create(D3DXVECTOR3(1200.0f, 0.5f, 600.0f), 200.0f, 200.0f, 5.0f, 5.0f);
-	CHole::Create(D3DXVECTOR3(1200.0f, -0.5f, 600.0f), 3000.0f, 3000.0f);
-
-	// 穴
-	CScene3D::Create(D3DXVECTOR3(550.0f, 0.0f, 700.0f), 700.0f, 700.0f, 1.0f, 1.0f);
-
 	// 背景ロゴの生成
 	CLogoBack::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 + 10.0f, 50.0f, 0.0f), 190.0f, 60.0f);
 	CLogoBack::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 + 450.0f, 50.0f, 0.0f), 130.0f, 60.0f);
@@ -297,40 +175,15 @@ void CGame::Uninit(void)
 	CCoin::SetNumCoin(0);
 
 	// モデルの解放
-	CBlock::UnloadModel();		// ブロック
-	CGoal::UnloadModel();		// ゴール
-	CObject::UnloadModel();			// 背景オブジェクト
-	CCoin::UnloadModel();				// コイン
-	CGem::UnloadModel();				// 宝石
-	CWoodBlock::UnloadModel();		// 木ブロック
-	CWoodBlock::UnloadMat();
-	CIronBlock::UnloadModel();		// 木ブロック
-	CIronBlock::UnloadMat();
-
-	CPebble::UnloadModel();			// 小石のモデル
-
+	UnLoadModel();
+	
 	// テクスチャの解放
-	CParticle2D::Unload();		// 2Dパーティクル
-	CParticle3D::Unload();		// 3Dパーティクル
-	CLogoBack::Unload();		// 背景ロゴ
-	CScoreLogo::Unload();		// スコアロゴ
-	CBlockLogo::Unload();		// ブロックロゴ
-	CLifeLogo::Unload();			// 残機ロゴ
-	CBlockCross::Unload();		// ブロックの個数ロゴ
-	CPlayerCross::Unload();		// プレイヤーの残機ロゴ
-	CHole::Unload();				// 地面テクスチャ
-	CFeild::Unload();
-	CNumber::UnLoad();			// テクスチャの解放
-	CBlockPos::UnLoad();				// ブロック出現位置
-
-	// パーティクル
-	CParticleX::UnloadModel();
-	CParticleX::UnloadMat();
+	UnLoadTexture();
 
 	// マテリアルの解放
-	CBlock::UnloadMat();		// ブロック
+	UnLoadMat();
 
-	// プレイヤーの情報を空にする
+	// 情報を空にする
 	m_pScore = NULL;
 	m_pNumBlock = NULL;
 	m_pLife = NULL;
@@ -585,4 +438,205 @@ void CGame::LoadCoin()
 		}
 		fclose(pFile);
 	}
+
+	// コイン生成
+	CCoin::Create(D3DXVECTOR3(450.0f, 65.0f, 1240.0f));
+	CCoin::Create(D3DXVECTOR3(880.0f, 130.0f, 1300.0f));
+	CCoin::Create(D3DXVECTOR3(880.0f, 130.0f, 1250.0f));
+	CCoin::Create(D3DXVECTOR3(880.0f, 130.0f, 1350.0f));
+
+	CCoin::Create(D3DXVECTOR3(450.0f, 150.0f, 120.0f));
+	CCoin::Create(D3DXVECTOR3(400.0f, 150.0f, 120.0f));
+	CCoin::Create(D3DXVECTOR3(500.0f, 150.0f, 120.0f));
+	CCoin::Create(D3DXVECTOR3(430.0f, 150.0f, 280.0f));
+	CCoin::Create(D3DXVECTOR3(480.0f, 150.0f, 280.0f));
+	CCoin::Create(D3DXVECTOR3(250.0f, 20.0f, 430.0f));
+	CCoin::Create(D3DXVECTOR3(250.0f, 20.0f, 400.0f));
+	CCoin::Create(D3DXVECTOR3(250.0f, 20.0f, 460.0f));
+	CCoin::Create(D3DXVECTOR3(70.0f, 10.0f, 400.0f));
+	CCoin::Create(D3DXVECTOR3(70.0f, 10.0f, 500.0f));
+}
+
+//=============================================================================
+// テクスチャのロード
+//=============================================================================
+void CGame::LoadTexture()
+{
+	// テクスチャを読み込む
+	// パーティクル
+	CParticle2D::Load();
+	CParticle3D::Load();
+	// 背景ロゴ
+	CLogoBack::Load();
+	// スコアロゴ
+	CScoreLogo::Load();
+	// ブロックロゴ
+	CBlockLogo::Load();
+	// 残機ロゴ
+	CLifeLogo::Load();
+	// ブロックの個数ロゴ
+	CBlockCross::Load();
+	// プレイヤーの残機ロゴ
+	CPlayerCross::Load();
+	// 地面テクスチャ
+	CHole::Load();
+	CFeild::Load();
+	// テクスチャの解放
+	CNumber::Load();
+}
+
+//=============================================================================
+// テクスチャの開放
+//=============================================================================
+void CGame::UnLoadTexture()
+{
+	CParticle2D::Unload();		// 2Dパーティクル
+	CParticle3D::Unload();		// 3Dパーティクル
+	CLogoBack::Unload();		// 背景ロゴ
+	CScoreLogo::Unload();		// スコアロゴ
+	CBlockLogo::Unload();		// ブロックロゴ
+	CLifeLogo::Unload();			// 残機ロゴ
+	CBlockCross::Unload();		// ブロックの個数ロゴ
+	CPlayerCross::Unload();		// プレイヤーの残機ロゴ
+	CHole::Unload();				// 地面テクスチャ
+	CFeild::Unload();
+	CNumber::UnLoad();			// テクスチャの解放
+}
+
+//=============================================================================
+// モデルのロード
+//=============================================================================
+void CGame::LoadModel()
+{
+	CBlock::LoadModel();
+	CWoodBlock::LoadModel();
+	CIronBlock::LoadModel();
+	CBlockPos::LoadModel();
+	CParticleX::LoadModel();
+	CCoin::LoadModel();
+	CGem::LoadModel();
+	CPebble::LoadModel();
+	CGoal::LoadModel();
+}
+
+//=============================================================================
+// モデルの開放
+//=============================================================================
+void CGame::UnLoadModel()
+{
+	CBlock::UnloadModel();		// ブロック
+	CGoal::UnloadModel();		// ゴール
+	CObject::UnloadModel();			// 背景オブジェクト
+	CCoin::UnloadModel();				// コイン
+	CGem::UnloadModel();				// 宝石
+	CWoodBlock::UnloadModel();		// 木ブロック
+	CIronBlock::UnloadModel();		// 木ブロック
+	CBlockPos::UnloadModel();		// ブロック出現位置
+	CPebble::UnloadModel();			// 小石のモデル
+	CParticleX::UnloadModel();
+}
+
+//=============================================================================
+// マテリアルのロード
+//=============================================================================
+void CGame::LoadMat()
+{
+	CBlock::LoadMat();
+	CWoodBlock::LoadMat();
+	CIronBlock::LoadMat();
+	CBlockPos::LoadMat();
+	CParticleX::LoadMat();
+}
+
+//=============================================================================
+// マテリアルの開放
+//=============================================================================
+void CGame::UnLoadMat()
+{
+	CWoodBlock::UnloadMat();
+	CIronBlock::UnloadMat();
+	CBlockPos::UnloadMat();
+	CParticleX::UnloadMat();
+	CBlock::UnloadMat();
+}
+
+//=============================================================================
+// ブロックの生成
+//=============================================================================
+void CGame::BlockCreate()
+{
+	// 木のブロック生成
+	CWoodBlock::Create(D3DXVECTOR3(250.0f, 0.0f, 430.0f));
+	CWoodBlock::Create(D3DXVECTOR3(1000.0f, 0.0f, 280.0f));
+	CWoodBlock::Create(D3DXVECTOR3(1000.0f, 0.0f, 160.0f));
+
+	// 鉄ブロック生成
+	CIronBlock::Create(D3DXVECTOR3(830.0f, 0.0f, 1250.0f));
+	CIronBlock::Create(D3DXVECTOR3(830.0f, 0.0f, 1300.0f));
+	CIronBlock::Create(D3DXVECTOR3(830.0f, 0.0f, 1350.0f));
+	CIronBlock::Create(D3DXVECTOR3(880.0f, 0.0f, 1250.0f));
+	CIronBlock::Create(D3DXVECTOR3(880.0f, 0.0f, 1300.0f));
+	CIronBlock::Create(D3DXVECTOR3(880.0f, 0.0f, 1350.0f));
+	CIronBlock::Create(D3DXVECTOR3(830.0f, 50.0f, 1250.0f));
+	CIronBlock::Create(D3DXVECTOR3(830.0f, 50.0f, 1300.0f));
+	CIronBlock::Create(D3DXVECTOR3(830.0f, 50.0f, 1350.0f));
+	CIronBlock::Create(D3DXVECTOR3(880.0f, 50.0f, 1250.0f));
+	CIronBlock::Create(D3DXVECTOR3(880.0f, 50.0f, 1300.0f));
+	CIronBlock::Create(D3DXVECTOR3(880.0f, 50.0f, 1350.0f));
+	CIronBlock::Create(D3DXVECTOR3(450.0f, 80.0f, 280.0f));
+	CIronBlock::Create(D3DXVECTOR3(400.0f, 80.0f, 280.0f));
+	CIronBlock::Create(D3DXVECTOR3(500.0f, 80.0f, 280.0f));
+	CIronBlock::Create(D3DXVECTOR3(450.0f, 80.0f, 120.0f));
+	CIronBlock::Create(D3DXVECTOR3(400.0f, 80.0f, 120.0f));
+	CIronBlock::Create(D3DXVECTOR3(500.0f, 80.0f, 120.0f));
+}
+
+//=============================================================================
+// フィールドの生成
+//=============================================================================
+void CGame::FieldCreate()
+{
+	CPebble::Create(D3DXVECTOR3(50.0f, 0.0f, 890.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(140.0f, 0.0f, 880.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(-20.0f, 0.0f, 880.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(50.0f, 0.0f, 890.0f + 270.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(140.0f, 0.0f, 880.0f + 270.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(-20.0f, 0.0f, 880.0f + 270.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(285.0f, 0.0f, 1230.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(280.0f, 0.0f, 1320.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(300.0f, 0.0f, 1120.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(285.0f + 300.0f, 0.0f, 1230.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(280.0f + 300.0f, 0.0f, 1320.0f), D3DXVECTOR3(0.0f, D3DX_PI * 0.5f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(500.0f, 0.0f, 1060.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(420.0f, 0.0f, 1060.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(370.0f, 0.0f, 1060.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(875.0f, 0.0f, 744.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(825.0f, 0.0f, 734.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(785.0f, 0.0f, 754.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(747.0f, 0.0f, 730.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(900.0f, 0.0f, 744.0f - 300.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(825.0f, 0.0f, 734.0f - 300.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(785.0f, 0.0f, 754.0f - 300.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	CPebble::Create(D3DXVECTOR3(747.0f, 0.0f, 730.0f - 300.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+
+	// メッシュフィールドの生成
+	CMeshField::Create(D3DXVECTOR3(-200.0f, -1.5f, 1700.0f));
+
+	// メッシュシリンダーの生成
+	CMeshCylinder::Create(D3DXVECTOR3(-150.0f, 1500.0f, 500.0f), 2000.0f, 30.0f);
+
+	// ゴールの生成
+	CGoal::Create(D3DXVECTOR3(1166.0f, 0.0f, 533.0f));
+
+	// 床ポリゴンの生成
+	CFeild::Create(D3DXVECTOR3(0.0f, 0.5f, 220.0f), 700.0f, 700.0f, 10.0f, 10.0f);
+	CFeild::Create(D3DXVECTOR3(30.0f, 0.5f, 1430.0f), 300.0f, 300.0f, 5.0f, 5.0f);
+	CFeild::Create(D3DXVECTOR3(1050.0f, 0.4f, 1200.0f), 500.0f, 500.0f, 8.0f, 8.0f);
+	CFeild::Create(D3DXVECTOR3(450.0f, 0.5f, 1000.0f), 90.0f, 270.0f, 5.0f, 5.0f);
+	CFeild::Create(D3DXVECTOR3(1000.0f, 0.5f, 200.0f), 300.0f, 300.0f, 5.0f, 5.0f);
+	CFeild::Create(D3DXVECTOR3(1200.0f, 0.5f, 600.0f), 200.0f, 200.0f, 5.0f, 5.0f);
+	CHole::Create(D3DXVECTOR3(1200.0f, -0.5f, 600.0f), 3000.0f, 3000.0f);
+
+	// 穴
+	CScene3D::Create(D3DXVECTOR3(550.0f, 0.0f, 700.0f), 700.0f, 700.0f, 1.0f, 1.0f);
 }

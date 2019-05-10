@@ -41,8 +41,14 @@ public:
 	static CLife *GetLife(void);
 
 	void LoadCoin(void);				// コインの読み込み
-
-
+	void LoadTexture(void);				// テクスチャの読み込み
+	void UnLoadTexture(void);			// テクスチャの開放
+	void LoadModel(void);				// モデルの読み込み
+	void UnLoadModel(void);				// モデルの開放
+	void LoadMat(void);					// マテリアルの読み込み
+	void UnLoadMat(void);				// マテリアルの開放
+	void BlockCreate(void);				// ブロックの生成
+	void FieldCreate(void);				// フィールドの生成
 
 private:
 	static CScore *m_pScore;

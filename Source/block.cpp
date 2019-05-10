@@ -124,10 +124,6 @@ void CBlock::Uninit(void)
 //=============================================================================
 void CBlock::Update(void)
 {
-	// 入力情報を取得
-	CInputKeyboard *pInputKeyboard;
-	pInputKeyboard = CManager::GetInputKeyboard();
-
 	// ゲームのモードを取得
 	CManager::MODE mode;
 	mode = CManager::GetMode();
@@ -137,81 +133,11 @@ void CBlock::Update(void)
 
 	if (m_State == STATE_NORMAL)
 	{
-		if (mode == CManager::MODE_TITLE || mode == CManager::MODE_RANKING)
-		{
-			if (m_bFall == true)
-			{
-				m_nCntFall++;
-				m_pos.y -= SPEED_FALL;
-
-				if (m_nCntFall > COUNT_FALL)
-				{
-					m_bFall = false;
-					m_nCntFall = 0;
-				}
-			}
-		}
-		if (mode == CManager::MODE_GAME || mode == CManager::MODE_TUTORIAL)
-		{
-			m_nCntTime++;
-
-			if (m_nCntTime / 60 > UNINIT_TIME0)
-			{
-				for (int nCntParticle = 0; nCntParticle < NUM_PARTICLE_X; nCntParticle++)
-				{
-					CParticleX::Create(D3DXVECTOR3(m_pos.x, m_pos.y + 30.0f, m_pos.z),
-						D3DXVECTOR3(sinf(D3DX_PI * PARTICLE_ROT), cosf(D3DX_PI * PARTICLE_ROT), cosf(D3DX_PI * PARTICLE_ROT)),
-						D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 7 + 1)), cosf(PARTICLE_ROT) * ((rand() % 7 + 1)), cosf(PARTICLE_ROT) * ((rand() % 7 + 1))),
-						LIFE_PARTICLE_X,
-						CParticleX::TYPE_DOWN);
-				}
-
-				Uninit();
-
-				m_nCntTime = 0;
-			}
-
-			if (m_nCntTime / 60 > UNINIT_TIME1)
-			{
-				if ((m_nCntTime % 60) == 0)
-				{
-					for (int nCntParticle = 0; nCntParticle < NUM_PARTICLE_3D; nCntParticle++)
-					{
-						CParticle3D::Create(D3DXVECTOR3(m_pos.x, m_pos.y + 30.0f, m_pos.z),
-							D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
-							D3DXCOLOR(1.0f, 0.5f, 0.5f, 0.7f),
-							SIZE_PARTICLE_3D,
-							SIZE_PARTICLE_3D,
-							LIFE_PARTICLE_3D,
-							CParticle3D::TYPE_NORMAL,
-							CParticle3D::TYPE_EFFECT);
-					}
-				}
-			}
-		}
+		StateNormal();
 	}
 	else if (m_State == STATE_PLAYER)
 	{
-		CScene *pScene = NULL;
-
-		// 先頭のオブジェクトを取得(モデルの優先順位が1だから、1にあるオブジェクトをすべて見る)
-		pScene = CScene::GetTop(PLAYER_PRIORITY);
-
-		while (pScene != NULL)
-		{// 優先順位が3のオブジェクトを1つ1つ確かめる
-		 // 処理の最中に消える可能性があるから先に記録しておく
-			CScene *pSceneNext = pScene->GetNext();
-
-			if (pScene->GetDeath() == false)
-			{// 死亡フラグが立っていないもの
-				if (pScene->GetObjType() == CScene::OBJTYPE_PLAYER)
-				{// オブジェクトの種類を確かめる
-					m_pos = ((CPlayer*)pScene)->GetBlockPos();
-				}
-			}
-			// 次のシーンに進める
-			pScene = pSceneNext;
-		}
+		StatePlayer();
 	}
 
 	SetPosition(m_pos);
@@ -240,6 +166,9 @@ void CBlock::Draw(void)
 		pDevice = pRenderer->GetDevice();
 	}
 
+	// 頂点法線の自動正規化	開始
+	pDevice->SetRenderState(D3DRS_NORMALIZENORMALS, TRUE);
+
 	if (m_State == STATE_PLAYER)
 	{
 		// 現在のマテリアルを取得
@@ -251,31 +180,30 @@ void CBlock::Draw(void)
 		for (int nCntMat = 0; nCntMat < (int)m_nNumMat; nCntMat++)
 		{
 			// マテリアルの設定
-			pMat[nCntMat].MatD3D.Diffuse.a = 0.6f;
-			pDevice->SetMaterial(&pMat[nCntMat].MatD3D);
-
-			//テクスチャの設定
-			pDevice->SetTexture(0, NULL);
-
-			// モデル(パーツ)の描画
-			m_pMesh->DrawSubset(nCntMat);
+			pMat[nCntMat].MatD3D.Diffuse.a = 0.5f;
 		}
 
 		CSceneX::Draw();
-
-		// マテリアルをデフォルトに戻す
-		pDevice->SetMaterial(&matDef);
 	}
-	else
+	else if(m_State == STATE_NORMAL)
 	{
-		// 頂点法線の自動正規化	開始
-		pDevice->SetRenderState(D3DRS_NORMALIZENORMALS, TRUE);
+		// 現在のマテリアルを取得
+		pDevice->GetMaterial(&matDef);
+
+		// マテリアルデータへのポインタを取得
+		pMat = (D3DXMATERIAL*)m_pBuffMat->GetBufferPointer();
+
+		for (int nCntMat = 0; nCntMat < (int)m_nNumMat; nCntMat++)
+		{
+			// マテリアルの設定
+			pMat[nCntMat].MatD3D.Diffuse.a = 1.0f;
+		}
 
 		CSceneX::Draw();
-
-		// 頂点法線の自動正規化	終了
-		pDevice->SetRenderState(D3DRS_NORMALIZENORMALS, FALSE);
 	}
+
+	// 頂点法線の自動正規化	終了
+	pDevice->SetRenderState(D3DRS_NORMALIZENORMALS, FALSE);
 }
 
 //=============================================================================
@@ -411,6 +339,96 @@ void CBlock::UnloadMat(void)
 		delete[] m_pTexture;
 		// NULLにする(更地)
 		m_pTexture = NULL;
+	}
+}
+
+//=============================================================================
+// 通常
+//=============================================================================
+void CBlock::StateNormal(void)
+{
+	// ゲームのモードを取得
+	CManager::MODE mode;
+	mode = CManager::GetMode();
+
+	if (mode == CManager::MODE_TITLE || mode == CManager::MODE_RANKING)
+	{
+		if (m_bFall == true)
+		{
+			m_nCntFall++;
+			m_pos.y -= SPEED_FALL;
+
+			if (m_nCntFall > COUNT_FALL)
+			{
+				m_bFall = false;
+				m_nCntFall = 0;
+			}
+		}
+	}
+	if (mode == CManager::MODE_GAME || mode == CManager::MODE_TUTORIAL)
+	{
+		m_nCntTime++;
+
+		if (m_nCntTime / 60 > UNINIT_TIME0)
+		{
+			for (int nCntParticle = 0; nCntParticle < NUM_PARTICLE_X; nCntParticle++)
+			{
+				CParticleX::Create(D3DXVECTOR3(m_pos.x, m_pos.y + 30.0f, m_pos.z),
+					D3DXVECTOR3(sinf(D3DX_PI * PARTICLE_ROT), cosf(D3DX_PI * PARTICLE_ROT), cosf(D3DX_PI * PARTICLE_ROT)),
+					D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 7 + 1)), cosf(PARTICLE_ROT) * ((rand() % 7 + 1)), cosf(PARTICLE_ROT) * ((rand() % 7 + 1))),
+					LIFE_PARTICLE_X,
+					CParticleX::TYPE_DOWN);
+			}
+
+			Uninit();
+
+			m_nCntTime = 0;
+		}
+
+		if (m_nCntTime / 60 > UNINIT_TIME1)
+		{
+			if ((m_nCntTime % 60) == 0)
+			{
+				for (int nCntParticle = 0; nCntParticle < NUM_PARTICLE_3D; nCntParticle++)
+				{
+					CParticle3D::Create(D3DXVECTOR3(m_pos.x, m_pos.y + 30.0f, m_pos.z),
+						D3DXVECTOR3(sinf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1)), cosf(PARTICLE_ROT) * ((rand() % 5 + 1))),
+						D3DXCOLOR(1.0f, 0.5f, 0.5f, 0.7f),
+						SIZE_PARTICLE_3D,
+						SIZE_PARTICLE_3D,
+						LIFE_PARTICLE_3D,
+						CParticle3D::TYPE_NORMAL,
+						CParticle3D::TYPE_EFFECT);
+				}
+			}
+		}
+	}
+}
+
+//=============================================================================
+// プレイヤー
+//=============================================================================
+void CBlock::StatePlayer(void)
+{
+	CScene *pScene = NULL;
+
+	// 先頭のオブジェクトを取得(モデルの優先順位が1だから、1にあるオブジェクトをすべて見る)
+	pScene = CScene::GetTop(PLAYER_PRIORITY);
+
+	while (pScene != NULL)
+	{// 優先順位が3のオブジェクトを1つ1つ確かめる
+	 // 処理の最中に消える可能性があるから先に記録しておく
+		CScene *pSceneNext = pScene->GetNext();
+
+		if (pScene->GetDeath() == false)
+		{// 死亡フラグが立っていないもの
+			if (pScene->GetObjType() == CScene::OBJTYPE_PLAYER)
+			{// オブジェクトの種類を確かめる
+				m_pos = ((CPlayer*)pScene)->GetBlockPos();
+			}
+		}
+		// 次のシーンに進める
+		pScene = pSceneNext;
 	}
 }
 

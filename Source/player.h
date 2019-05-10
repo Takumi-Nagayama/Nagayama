@@ -106,11 +106,15 @@ public:
 	
 	void SetVtx(void);																					// 頂点座標の設定
 	void Move(void);																					// プレイヤーが動く処理
+	void Action(void);
+	void Life(void);																					// 残機処理
+	void SetBlock(void);																				// ブロックの設置
 	bool GetRTriangle(void);																			// 右のポリゴンに乗っているかどうかを取得
 	void UpdateMotion(void);																			// モーションの更新処理
 	static CPlayer *Create(D3DXVECTOR3 pos);															// オブジェクトの生成
 	void LoadMotion(void);																				// 高さのロード
 
+	void CollisonAll(void);																				// 当たり判定
 	void CollisonModel(D3DXVECTOR3 *pos, D3DXVECTOR3 *posOld, D3DXVECTOR3 *move, D3DXVECTOR3 radius);	// モデルとの当たり判定
 	void CollisonBlock(D3DXVECTOR3 *pos, float fRadius);											// ブロックの破壊の判定
 	void CollisonIronBlock(D3DXVECTOR3 *pos, float fRadius);											// 鉄ブロックの破壊の判定

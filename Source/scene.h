@@ -15,21 +15,22 @@
 #define MAX_OBJECT				(1024)	// テクスチャの数
 #define NUM_PRIORITY			(8)		// 優先順位の数
 #define SCENEOBJ_PRIORITY		(2)		// 設置するオブジェクトの優先順位
-#define OBJ_PRIORITY			(5)		// オブジェクトの優先順位
+#define OBJ_PRIORITY			(4)		// オブジェクトの優先順位
 #define OBSTACLE_PRIORITY		(3)		// 障害物の優先順位
 #define GOAL_PRIORITY			(1)		// ゴールの優先順位
-#define SCENEX_PRIORITY			(1)		// ブロックの優先順位
+#define SCENEX_PRIORITY			(2)		// モデルの優先順位
 #define MESHFIELD_PRIORITY		(3)		// メッシュフィールドの優先順位
 #define POLYGON_PRIORITY		(3)		// 床の優先順位
 #define SCENE3D_PRIORITY		(3)		// 川の優先順位
 #define	PLAYER_PRIORITY			(5)		// プレイヤーの優先順位
 #define	SHADOW_PRIORITY			(6)		// 影の優先順位
-#define	PARTICLE_PRIORITY		(4)		// パーティクルの優先順位
-#define COIN_PRIORITY			(6)		// コインの優先順位
+#define	PARTICLE_PRIORITY		(5)		// パーティクルの優先順位
+#define COIN_PRIORITY			(4)		// コインの優先順位
 #define LOGO_PRIORITY			(6)		// ロゴの優先順位
 #define LOGOBACK_PRIORITY		(4)		// 背景ロゴの優先順位
-#define HOLE_PRIORITY			(5)		// 地面全体の優先順位
+#define HOLE_PRIORITY			(4)		// 地面全体の優先順位
 #define TUTORIALLOGO_PRIORITY	(3)		// チュートリアルロゴの優先順位
+#define GEM_PRIORITY			(4)
 
 //========================================
 // クラスの定義

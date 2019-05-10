@@ -4,7 +4,7 @@
 // Author : ’·ŽR‘ñŽÀ
 //
 //=============================================================================
-#include "NumBlock.h"
+#include "numBlock.h"
 #include "manager.h"
 #include "number.h"
 #include "scene2D.h"

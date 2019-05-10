@@ -24,7 +24,6 @@
 class CScene2D;
 class CBlock;
 class CScore;
-//class CRenderer;
 
 //=============================================================================
 // クラスの定義
@@ -44,6 +43,7 @@ public:
 	void Uninit(void);				// タイトル終了処理
 	void Update(void);				// タイトル更新処理
 	void Draw(void);				// タイトル描画処理
+	void Block(void);				// ブロック設置
 
 	void LoadCharFall(void);				// 背景オブジェクトの読み込み
 

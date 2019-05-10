@@ -1,103 +1,132 @@
 //=============================================================================
 //
-// ブロックの出現位置表示処理 [blockPos.cpp]
+// ブロック処理 [block.cpp]
 // Author : 長山拓実
 //
 //=============================================================================
 #include "blockPos.h"
-#include "manager.h"
+#include "input.h"
 #include "renderer.h"
-#include "scene2D.h"
+#include "manager.h"
+#include "debugProc.h"
+#include "camera.h"
+#include "scene3D.h"
+#include "meshField.h"
 #include "player.h"
+#include "game.h"
+#include "particle3D.h"
+#include "particleX.h"
 
 //*****************************************************************************
 // マクロ定義
 //*****************************************************************************
-#define TEXTURENAME000			"data\\TEXTURE\\woodBox.jpg"	//テクスチャのファイル名
+#define BLOCK_NAME	"data\\MODEL\\woodBox.x"	// ブロックのモデル名
+#define BLOCK_ALPHA		(0.7f)				// 透明度
+#define BLOCK_ALPHASPEED		(0.01f)				// 透明度
 
-//--------------------------------------------
-//静的メンバ変数宣言
-//--------------------------------------------
-LPDIRECT3DTEXTURE9	CBlockPos::m_pTexture = NULL;
+//=============================================================================
+// 静的メンバ変数宣言
+//=============================================================================
+LPD3DXMESH CBlockPos::m_pMesh = NULL;		// メッシュ情報（頂点情報）へのポインタ
+LPD3DXBUFFER CBlockPos::m_pBuffMat = NULL;	// マテリアル情報へのポインタ
+DWORD CBlockPos::m_nNumMat = 0;			// マテリアル情報の数
+LPDIRECT3DTEXTURE9 *CBlockPos::m_pTexture = 0;			// テクスチャ情報
 
-//--------------------------------------------
-// ブロックの出現位置表示コンストラクタ
-//--------------------------------------------
-CBlockPos::CBlockPos()
+//=============================================================================
+// ブロッククラスのコンストラクタ
+//=============================================================================
+CBlockPos::CBlockPos() : CSceneX(5)
 {
-	m_pos = D3DXVECTOR3(0, 0, 0);			//位置
-	m_rot = D3DXVECTOR3(0, 0, 0);		//向き
-	D3DXMatrixIdentity(&m_mtxWorld);	//ワールドマトリックス
+	// 値をクリア
+	m_pVtxBuff = NULL;						// 頂点バッファへのポインタ
+	D3DXMatrixIdentity(&m_mtxWorld);		// ワールドマトリックス
+	m_pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);	// 位置
+	m_move = D3DXVECTOR3(0.0f, 0.0f, 0.0f);	// 移動量
+	m_rot = D3DXVECTOR3(0.0f, 0.0f, 0.0f);	// 向き
+	m_VtxMin = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+	m_VtxMax = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+	m_bFall = true;
+	m_nCntFall = 0;
+	m_nCntTime = 0;
+	m_fAlpha = 0.0f;
+	m_fAlphaSpeed = 0.0f;
 }
 
-//--------------------------------------------
-// ブロックの出現位置表示デストラクタ
-//--------------------------------------------
+//=============================================================================
+// デストラクタ
+//=============================================================================
 CBlockPos::~CBlockPos()
 {
 }
 
 //=============================================================================
-// 生成処理
+// オブジェクトの生成処理
 //=============================================================================
-CBlockPos * CBlockPos::Create(D3DXVECTOR3 pos, float fDepth, float fWifth, float fTextureU, float fTextureV, D3DXCOLOR col)
+CBlockPos *CBlockPos::Create(D3DXVECTOR3 pos)
 {
-	CBlockPos *pBlockPos = NULL;
+	CBlockPos *pBlock = NULL;
 
-	if (pBlockPos == NULL)
+	if (pBlock == NULL)
 	{
-		// 地面クラスの生成
-		pBlockPos = new CBlockPos;
+		// オブジェクトクラスの生成
+		pBlock = new CBlockPos;
 
-		if (pBlockPos != NULL)
+		if (pBlock != NULL)
 		{
-			pBlockPos->SetDepth(fDepth);
-			pBlockPos->SetWidth(fWifth);
-			pBlockPos->SetTextureU(fTextureU);
-			pBlockPos->SetTextureV(fTextureV);
-			pBlockPos->SetPos(pos);
-			pBlockPos->Init();								// 初期化処理
-			pBlockPos->SetCol(col);				// 種類の設定
-			pBlockPos->BindTexture(m_pTexture);				// 種類の設定
+			pBlock->SetPosition(pos);
+			pBlock->BindModel(m_pBuffMat, m_nNumMat, m_pMesh);
+			pBlock->BindMat(m_pTexture);
+			pBlock->Init();
 		}
 	}
-	return pBlockPos;
+
+	return pBlock;
 }
 
 //=============================================================================
-// 初期化処理
+// ブロック初期化処理
 //=============================================================================
 HRESULT CBlockPos::Init(void)
 {
-	// 2Dオブジェクト初期化処理
-	CPolygon::Init();
-
 	// オブジェクトの種類の設定
-	SetObjType(CScene::OBJTYPE_BLOCKPOS);
+	SetObjType(CScene::OBJTYPE_BLOCK);
+
+	// 初期化処理
+	CSceneX::Init();
+
+	m_bFall = true;
+
+	m_nCntFall = 0;
+	m_nCntTime = 0;
+	m_fAlpha = BLOCK_ALPHA;
+	m_fAlphaSpeed = BLOCK_ALPHASPEED;
 
 	return S_OK;
 }
 
 //=============================================================================
-// 終了処理
+// ブロック終了処理
 //=============================================================================
 void CBlockPos::Uninit(void)
 {
-	// 2Dオブジェクト終了処理
-	CPolygon::Uninit();
+	CSceneX::Uninit();
 }
 
 //=============================================================================
-// 更新処理
+// ブロック更新処理
 //=============================================================================
 void CBlockPos::Update(void)
 {
+	// 入力情報を取得
+	CInputKeyboard *pInputKeyboard;
+	pInputKeyboard = CManager::GetInputKeyboard();
+
 	// ゲームのモードを取得
 	CManager::MODE mode;
 	mode = CManager::GetMode();
 
 	// 位置を取得
-	m_pos = CPolygon::GetPos();
+	m_pos = CSceneX::GetPosition();
 
 	CScene *pScene = NULL;
 
@@ -120,50 +149,185 @@ void CBlockPos::Update(void)
 		pScene = pSceneNext;
 	}
 
+	SetPosition(m_pos);
 
-	SetPos(D3DXVECTOR3(m_pos.x, m_pos.y + 1.0f, m_pos.z));
+	m_fAlpha -= m_fAlphaSpeed;
+
+	if (m_fAlpha <= 0.2f)
+	{
+		m_fAlphaSpeed *= -1.0f;
+	}
+	if (m_fAlpha > BLOCK_ALPHA)
+	{
+		m_fAlphaSpeed *= -1.0f;
+	}
 }
 
 //=============================================================================
-// 描画処理
+// ブロック描画処理
 //=============================================================================
 void CBlockPos::Draw(void)
 {
-	// 2Dオブジェクト描画処理
-	CPolygon::Draw();
+	D3DMATERIAL9 matDef;						// 現在のマテリアル保存用
+	D3DXMATERIAL *pMat;					// マテリアルデータへのポインタ
+
+	// レンダラーを取得
+	CRenderer *pRenderer;
+	pRenderer = CManager::GetRenderer();
+
+	// デバイスを取得
+	LPDIRECT3DDEVICE9 pDevice = NULL;
+
+	if (pRenderer != NULL)
+	{
+		pDevice = pRenderer->GetDevice();
+	}
+
+	// 頂点法線の自動正規化	開始
+	pDevice->SetRenderState(D3DRS_NORMALIZENORMALS, TRUE);
+
+	// 現在のマテリアルを取得
+	pDevice->GetMaterial(&matDef);
+
+	// マテリアルデータへのポインタを取得
+	pMat = (D3DXMATERIAL*)m_pBuffMat->GetBufferPointer();
+
+	for (int nCntMat = 0; nCntMat < (int)m_nNumMat; nCntMat++)
+	{
+		// マテリアルの設定
+		pMat[nCntMat].MatD3D.Diffuse.a = m_fAlpha;
+	}
+
+	CSceneX::Draw();
+
+	// 頂点法線の自動正規化	終了
+	pDevice->SetRenderState(D3DRS_NORMALIZENORMALS, FALSE);
 }
 
 //=============================================================================
-// 位置設定処理
+// ブロックのモデル読み込み処理
 //=============================================================================
-void CBlockPos::Setpos(D3DXVECTOR3 pos)
+HRESULT CBlockPos::LoadModel(void)
 {
-	m_pos = pos;
-}
+	// レンダラーを取得
+	CRenderer *pRenderer;
+	pRenderer = CManager::GetRenderer();
 
-//=============================================================================
-// テクスチャロード処理
-//=============================================================================
-HRESULT CBlockPos::Load(void)
-{
-	//デバイスを取得
-	CRenderer *pRenderer = CManager::GetRenderer();
-	LPDIRECT3DDEVICE9 pDevice = pRenderer->GetDevice();
+	LPDIRECT3DDEVICE9 pDevice = NULL;
 
-	//テクスチャの読み込み
-	D3DXCreateTextureFromFile(pDevice, TEXTURENAME000, &m_pTexture);
+	if (pRenderer != NULL)
+	{
+		pDevice = pRenderer->GetDevice();
+	}
+
+	// Xファイルの読み込み
+	D3DXLoadMeshFromX(BLOCK_NAME,
+		D3DXMESH_SYSTEMMEM,
+		pDevice,
+		NULL,
+		&m_pBuffMat,
+		NULL,
+		&m_nNumMat,
+		&m_pMesh);
 
 	return S_OK;
 }
+
 //=============================================================================
-// テクスチャ破棄処理
+// ブロックのモデル解放処理
 //=============================================================================
-void CBlockPos::UnLoad(void)
+void CBlockPos::UnloadModel(void)
 {
-	// テクスチャの破棄
-	if (m_pTexture != NULL)
+	// メッシュの開放
+	if (m_pMesh != NULL)
 	{
-		m_pTexture->Release();
+		m_pMesh->Release();
+		m_pMesh = NULL;
+	}
+
+	// マテリアルの開放
+	if (m_pBuffMat != NULL)
+	{
+		m_pBuffMat->Release();
+		m_pBuffMat = NULL;
+	}
+}
+
+//=============================================================================
+// ブロックのモデル読み込み処理
+//=============================================================================
+HRESULT CBlockPos::LoadMat(void)
+{
+	// レンダラーを取得
+	CRenderer *pRenderer;
+	pRenderer = CManager::GetRenderer();
+
+	// デバイスを取得
+	LPDIRECT3DDEVICE9 pDevice = NULL;
+
+	if (pRenderer != NULL)
+	{
+		pDevice = pRenderer->GetDevice();
+	}
+
+	D3DXMATERIAL *pMat;					// マテリアルデータへのポインタ
+
+										// マテリアルデータへのポインタを取得
+	pMat = (D3DXMATERIAL*)m_pBuffMat->GetBufferPointer();
+
+	// マテリアルの数分テクスチャを入れるものを動的に確保
+	m_pTexture = new LPDIRECT3DTEXTURE9[m_nNumMat];
+
+	for (int nCntMat = 0; nCntMat < (int)m_nNumMat; nCntMat++)
+	{
+		// 入れる前に空にする
+		m_pTexture[nCntMat] = NULL;
+
+		if (pMat[nCntMat].pTextureFilename != NULL)
+		{
+			// テクスチャの生成
+			D3DXCreateTextureFromFile(pDevice, pMat[nCntMat].pTextureFilename, &m_pTexture[nCntMat]);
+		}
+	}
+
+	return S_OK;
+}
+
+//=============================================================================
+// ブロックのモデル解放処理
+//=============================================================================
+void CBlockPos::UnloadMat(void)
+{
+	if (m_pTexture != NULL)
+	{// テクスチャのポインタのNULLチェック(家)
+		for (int nCntMat = 0; nCntMat < (int)m_nNumMat; nCntMat++)
+		{
+			if (m_pTexture[nCntMat] != NULL)
+			{// ポインタの中のNULLチェック(家具)
+				m_pTexture[nCntMat]->Release();
+				m_pTexture[nCntMat] = NULL;
+			}
+		}
+
+		// メモリの開放(解体)
+		delete[] m_pTexture;
+		// NULLにする(更地)
 		m_pTexture = NULL;
 	}
+}
+
+//=============================================================================
+// 位置の取得
+//=============================================================================
+D3DXVECTOR3 CBlockPos::GetPos(void)
+{
+	return m_pos;
+}
+
+//=============================================================================
+// 位置の設定
+//=============================================================================
+void CBlockPos::SetPos(D3DXVECTOR3 pos)
+{
+	m_pos = pos;
 }

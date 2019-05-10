@@ -26,6 +26,9 @@ public:
 	void Uninit(void);
 	void Update(void);
 	void SetCamera(void);
+	void GemCamera(void);
+	void PlayerCamera(void);
+	void SetAngle(void);
 
 	D3DXVECTOR3 GetRot(void);						// ˆÊ’u‚Ìæ“¾
 	static bool GetGem(void);						// •óÎ‚ğæ‚ê‚éó‘Ô‚©‚Ìæ“¾

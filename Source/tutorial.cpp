@@ -16,7 +16,7 @@
 #include "field.h"
 #include "block.h"
 #include "score.h"
-#include "NumBlock.h"
+#include "numBlock.h"
 #include "particle2D.h"
 #include "particle3D.h"
 #include "particleX.h"
@@ -29,7 +29,6 @@
 #include "ironBlock.h"
 #include "woodBlock.h"
 #include "hole.h"
-#include "coin.h"
 #include "gem.h"
 #include "pressAnyButton.h"
 #include "sound.h"
@@ -111,7 +110,8 @@ HRESULT CTutorial::Init(void)
 	// テクスチャのロード
 	CNumber::Load();
 	// ブロック出現位置
-	CBlockPos::Load();
+	CBlockPos::LoadModel();
+	CBlockPos::LoadMat();
 
 	// モデルを読み込む
 	// ブロックのモデルの読み込み
@@ -182,7 +182,6 @@ HRESULT CTutorial::Init(void)
 	CGoal::Create(D3DXVECTOR3(0.0f, 0.0f, 1800.0f));
 
 	// 穴
-	//CPolygon::Create(D3DXVECTOR3(0.0f, 0.0f, 700.0f), 8000.0f, 3000.0f, 50.0f, 50.0f);
 	CScene3D::Create(D3DXVECTOR3(0.0f, 0.0f, 700.0f), 1000.0f, 1000.0f, 80.0f, 80.0f);
 
 	// 背景ロゴの生成
@@ -201,7 +200,6 @@ HRESULT CTutorial::Init(void)
 //=============================================================================
 void CTutorial::Uninit(void)
 {
-	CCoin::SetNumCoin(0);
 	// モデルの解放
 	CBlock::UnloadModel();		// ブロック
 	CBlock::UnloadMat();
@@ -209,6 +207,9 @@ void CTutorial::Uninit(void)
 	CIronBlock::UnloadMat();
 	CWoodBlock::UnloadModel();		// 木ブロック
 	CWoodBlock::UnloadMat();
+	CBlockPos::UnloadModel();		// ブロック出現位置
+	CBlockPos::UnloadMat();
+
 	// パーティクル
 	CParticleX::UnloadModel();
 	CParticleX::UnloadMat();
@@ -227,7 +228,6 @@ void CTutorial::Uninit(void)
 	CPlayerCross::Unload();		// プレイヤーの残機ロゴ
 	CPressAnyButton::Unload();
 	CLifeLogo::Unload();			// 残機ロゴ
-	CBlockPos::UnLoad();				// ブロック出現位置
 
 	// テクスチャの解放
 	CNumber::UnLoad();
@@ -253,10 +253,6 @@ void CTutorial::Update(void)
 	// 入力情報を取得
 	CInputJoypad *pInputJoypad;
 	pInputJoypad = CManager::GetInputJoypad();
-
-	// プレイヤーの状態を取得
-	/*CPlayer::STATE playerState;
-	playerState = CPlayer::GetState();*/
 
 	// 音楽情報を取得
 	CSound *pSound;

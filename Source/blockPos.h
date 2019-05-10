@@ -1,6 +1,6 @@
 //=============================================================================
 //
-// ブロックの出現位置表示処理 [blockPos.h]
+// ブロック処理 [block.h]
 // Author : 長山拓実
 //
 //=============================================================================
@@ -8,38 +8,54 @@
 #define _BLOCKPOS_H_
 
 #include "main.h"
-#include "scene.h"
-#include "polygon.h"
+#include "sceneX.h"
 
-//*********************************************************************
-// ブロックの出現位置表示クラスの定義
-//*********************************************************************
-class CBlockPos : public  CPolygon
+//========================================
+// クラスの定義
+//========================================
+//=====================
+// ブロッククラス
+//=====================
+class CBlockPos : public CSceneX
 {
 public:
+	CBlockPos();								// コンストラクタ
+	~CBlockPos();								// デストラクタ
 
-	CBlockPos();
-	~CBlockPos();
-	HRESULT Init(void);
-	void Uninit(void);
-	void Update(void);
-	void Draw(void);
-	void Setpos(D3DXVECTOR3 pos);
-	static CBlockPos *Create(D3DXVECTOR3 pos, float fDepth, float fWifth, float fTextureU, float fTextureV, D3DXCOLOR col);
-	static HRESULT Load(void);
-	static void UnLoad(void);
+	HRESULT Init(void);						// プレイヤー初期化処理
+	void Uninit(void);						// プレイヤー終了処理
+	void Update(void);						// プレイヤー更新処理
+	void Draw(void);						// プレイヤー描画処理
 
-	//メンバ変数
+	static HRESULT LoadModel(void);				// テクスチャ読み込み
+	static void UnloadModel(void);				// テクスチャ解放
+
+	static HRESULT LoadMat(void);				// マテリアル読み込み
+	static void UnloadMat(void);				// マテリアル解放
+
+	static CBlockPos *Create(D3DXVECTOR3 pos);	// オブジェクトの生成
+
+	D3DXVECTOR3 GetPos(void);						// 位置の取得
+	void SetPos(D3DXVECTOR3 pos);					// 位置の設定
+
 private:
-	LPDIRECT3DVERTEXBUFFER9				m_pVtxBuff = NULL;	//頂点バッファへのポインタ
-	static LPDIRECT3DTEXTURE9			m_pTexture;	//テクスチャへのポインタ
-	float								m_Height;
+	static LPD3DXMESH		m_pMesh;			// メッシュ情報（頂点情報）へのポインタ
+	static LPD3DXBUFFER		m_pBuffMat;			// マテリアル情報へのポインタ
+	static DWORD			m_nNumMat;			// マテリアル情報の数
+	static LPDIRECT3DTEXTURE9		*m_pTexture;			// テクスチャへのポインタ
+	D3DXVECTOR3				m_pos;				// 位置
+	D3DXVECTOR3				m_move;				// 移動量
+	D3DXVECTOR3				m_rot;				// 向き
+	LPDIRECT3DVERTEXBUFFER9 m_pVtxBuff;			// 頂点バッファへのポインタ
+	D3DXVECTOR3				m_VtxMin, m_VtxMax;	// ブロックの最小値、最大値
+	bool					m_bLand;			// ブロックに乗っているかどうか
+	bool					m_bFall;			// 落ちているかどうか
+	int						m_nCntFall;			// 落ちている時間をカウント
+	int						m_nCntTime;			// 消えるカウント
+	float						m_fAlpha;			// 透明度
+	float						m_fAlphaSpeed;		// 透明度
 
-	D3DXVECTOR3							m_pos;							//位置
-	D3DXVECTOR3							m_rot;							//向き
-	D3DXCOLOR							m_col;
-	D3DXMATRIX							m_mtxWorld;						//ワールドマトリックス
-	float								m_fWidth, m_fDepth;				//幅　奥行き
+	D3DXMATRIX				m_mtxWorld;		// ワールドマトリックス
 };
 
 #endif

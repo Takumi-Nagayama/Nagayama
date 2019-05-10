@@ -95,7 +95,6 @@ HRESULT CGameClear::Init(void)
 	// テクスチャの解放
 	CNumber::Load();
 
-
 	CPressAnyButton::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, 650.0f, 0.0f), 200.0f, 170.0f, CPressAnyButton::TYPE_ANY);
 
 	if (m_pScore == NULL)
@@ -233,55 +232,7 @@ void CGameClear::Update(void)
 		}
 	}
 
-	m_nCntTimer++;
-
-	if (m_nCntTimer >= 600)
-	{
-		pFade->SetFade(CManager::MODE_RANKING, CFade::FADE_OUT);
-		m_nCntTimer = 0;
-	}
-
-	if (m_bSetBlock == true)
-	{
-		m_nBlockTimer++;
-
-		if (m_nBlockTimer > 1)
-		{
-			if (m_nCntBlock < NUM_BLOCK_X * NUM_BLOCK_Y)
-			{
-				if (m_nCntBlock % 10 == 0)
-				{
-					pSound->PlaySound(CSound::SOUND_LABEL_SE_BREAK);
-				}
-				for (int nCntParticle = 0; nCntParticle < 10; nCntParticle++)
-				{
-					CParticleX::Create(D3DXVECTOR3(m_pBlock[m_nCntBlock]->GetPosition().x, m_pBlock[m_nCntBlock]->GetPosition().y + 30.0f, m_pBlock[m_nCntBlock]->GetPosition().z),
-						D3DXVECTOR3(sinf(D3DX_PI * (rand() % 628) / 100.0f), cosf(D3DX_PI * (rand() % 628) / 100.0f), cosf(D3DX_PI * (rand() % 618) / 100.0f)),
-						D3DXVECTOR3(sinf((rand() % 628) / 100.0f) * ((rand() % 7 + 1)), cosf((rand() % 628) / 100.0f) * ((rand() % 7 + 1)), cosf((rand() % 618) / 100.0f) * ((rand() % 7 + 1))),
-						100,
-						CParticleX::TYPE_DOWN);
-				}
-
-				if (m_pBlock[m_nCntBlock] != NULL)
-				{
-					m_pBlock[m_nCntBlock]->Uninit();
-					m_pBlock[m_nCntBlock] = NULL;
-				}
-				if (m_pBlock[m_nCntBlock + 1] != NULL)
-				{
-					m_pBlock[m_nCntBlock + 1]->Uninit();
-					m_pBlock[m_nCntBlock + 1] = NULL;
-				}
-
-				m_nCntBlock += 2;
-				m_nBlockTimer = 0;
-			}
-		}
-		if (m_nCntBlock >= NUM_BLOCK_X * NUM_BLOCK_Y)
-		{
-			m_bSetBlock = false;
-		}
-	}
+	Block();
 }
 
 //=============================================================================
@@ -417,5 +368,68 @@ void CGameClear::LoadCharFall()
 			}
 		}
 		fclose(pFile);
+	}
+}
+
+//=============================================================================
+// ブロック
+//=============================================================================
+void CGameClear::Block()
+{
+	// 音楽情報を取得
+	CSound *pSound;
+	pSound = CManager::GetSound();
+
+	// フェード取得
+	CFade *pFade = CManager::GetFade();
+
+	m_nCntTimer++;
+
+	if (m_nCntTimer >= 600)
+	{
+		pFade->SetFade(CManager::MODE_RANKING, CFade::FADE_OUT);
+		m_nCntTimer = 0;
+	}
+
+	if (m_bSetBlock == true)
+	{
+		m_nBlockTimer++;
+
+		if (m_nBlockTimer > 1)
+		{
+			if (m_nCntBlock < NUM_BLOCK_X * NUM_BLOCK_Y)
+			{
+				if (m_nCntBlock % 10 == 0)
+				{
+					pSound->PlaySound(CSound::SOUND_LABEL_SE_BREAK);
+				}
+				for (int nCntParticle = 0; nCntParticle < 10; nCntParticle++)
+				{
+					CParticleX::Create(D3DXVECTOR3(m_pBlock[m_nCntBlock]->GetPosition().x, m_pBlock[m_nCntBlock]->GetPosition().y + 30.0f, m_pBlock[m_nCntBlock]->GetPosition().z),
+						D3DXVECTOR3(sinf(D3DX_PI * (rand() % 628) / 100.0f), cosf(D3DX_PI * (rand() % 628) / 100.0f), cosf(D3DX_PI * (rand() % 618) / 100.0f)),
+						D3DXVECTOR3(sinf((rand() % 628) / 100.0f) * ((rand() % 7 + 1)), cosf((rand() % 628) / 100.0f) * ((rand() % 7 + 1)), cosf((rand() % 618) / 100.0f) * ((rand() % 7 + 1))),
+						100,
+						CParticleX::TYPE_DOWN);
+				}
+
+				if (m_pBlock[m_nCntBlock] != NULL)
+				{
+					m_pBlock[m_nCntBlock]->Uninit();
+					m_pBlock[m_nCntBlock] = NULL;
+				}
+				if (m_pBlock[m_nCntBlock + 1] != NULL)
+				{
+					m_pBlock[m_nCntBlock + 1]->Uninit();
+					m_pBlock[m_nCntBlock + 1] = NULL;
+				}
+
+				m_nCntBlock += 2;
+				m_nBlockTimer = 0;
+			}
+		}
+		if (m_nCntBlock >= NUM_BLOCK_X * NUM_BLOCK_Y)
+		{
+			m_bSetBlock = false;
+		}
 	}
 }

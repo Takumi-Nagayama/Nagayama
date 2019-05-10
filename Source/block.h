@@ -34,6 +34,9 @@ public:
 	void Update(void);						// プレイヤー更新処理
 	void Draw(void);						// プレイヤー描画処理
 
+	void StateNormal(void);
+	void StatePlayer(void);
+
 	static HRESULT LoadModel(void);				// テクスチャ読み込み
 	static void UnloadModel(void);				// テクスチャ解放
 

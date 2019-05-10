@@ -86,34 +86,11 @@ void CCamera::Update(void)
 	CManager::MODE mode;
 	mode = CManager::GetMode();
 
-	// 入力情報を取得
-	CInputKeyboard *pInputKeyboard;
-	pInputKeyboard = CManager::GetInputKeyboard();
-
 	if (mode == CManager::MODE_GAME || mode == CManager::MODE_TUTORIAL)
 	{
 		if (m_bGem == true && mode == CManager::MODE_GAME)
-		{
-			m_nGemTimer++;
-
-			if (m_nGemTimer < GEM_TIMER)
-			{
-				if (mode == CManager::MODE_GAME)
-				{
-					m_posV = GEM_V;	// 視点
-					m_posR = GEM_R;		// 注視点
-				}
-				else if (mode == CManager::MODE_TUTORIAL)
-				{
-					//m_posV = D3DXVECTOR3(100.0f, 200.0f, 1700.0f);	// 視点
-					//m_posR = D3DXVECTOR3(0.0f, 20.0f, 1500.0f);		// 注視点
-				}
-			}
-			else
-			{
-				m_bGem = false;
-			}
-
+		{ 
+			GemCamera();
 		}
 		else
 		{// 宝石が取れる状態じゃないとき
@@ -133,282 +110,7 @@ void CCamera::Update(void)
 				}
 			}
 
-			CScene *pScene = NULL;
-
-			// 先頭のオブジェクトを取得(モデルの優先順位が1だから、1にあるオブジェクトをすべて見る)
-			pScene = CScene::GetTop(PLAYER_PRIORITY);
-
-			while (pScene != NULL)
-			{// 優先順位が3のオブジェクトを1つ1つ確かめる
-			 // 処理の最中に消える可能性があるから先に記録しておく
-				CScene *pSceneNext = pScene->GetNext();
-
-				if (pScene->GetDeath() == false)
-				{// 死亡フラグが立っていないもの
-					if (pScene->GetObjType() == CScene::OBJTYPE_PLAYER)
-					{// オブジェクトの種類を確かめる
-// デバック用
-#if 0
-						if (pInputKeyboard->GetPress(DIK_LEFT) == true)
-						{// 左方向に移動
-							if (pInputKeyboard->GetPress(DIK_UP) == true)
-							{// 左奥に移動
-								m_posV.x -= sinf(m_rot.y + D3DX_PI * 0.75f) * CAMERA_SPEED;
-								m_posV.z -= cosf(m_rot.y + D3DX_PI * 0.75f) * CAMERA_SPEED;
-
-								m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-								m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-							}
-							else if (pInputKeyboard->GetPress(DIK_DOWN) == true)
-							{// 左手前移動
-								m_posV.x -= sinf(m_rot.y + D3DX_PI * 0.25f) * CAMERA_SPEED;
-								m_posV.z -= cosf(m_rot.y + D3DX_PI * 0.25f) * CAMERA_SPEED;
-
-								m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-								m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-							}
-							else
-							{// 左
-								m_posV.x -= sinf(m_rot.y + D3DX_PI * 0.5f) * CAMERA_SPEED;
-								m_posV.z -= cosf(m_rot.y + D3DX_PI * 0.5f) * CAMERA_SPEED;
-
-								m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-								m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-							}
-						}
-						else if (pInputKeyboard->GetPress(DIK_RIGHT) == true)
-						{// 右方向に移動
-							if (pInputKeyboard->GetPress(DIK_UP) == true)
-							{// 右前移動
-								m_posV.x -= sinf(m_rot.y - D3DX_PI * 0.75f) * CAMERA_SPEED;
-								m_posV.z -= cosf(m_rot.y - D3DX_PI * 0.75f) * CAMERA_SPEED;
-
-								m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-								m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-							}
-							else if (pInputKeyboard->GetPress(DIK_DOWN) == true)
-							{// 右後ろ移動
-								m_posV.x -= sinf(m_rot.y - D3DX_PI * 0.25f) * CAMERA_SPEED;
-								m_posV.z -= cosf(m_rot.y - D3DX_PI * 0.25f) * CAMERA_SPEED;
-
-								m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-								m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-							}
-							else
-							{// 右
-								m_posV.x -= sinf(m_rot.y - D3DX_PI * 0.5f) * CAMERA_SPEED;
-								m_posV.z -= cosf(m_rot.y - D3DX_PI * 0.5f) * CAMERA_SPEED;
-
-								m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-								m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-							}
-						}
-						else if (pInputKeyboard->GetPress(DIK_UP) == true)
-						{// 前方向に移動
-							m_posV.x += sinf(m_rot.y) * CAMERA_SPEED;
-							m_posV.z += cosf(m_rot.y) * CAMERA_SPEED;
-
-							m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-							m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-						}
-						else if (pInputKeyboard->GetPress(DIK_DOWN) == true)
-						{// 手前方向に移動
-							m_posV.x -= sinf(m_rot.y) * CAMERA_SPEED;
-							m_posV.z -= cosf(m_rot.y) * CAMERA_SPEED;
-
-							m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-							m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-						}
-
-						// 注視点回転
-						if (pInputKeyboard->GetPress(DIK_Q) == true)
-						{// 左方向に回転
-							m_rot.y -= 0.03f;
-
-							if (m_rot.y < -D3DX_PI)
-							{
-								m_rot.y += D3DX_PI * 2.0f;
-							}
-
-							m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-							m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-						}
-						else if (pInputKeyboard->GetPress(DIK_E) == true)
-						{// 左方向に回転
-							m_rot.y += 0.03f;
-
-							if (m_rot.y > D3DX_PI)
-							{
-								m_rot.y -= D3DX_PI * 2.0f;
-							}
-
-							m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
-							m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
-						}
-						else if (pInputKeyboard->GetPress(DIK_T) == true)
-						{// 上
-							m_rot.x += 3.0f;
-
-							m_posR.y = m_rot.x;
-						}
-						else if (pInputKeyboard->GetPress(DIK_B) == true)
-						{// 下
-							m_rot.x -= 3.0f;
-
-							m_posR.y = m_rot.x;
-						}
-
-						// 視点回転
-						if (pInputKeyboard->GetPress(DIK_Z) == true)
-						{// 左方向に回転
-							m_rot.y -= 0.03f;
-
-							if (m_rot.y < -D3DX_PI)
-							{
-								m_rot.y += D3DX_PI * 2.0f;
-							}
-
-							m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
-							m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
-						}
-						else if (pInputKeyboard->GetPress(DIK_C) == true)
-						{// 左方向に回転
-							m_rot.y += 0.03f;
-
-							if (m_rot.y > D3DX_PI)
-							{
-								m_rot.y -= D3DX_PI * 2.0f;
-							}
-
-							m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
-							m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
-						}
-						else if (pInputKeyboard->GetPress(DIK_Y) == true)
-						{// 上
-							m_posV.y += 3.0f;
-						}
-						else if (pInputKeyboard->GetPress(DIK_N) == true)
-						{// 下
-							m_posV.y -= 3.0f;
-						}
-#endif
-#if 1
-						m_posRDest.x = ((CPlayer*)pScene)->GetPos().x - sinf(((CPlayer*)pScene)->GetRot().y) * DEST_R;
-						m_posRDest.z = ((CPlayer*)pScene)->GetPos().z - cosf(((CPlayer*)pScene)->GetRot().y) * DEST_R;
-						//
-						m_posVDest.x = ((CPlayer*)pScene)->GetPos().x - sinf(m_rot.y) * m_fLength;
-						m_posVDest.y = ((CPlayer*)pScene)->GetPos().y - sinf(m_rot.x) * m_fLength;
-						m_posVDest.z = ((CPlayer*)pScene)->GetPos().z - cosf(m_rot.y) * m_fLength;
-
-						//減速
-						m_posR.x += (m_posRDest.x - m_posR.x) * 0.2f + ((CPlayer*)pScene)->GetMove().x;
-						m_posR.z += (m_posRDest.z - m_posR.z) * 0.2f + ((CPlayer*)pScene)->GetMove().z;
-
-						if(((CPlayer*)pScene)->GetPos().y > -100.0f)
-						{
-							m_posRDest.y = ((CPlayer*)pScene)->GetPos().y - sinf(((CPlayer*)pScene)->GetRot().x) * DEST_R_Y;
-							m_posR.y += (m_posRDest.y - m_posR.y) * 0.2f + 10.0f;
-							m_posV.y += ((m_posVDest.y - m_posV.y) * 0.2f) + 20.0f;
-						}
-
-						m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
-						m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
-
-						// 入力情報を取得
-						CInputJoypad *pInputJoypad;
-						pInputJoypad = CManager::GetInputJoypad();
-
-						// 視点回転
-						if (pInputKeyboard->GetPress(DIK_Q) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RS_RIGHT) == true)
-						{// 左方向に回転
-							m_rotDest.y -= 0.03f;
-
-							if (m_rotDest.y < -D3DX_PI)
-							{
-								m_rotDest.y += D3DX_PI * 2.0f;
-							}
-
-							m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
-							m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
-						}
-						else if (pInputKeyboard->GetPress(DIK_E) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RS_LEFT) == true)
-						{// 左方向に回転
-							m_rotDest.y += 0.03f;
-
-							if (m_rotDest.y > D3DX_PI)
-							{
-								m_rotDest.y -= D3DX_PI * 2.0f;
-							}
-
-							m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
-							m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
-						}
-
-						if (pInputKeyboard->GetTrigger(DIK_C) == true)
-						{
-							//カメラをプレイヤーの後ろにする
-							m_rotDest.y = (((CPlayer*)pScene)->GetRot().y + D3DX_PI);
-							m_rotDest.x = (((CPlayer*)pScene)->GetRot().x + D3DX_PI);
-							m_rotDest.z = (((CPlayer*)pScene)->GetRot().z + D3DX_PI);
-
-
-							//カメラとプレイヤーの距離を求める		
-							m_DiffAngle.x = m_rotDest.x - m_rot.x;
-							m_DiffAngle.y = m_rotDest.y - m_rot.y;
-							m_DiffAngle.z = m_rotDest.z - m_rot.z;
-
-							//角度の設定
-							if (m_DiffAngle.y > D3DX_PI)
-							{
-								m_DiffAngle.y -= D3DX_PI * 2.0f;
-							}
-							if (m_DiffAngle.y < -D3DX_PI)
-							{
-								m_DiffAngle.y += D3DX_PI * 2.0f;
-							}
-							//
-							m_rot.y += m_DiffAngle.y * 0.2f;
-
-							if (m_rot.y > D3DX_PI)
-							{
-								m_rot.y -= D3DX_PI * 2.0f;
-							}
-							if (m_rot.y < -D3DX_PI)
-							{
-								m_rot.y += D3DX_PI * 2.0f;
-							}
-						}
-
-						//向きの慣性
-						m_DiffAngle.y = m_rotDest.y - m_rot.y;
-
-						//角度の設定
-						if (m_DiffAngle.y > D3DX_PI)
-						{
-							m_DiffAngle.y -= D3DX_PI* 2.0f;
-						}
-						if (m_DiffAngle.y < -D3DX_PI)
-						{
-							m_DiffAngle.y += D3DX_PI* 2.0f;
-						}
-
-						m_rot.y += m_DiffAngle.y * 0.1f;
-
-						if (m_rot.y > D3DX_PI)
-						{
-							m_rot.y -= D3DX_PI* 2.0f;
-						}
-						if (m_rot.y < -D3DX_PI)
-						{
-							m_rot.y += D3DX_PI* 2.0f;
-						}
-#endif
-					}
-				}
-
-				// 次のシーンに進める
-				pScene = pSceneNext;
-			}
+			PlayerCamera();
 		}
 	}
 
@@ -472,6 +174,312 @@ void CCamera::SetCamera(void)
 
 	// ビューマトリックスの設定
 	pDevice->SetTransform(D3DTS_VIEW, &m_mtxView);
+}
+
+//=============================================================================
+// 宝石を映す
+//=============================================================================
+void CCamera::GemCamera(void)
+{
+	CManager::MODE mode;
+	mode = CManager::GetMode();
+
+	m_nGemTimer++;
+
+	if (m_nGemTimer < GEM_TIMER)
+	{
+		if (mode == CManager::MODE_GAME)
+		{
+			m_posV = GEM_V;	// 視点
+			m_posR = GEM_R;		// 注視点
+		}
+		else if (mode == CManager::MODE_TUTORIAL)
+		{
+			//m_posV = D3DXVECTOR3(100.0f, 200.0f, 1700.0f);	// 視点
+			//m_posR = D3DXVECTOR3(0.0f, 20.0f, 1500.0f);		// 注視点
+		}
+	}
+	else
+	{
+		m_bGem = false;
+	}
+}
+
+//=============================================================================
+// 角度の設定
+//=============================================================================
+void CCamera::SetAngle(void)
+{
+	if (m_DiffAngle.y > D3DX_PI)
+	{
+		m_DiffAngle.y -= D3DX_PI * 2.0f;
+	}
+	if (m_DiffAngle.y < -D3DX_PI)
+	{
+		m_DiffAngle.y += D3DX_PI * 2.0f;
+	}
+	//
+	m_rot.y += m_DiffAngle.y * 0.2f;
+
+	if (m_rot.y > D3DX_PI)
+	{
+		m_rot.y -= D3DX_PI * 2.0f;
+	}
+	if (m_rot.y < -D3DX_PI)
+	{
+		m_rot.y += D3DX_PI * 2.0f;
+	}
+}
+
+//=============================================================================
+// プレイヤー追従処理
+//=============================================================================
+void CCamera::PlayerCamera(void)
+{
+	CScene *pScene = NULL;
+
+	// 先頭のオブジェクトを取得(モデルの優先順位が1だから、1にあるオブジェクトをすべて見る)
+	pScene = CScene::GetTop(PLAYER_PRIORITY);
+
+	while (pScene != NULL)
+	{// 優先順位が3のオブジェクトを1つ1つ確かめる
+	 // 処理の最中に消える可能性があるから先に記録しておく
+		CScene *pSceneNext = pScene->GetNext();
+
+		if (pScene->GetDeath() == false)
+		{// 死亡フラグが立っていないもの
+			if (pScene->GetObjType() == CScene::OBJTYPE_PLAYER)
+			{// オブジェクトの種類を確かめる
+			 // デバック用
+#if 0
+				if (pInputKeyboard->GetPress(DIK_LEFT) == true)
+				{// 左方向に移動
+					if (pInputKeyboard->GetPress(DIK_UP) == true)
+					{// 左奥に移動
+						m_posV.x -= sinf(m_rot.y + D3DX_PI * 0.75f) * CAMERA_SPEED;
+						m_posV.z -= cosf(m_rot.y + D3DX_PI * 0.75f) * CAMERA_SPEED;
+
+						m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+						m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+					}
+					else if (pInputKeyboard->GetPress(DIK_DOWN) == true)
+					{// 左手前移動
+						m_posV.x -= sinf(m_rot.y + D3DX_PI * 0.25f) * CAMERA_SPEED;
+						m_posV.z -= cosf(m_rot.y + D3DX_PI * 0.25f) * CAMERA_SPEED;
+
+						m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+						m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+					}
+					else
+					{// 左
+						m_posV.x -= sinf(m_rot.y + D3DX_PI * 0.5f) * CAMERA_SPEED;
+						m_posV.z -= cosf(m_rot.y + D3DX_PI * 0.5f) * CAMERA_SPEED;
+
+						m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+						m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+					}
+				}
+				else if (pInputKeyboard->GetPress(DIK_RIGHT) == true)
+				{// 右方向に移動
+					if (pInputKeyboard->GetPress(DIK_UP) == true)
+					{// 右前移動
+						m_posV.x -= sinf(m_rot.y - D3DX_PI * 0.75f) * CAMERA_SPEED;
+						m_posV.z -= cosf(m_rot.y - D3DX_PI * 0.75f) * CAMERA_SPEED;
+
+						m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+						m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+					}
+					else if (pInputKeyboard->GetPress(DIK_DOWN) == true)
+					{// 右後ろ移動
+						m_posV.x -= sinf(m_rot.y - D3DX_PI * 0.25f) * CAMERA_SPEED;
+						m_posV.z -= cosf(m_rot.y - D3DX_PI * 0.25f) * CAMERA_SPEED;
+
+						m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+						m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+					}
+					else
+					{// 右
+						m_posV.x -= sinf(m_rot.y - D3DX_PI * 0.5f) * CAMERA_SPEED;
+						m_posV.z -= cosf(m_rot.y - D3DX_PI * 0.5f) * CAMERA_SPEED;
+
+						m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+						m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+					}
+				}
+				else if (pInputKeyboard->GetPress(DIK_UP) == true)
+				{// 前方向に移動
+					m_posV.x += sinf(m_rot.y) * CAMERA_SPEED;
+					m_posV.z += cosf(m_rot.y) * CAMERA_SPEED;
+
+					m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+					m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+				}
+				else if (pInputKeyboard->GetPress(DIK_DOWN) == true)
+				{// 手前方向に移動
+					m_posV.x -= sinf(m_rot.y) * CAMERA_SPEED;
+					m_posV.z -= cosf(m_rot.y) * CAMERA_SPEED;
+
+					m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+					m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+				}
+
+				// 注視点回転
+				if (pInputKeyboard->GetPress(DIK_Q) == true)
+				{// 左方向に回転
+					m_rot.y -= 0.03f;
+
+					if (m_rot.y < -D3DX_PI)
+					{
+						m_rot.y += D3DX_PI * 2.0f;
+					}
+
+					m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+					m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+				}
+				else if (pInputKeyboard->GetPress(DIK_E) == true)
+				{// 左方向に回転
+					m_rot.y += 0.03f;
+
+					if (m_rot.y > D3DX_PI)
+					{
+						m_rot.y -= D3DX_PI * 2.0f;
+					}
+
+					m_posR.x = m_posV.x + sinf(m_rot.y) * m_fLength;
+					m_posR.z = m_posV.z + cosf(m_rot.y) * m_fLength;
+				}
+				else if (pInputKeyboard->GetPress(DIK_T) == true)
+				{// 上
+					m_rot.x += 3.0f;
+
+					m_posR.y = m_rot.x;
+				}
+				else if (pInputKeyboard->GetPress(DIK_B) == true)
+				{// 下
+					m_rot.x -= 3.0f;
+
+					m_posR.y = m_rot.x;
+				}
+
+				// 視点回転
+				if (pInputKeyboard->GetPress(DIK_Z) == true)
+				{// 左方向に回転
+					m_rot.y -= 0.03f;
+
+					if (m_rot.y < -D3DX_PI)
+					{
+						m_rot.y += D3DX_PI * 2.0f;
+					}
+
+					m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
+					m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
+				}
+				else if (pInputKeyboard->GetPress(DIK_C) == true)
+				{// 左方向に回転
+					m_rot.y += 0.03f;
+
+					if (m_rot.y > D3DX_PI)
+					{
+						m_rot.y -= D3DX_PI * 2.0f;
+					}
+
+					m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
+					m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
+				}
+				else if (pInputKeyboard->GetPress(DIK_Y) == true)
+				{// 上
+					m_posV.y += 3.0f;
+				}
+				else if (pInputKeyboard->GetPress(DIK_N) == true)
+				{// 下
+					m_posV.y -= 3.0f;
+				}
+#endif
+#if 1
+				m_posRDest.x = ((CPlayer*)pScene)->GetPos().x - sinf(((CPlayer*)pScene)->GetRot().y) * DEST_R;
+				m_posRDest.z = ((CPlayer*)pScene)->GetPos().z - cosf(((CPlayer*)pScene)->GetRot().y) * DEST_R;
+				//
+				m_posVDest.x = ((CPlayer*)pScene)->GetPos().x - sinf(m_rot.y) * m_fLength;
+				m_posVDest.y = ((CPlayer*)pScene)->GetPos().y - sinf(m_rot.x) * m_fLength;
+				m_posVDest.z = ((CPlayer*)pScene)->GetPos().z - cosf(m_rot.y) * m_fLength;
+
+				//減速
+				m_posR.x += (m_posRDest.x - m_posR.x) * 0.2f + ((CPlayer*)pScene)->GetMove().x;
+				m_posR.z += (m_posRDest.z - m_posR.z) * 0.2f + ((CPlayer*)pScene)->GetMove().z;
+
+				if (((CPlayer*)pScene)->GetPos().y > -100.0f)
+				{
+					m_posRDest.y = ((CPlayer*)pScene)->GetPos().y - sinf(((CPlayer*)pScene)->GetRot().x) * DEST_R_Y;
+					m_posR.y += (m_posRDest.y - m_posR.y) * 0.2f + 10.0f;
+					m_posV.y += ((m_posVDest.y - m_posV.y) * 0.2f) + 20.0f;
+				}
+
+				m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
+				m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
+
+				// 入力情報を取得
+				CInputJoypad *pInputJoypad;
+				pInputJoypad = CManager::GetInputJoypad();
+
+				// 入力情報を取得
+				CInputKeyboard *pInputKeyboard;
+				pInputKeyboard = CManager::GetInputKeyboard();
+
+				// 視点回転
+				if (pInputKeyboard->GetPress(DIK_Q) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RS_RIGHT) == true)
+				{// 左方向に回転
+					m_rotDest.y -= 0.03f;
+
+					if (m_rotDest.y < -D3DX_PI)
+					{
+						m_rotDest.y += D3DX_PI * 2.0f;
+					}
+
+					m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
+					m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
+				}
+				else if (pInputKeyboard->GetPress(DIK_E) == true || pInputJoypad->GetPress(CInputJoypad::DIJS_BUTTON_RS_LEFT) == true)
+				{// 左方向に回転
+					m_rotDest.y += 0.03f;
+
+					if (m_rotDest.y > D3DX_PI)
+					{
+						m_rotDest.y -= D3DX_PI * 2.0f;
+					}
+
+					m_posV.x = m_posR.x + sinf(D3DX_PI + m_rot.y) * m_fLength;
+					m_posV.z = m_posR.z + cosf(D3DX_PI + m_rot.y) * m_fLength;
+				}
+
+				if (pInputKeyboard->GetTrigger(DIK_C) == true)
+				{
+					//カメラをプレイヤーの後ろにする
+					m_rotDest.y = (((CPlayer*)pScene)->GetRot().y + D3DX_PI);
+					m_rotDest.x = (((CPlayer*)pScene)->GetRot().x + D3DX_PI);
+					m_rotDest.z = (((CPlayer*)pScene)->GetRot().z + D3DX_PI);
+
+
+					//カメラとプレイヤーの距離を求める		
+					m_DiffAngle.x = m_rotDest.x - m_rot.x;
+					m_DiffAngle.y = m_rotDest.y - m_rot.y;
+					m_DiffAngle.z = m_rotDest.z - m_rot.z;
+
+					//角度の設定
+					SetAngle();
+				}
+
+				//向きの慣性
+				m_DiffAngle.y = m_rotDest.y - m_rot.y;
+
+				//角度の設定
+				SetAngle();
+#endif
+			}
+		}
+
+		// 次のシーンに進める
+		pScene = pSceneNext;
+	}
 }
 
 //=============================================================================
