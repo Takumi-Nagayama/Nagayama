@@ -22,8 +22,9 @@
 #define MAX_TIRE	(4)		//タイヤの最大数
 #define MAX_EGG		(3)		//卵の最大数
 #define MAX_FRAME	(60)
-
-#define MAX_EGG		(3)		//卵の最大数
+#define DAMAGE_TIME	(60)		// ダメージを食らっている時間
+#define SPEEDUP_TIME	(60)	// 加速している時間
+#define SPEEDDOWN_TIME	(300)	// 減速している時間
 
 //=============================================================================
 // 前方宣言
@@ -79,6 +80,15 @@ public:
 		D3DXVECTOR3 FirstPos;	//初期位置
 	}PLAYER_INFO;
 
+	typedef enum
+	{// プレイヤーの状態
+		PLAYERSTATE_NORMAL = 0,	// 通常
+		PLAYERSTATE_SPEEDUP,		// 加速
+		PLAYERSTATE_SPEEDDOWN,	// 減速
+		PLAYERSTATE_DAMAGE,		// 攻撃食らう
+		PLAYERSTATE_MAX,			//最大数
+	} PLAYERSTATE;
+
 	//色の状態の種類
 	CPlayer();
 	~CPlayer();
@@ -108,6 +118,7 @@ public:
 	STATE GetState(void) { return m_state; };
 
 	void CollisitionWall(void);
+	void CollisionEgg(void);
 
 	void SetControl(bool bControl) { m_bControl = bControl; };
 	bool GetControl(void) { return m_bControl; };
@@ -188,7 +199,9 @@ private:
 	int							  m_nCntFrame;			// 卵のついてくる処理に使う
 	bool						  m_abJump[MAX_FRAME];
 	bool						  m_bJumpSave;
-	bool						  m_bSpeed;
+	bool						  m_bDamage;
+	PLAYERSTATE					  m_State;
+	int							  m_nCntDamage;
 
 	int							  m_nPlayerNum;			// プレイヤー番号
 	int							  m_nControllerNum;		// コントローラー番号

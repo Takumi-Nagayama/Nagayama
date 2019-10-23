@@ -44,11 +44,9 @@
 #define DECELERATION	(0.5f)										//減速の割合
 #define START_ENGINE	(200)										//エンジン音の再生時間
 #define START_GEARCHANGE (300)										//スタート時のギア切替時間
-#define EGG_SCALE		(10.0f)										//卵の大きさ
-#define EGG_RANGE		(50.0f)										// 卵とプレイヤーの距離
-#define EGG_POS			(7)											// 卵同士の間隔の広さ（増やすと広くなる）
-#define SPEEDUP_TIME	(60)										// 加速している時間
-#define SPEED			(5.0f)										// 加速する量
+#define MAX_EGG			(3)											//卵の最大数
+#define SPEEDDOWN		(0.95f)										// 減速させる値
+
 
 // プレイヤー情報
 #define PLAYER_ACCEL	(1.0f)										//加速値（前進）
@@ -242,7 +240,9 @@ HRESULT CPlayer::Init(void)
 	m_bDirive = true;
 	m_nNumEgg = 0;
 	m_bJumpSave = false;
-	m_bSpeed = false;
+	m_bDamage = false;
+	m_nCntDamage = 0;
+	m_State = PLAYERSTATE_NORMAL;
 
 	for (int nCntEggPos = 0; nCntEggPos < MAX_FRAME; nCntEggPos++)
 	{
@@ -352,28 +352,12 @@ void CPlayer::Update(void)
 
 	CollisionFeed();		// 餌の当たり判定
 
+	CollisionEgg();			// 卵との当たり判定
+
 	ChaseEgg();	// 卵がついてくる処理
-	BulletEgg();
 
-	/*UpdateStateJump();		// ジャンプ状態の更新処理
-	RiverInfluence();		// 川による影響
-	*/
 	CollisionObject();		// オブジェクトとの当たり判定
-	/*UpdateShake();			//車の揺れの処理
-	//CollisitionWall();	// 壁との当たり判定
-	UpdateSmoke(TirePos);	//煙の更新処理
-	UpdateGrass(TirePos);	//草エフェクトの更新処理
-	*/
-	/*m_nCntCombo++;
-
-	// コンボ数
-	if (m_pCombo != NULL && m_pCombo->GetFream() == 0)
-	{	// NULLチェック & フレームが0の場合
-	m_nCntCombo = 0;
-	m_pCombo->Uninit();
-	m_pCombo = NULL;
-	}*/
-
+	
 	DebugProc();		// デバック表示
 }
 
@@ -391,7 +375,7 @@ void CPlayer::Draw(void)
 
 	D3DXMATRIX		  mtxRot, mtxTrans;			// 計算用マトリックス
 
-												// ワールドマトリックスの初期化
+	// ワールドマトリックスの初期化
 	D3DXMatrixIdentity(&m_mtxWorld);
 
 	// 回転を反映
@@ -484,7 +468,7 @@ void CPlayer::ControlKey(void)
 			{
 				SetStateSpeed(STATE_SPEED_STOP);
 
-				if (m_bSpeed == true)
+				if (m_State == PLAYERSTATE_SPEEDUP)
 				{// スピードアイテムを使ったとき
 				 //進行方向の設定
 					m_move.x += sinf(m_rot.y) * (m_fSpeed);
@@ -507,7 +491,7 @@ void CPlayer::ControlKey(void)
 	{// ジャンプしていない
 		m_bJumpSave = false;
 
-		if (pInputKeyboard->GetKeyboardTrigger(DIK_W) == true || pXpad->GetTrigger(XINPUT_GAMEPAD_A, m_nControllerNum) == true)
+		if (pInputKeyboard->GetKeyboardTrigger(DIK_W) == true || pXpad->GetPress(XINPUT_GAMEPAD_A, m_nControllerNum) == true)
 		{// ジャンプキー
 			m_bJumpSave = true;
 			m_bJump = true;
@@ -517,6 +501,11 @@ void CPlayer::ControlKey(void)
 	else
 	{
 		m_bJumpSave = false;
+	}
+
+	if (pInputKeyboard->GetKeyboardTrigger(DIK_SPACE) == true)
+	{// 弾発射
+		BulletEgg();
 	}
 
 	CSound *pSound = CManager::GetSound();
@@ -537,13 +526,13 @@ void CPlayer::UpdateMove(void)
 
 	RemakeAngle(&m_rot.y);
 
-	if (m_bSpeed == true)
+	if (m_State == PLAYERSTATE_SPEEDUP)
 	{// スピードアイテムを使ったとき
 		m_nCountSpeed++;
 
 		if (m_nCountSpeed > SPEEDUP_TIME)
 		{
-			m_bSpeed = false;
+			m_State = PLAYERSTATE_NORMAL;
 			m_nCountSpeed = 0;
 		}
 	}
@@ -553,42 +542,11 @@ void CPlayer::UpdateMove(void)
 	{
 	case STATE_SPEED_ACCEL:	//アクセル状態
 
-							//ジャンプ状態なら
+		//ジャンプ状態なら
 		if (m_bJump == true) { break; }
 
-		/*CDebugProc::Print("初速加速あり\n");
-		//速度を上げる
-		m_PlayerInfo.nCountTime++;
-		if (m_move.x < 3.0f && m_move.z < 3.0f &&m_move.x > -3.0f && m_move.z > -3.0f)
-		{
-		m_PlayerInfo.nCountTime = m_PlayerInfo.nCountTime*1.03f;
-		CDebugProc::Print("初速UP状態 [1段階]\n");
-		}
-		else if (m_move.x < 6.0f && m_move.z < 6.0f &&m_move.x > -6.0f && m_move.z > -6.0f)
-		{
-		m_PlayerInfo.nCountTime = m_PlayerInfo.nCountTime*1.04f;
-		CDebugProc::Print("初速UP状態 [2段階]\n");
-		}
-		else if (m_move.x < 9.0f && m_move.z < 9.0f &&m_move.x > -9.0f && m_move.z > -9.0f)
-		{
-		m_PlayerInfo.nCountTime = m_PlayerInfo.nCountTime*1.065f;
-		CDebugProc::Print("初速UP状態 [3段階]\n");
-		}
-
-		//加速値を求める
-		m_PlayerInfo.fAccel = (m_fMaxSpeed / ACCLE_TIME) * m_PlayerInfo.nCountTime;
-
-		//減速させる
-		if (m_state == STATE_DRIVE)
-		{
-		if (m_PlayerInfo.fAccel > m_fMaxSpeed) { m_PlayerInfo.fAccel = m_fMaxSpeed; }
-		}
-		else if (m_state == STATE_REVERSE)
-		{
-		if (m_PlayerInfo.fAccel < m_fMaxSpeed) { m_PlayerInfo.fAccel = m_fMaxSpeed; }
-		}*/
-
-		if (m_bSpeed == false)
+		
+		if (m_State == PLAYERSTATE_NORMAL)
 		{
 			m_fSpeed = m_PlayerInfo.fAccel * (m_PlayerInfo.nCountTime < 90 ? (m_PlayerInfo.nCountTime / 90) : 1.0f);
 		}
@@ -600,20 +558,8 @@ void CPlayer::UpdateMove(void)
 
 	case STATE_SPEED_BRAKS: //ブレーキ状態
 
-							//ジャンプ状態なら
+		//ジャンプ状態なら
 		if (m_bJump == true) { break; }
-
-		//速度を下げる
-		//m_PlayerInfo.fAccel -= m_PlayerInfo.fBraks;
-
-		/*if (m_state == STATE_DRIVE)
-		{
-		if (m_PlayerInfo.fAccel < 0.0f) { m_PlayerInfo.fAccel = 0.0f; }
-		}
-		else
-		{
-		if (m_PlayerInfo.fAccel > 0.0f) { m_PlayerInfo.fAccel = 0.0f; }
-		}*/
 
 		m_fSpeed = m_PlayerInfo.fBraks * (m_PlayerInfo.nCountTime < 90 ? (m_PlayerInfo.nCountTime / 90) : 1.0f);
 
@@ -627,7 +573,7 @@ void CPlayer::UpdateMove(void)
 	case STATE_SPEED_DOWN: //ダウン状態
 		m_PlayerInfo.nCountTime = 0;
 
-		if (m_bSpeed == true)
+		if (m_State == PLAYERSTATE_SPEEDUP)
 		{// スピードアイテムを使ったとき
 		 //進行方向の設定
 			m_move.x += sinf(m_rot.y) * (m_fSpeed);
@@ -637,10 +583,59 @@ void CPlayer::UpdateMove(void)
 		break;
 	}
 
+	switch (m_State)
+	{// 弾を食らったとき
+	case PLAYERSTATE_NORMAL:
+		break;
+
+	case PLAYERSTATE_SPEEDDOWN:
+		//進行方向の設定
+		m_move.x *= SPEEDDOWN;
+		m_move.z *= SPEEDDOWN;
+
+		break;
+
+	case PLAYERSTATE_DAMAGE:
+
+		m_fSpeed = 0.0f;
+		
+		//進行方向の設定
+		m_move.x = sinf(m_rot.y) * (m_fSpeed);
+		m_move.z = cosf(m_rot.y) * (m_fSpeed);
+
+		m_PlayerInfo.nCountTime = 0;
+		break;
+	}
+
+	if (m_bDamage == true)
+	{
+		m_nCntDamage++;
+
+		int nDamageTime = 0;	// 状態が変わる時間の長さ
+
+		if (m_State == PLAYERSTATE_DAMAGE)
+		{// 攻撃を食らったとき
+			nDamageTime = DAMAGE_TIME;
+		}
+		else if (m_State == PLAYERSTATE_SPEEDDOWN)
+		{// スピードダウンを食らったとき
+			nDamageTime = SPEEDDOWN_TIME;
+		}
+
+		if (m_nCntDamage > nDamageTime)
+		{
+			m_State = PLAYERSTATE_NORMAL;
+			m_nCntDamage = 0;
+
+			m_bDamage = false;
+		}
+	}
+
 	m_PlayerInfo.nCountTime++;
 
-	//CDebugProc::Print("アクセル : %1f\n", m_PlayerInfo.fAccel);
-	//CDebugProc::Print("スピード : %1f  %1f  %1f\n", m_move.x, m_move.y, m_move.z);
+	CDebugProc::Print("アクセル : %1f\n", m_PlayerInfo.fAccel);
+	CDebugProc::Print("m_fSpeed : %1f\n", m_fSpeed);
+	CDebugProc::Print("スピード : %1f  %1f  %1f\n", m_move.x, m_move.y, m_move.z);
 
 	//ハンドルの状態更新
 	if (m_StateHandle == HANDLE_LEFT)
@@ -671,47 +666,6 @@ void CPlayer::UpdateMove(void)
 		m_move.x += (0.0f - m_move.x) * m_PlayerInfo.fDown;
 		m_move.z += (0.0f - m_move.z) * m_PlayerInfo.fDown;
 	}
-
-	//煙の表示
-	/*if ((fDiffuse.x < 1.5f) && (fDiffuse.x > -1.5f))
-	{
-	if ((fDiffuse.z < 1.5f) && (fDiffuse.z > -1.5f))
-	{
-	m_bSmoke = false;
-	m_bGrassEffect = false;		//草エフェクト非表示
-	}
-	else
-	{
-	m_bSmoke = true;
-	}
-	}
-	else
-	{
-	m_bSmoke = true;
-	}
-
-	//お客さんを乗せるための停止判定
-	if ((fDiffuse.x < 1.0f) && (fDiffuse.x > -1.0f))
-	{
-	if ((fDiffuse.z < 1.0f) && (fDiffuse.z > -1.0f))
-	{
-	m_bCustomrStop = true;
-	}
-	else
-	{
-	m_bCustomrStop = false;
-	}
-	}
-	else
-	{
-	m_bCustomrStop = false;
-	}*/
-
-	/*if ((m_StateSpeed == STATE_SPEED_BRAKS))
-	{
-	//角度を変える
-	m_rot.x += SHAKE_BRAK;
-	}*/
 }
 
 //=============================================================================
@@ -802,14 +756,14 @@ void CPlayer::SetState(CPlayer::STATE state)
 
 		if (STATE_REVERSE == state)
 		{// バック音
-			//pSound->StopSound(CSound::SOUND_LABEL_SE_ACCEL);
-			//pSound->PlaySoundA(CSound::SOUND_LABEL_SE_BACK);
+			pSound->StopSound(CSound::SOUND_LABEL_SE_ACCEL);
+			pSound->PlaySoundA(CSound::SOUND_LABEL_SE_BACK);
 		}
 		else if (STATE_DRIVE == state)
 		{
-			//pSound->StopSound(CSound::SOUND_LABEL_SE_BACK);
-			//pSound->SetVolume(CSound::SOUND_LABEL_SE_ACCEL, 0.7f);
-			//pSound->PlaySoundA(CSound::SOUND_LABEL_SE_ACCEL);
+			pSound->StopSound(CSound::SOUND_LABEL_SE_BACK);
+			pSound->SetVolume(CSound::SOUND_LABEL_SE_ACCEL, 0.7f);
+			pSound->PlaySoundA(CSound::SOUND_LABEL_SE_ACCEL);
 		}
 	}
 
@@ -887,8 +841,8 @@ void CPlayer::CollisionObject(void)
 			{// タイプが障害物だったら
 				CObject *pObject = (CObject*)pScene;	// オブジェクトクラスのポインタ変数にする
 				int nType = pObject->GetType();			// 障害物の種類を取得
-				//当たり判定用のオブジェクトにのみ当たる
-				if (nType == 2) { pObject->CollisionObject(&m_pos, &m_OldPos, &m_move); }
+
+				//pObject->CollisionObject(&m_pos, &m_OldPos, &m_move);
 			}
 
 			// Nextに次のSceneを入れる
@@ -897,14 +851,14 @@ void CPlayer::CollisionObject(void)
 	}
 
 	//デバック表示
-	/*if (m_bCrcleCarIn == true)
+	if (m_bCrcleCarIn == true)
 	{
 		CDebugProc::Print("入っている\n");
 	}
 	else if (m_bCrcleCarIn == false)
 	{
 		CDebugProc::Print("入っていない\n");
-	}*/
+	}
 }
 
 //=============================================================================
@@ -1091,7 +1045,7 @@ void CPlayer::RemakeAngle(float * pAngle)
 void CPlayer::DebugProc(void)
 {
 	//状態の表示
-	/*if (m_state == STATE_DRIVE)
+	if (m_state == STATE_DRIVE)
 	{
 		CDebugProc::Print("状態 : STATE_DRIVE\n");
 	}
@@ -1105,13 +1059,29 @@ void CPlayer::DebugProc(void)
 	{
 		CDebugProc::Print("停止状態\n");
 	}
-	*/
+
 	//位置表示
 	CDebugProc::Print("位置 : X %.2f, Y %.2f, Z %.2f\n", m_pos.x, m_pos.y, m_pos.z);
+	CDebugProc::Print("むき : X %.2f, Y %.2f, Z %.2f\n", m_rot.x, m_rot.y, m_rot.z);
 
 	CDebugProc::Print("ジャンプ：%s\n", m_bJump ? "〇" : "×");
 
-	//CDebugProc::Print("カウント : %f\n", m_PlayerInfo.nCountTime);
+	CDebugProc::Print("カウント : %f\n", m_PlayerInfo.nCountTime);
+
+	switch (m_State)
+	{// 弾を食らったとき
+	case PLAYERSTATE_SPEEDDOWN:
+		CDebugProc::Print("スピードダウン\n");
+		break;
+
+	case PLAYERSTATE_DAMAGE:
+		CDebugProc::Print("ダメージ\n");
+		break;
+
+	case PLAYERSTATE_SPEEDUP:
+		CDebugProc::Print("スピードアップ\n");
+		break;
+	}
 
 }
 
@@ -1225,15 +1195,27 @@ void CPlayer::EggAppear(CFeed *pFeed)
 	{
 		if (pFeed->GetFeedType() == CFeed::FEEDTYPE_ATTACK)
 		{// 攻撃の卵生成
-			m_pEgg[m_nNumEgg] = CEgg::Create(m_pos, D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(EGG_SCALE, EGG_SCALE, EGG_SCALE), CEgg::EGGTYPE_ATTACK);
+			m_pEgg[m_nNumEgg] = CEgg::Create(m_pos,
+				D3DXVECTOR3(0.0f, 0.0f, 0.0f), 
+				D3DXVECTOR3(EGG_SCALE, EGG_SCALE, EGG_SCALE), 
+				CEgg::EGGTYPE_ATTACK,
+				CEgg::BULLETTYPE_PLAYER);
 		}
 		else if (pFeed->GetFeedType() == CFeed::FEEDTYPE_ANNOY)
 		{// 妨害の卵生成
-			m_pEgg[m_nNumEgg] = CEgg::Create(m_pos, D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(EGG_SCALE, EGG_SCALE, EGG_SCALE), CEgg::EGGTYPE_ANNOY);
+			m_pEgg[m_nNumEgg] = CEgg::Create(m_pos,
+				D3DXVECTOR3(0.0f, 0.0f, 0.0f),
+				D3DXVECTOR3(EGG_SCALE, EGG_SCALE, EGG_SCALE), 
+				CEgg::EGGTYPE_ANNOY,
+				CEgg::BULLETTYPE_PLAYER);
 		}
 		else if (pFeed->GetFeedType() == CFeed::FEEDTYPE_SPEED)
 		{// 加速の卵生成
-			m_pEgg[m_nNumEgg] = CEgg::Create(m_pos, D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(EGG_SCALE, EGG_SCALE, EGG_SCALE), CEgg::EGGTYPE_SPEED);
+			m_pEgg[m_nNumEgg] = CEgg::Create(m_pos,
+				D3DXVECTOR3(0.0f, 0.0f, 0.0f), 
+				D3DXVECTOR3(EGG_SCALE, EGG_SCALE, EGG_SCALE), 
+				CEgg::EGGTYPE_SPEED,
+				CEgg::BULLETTYPE_PLAYER);
 		}
 	}
 
@@ -1247,7 +1229,7 @@ void CPlayer::ChaseEgg(void)
 {
 	m_nCntFrame++;
 
-	if (m_nCntFrame > MAX_FRAME)
+	if (m_nCntFrame >= MAX_FRAME)
 	{
 		m_nCntFrame = 0;
 	}
@@ -1267,7 +1249,7 @@ void CPlayer::ChaseEgg(void)
 
 			if (nData < 0)
 			{
-				nData += MAX_FRAME + 1;
+				nData += MAX_FRAME;
 			}
 
 			// 卵の位置設定
@@ -1291,7 +1273,7 @@ void CPlayer::ChaseEgg(void)
 
 		if (nData < 0)
 		{
-			nData += MAX_FRAME + 1;
+			nData += MAX_FRAME;
 		}
 
 		m_pEgg[1]->SetPosition(D3DXVECTOR3((sinf(m_OldEggRot[nData].y + D3DX_PI) * EGG_RANGE * 2) + m_pos.x,
@@ -1312,7 +1294,7 @@ void CPlayer::ChaseEgg(void)
 
 		if (nData < 0)
 		{
-			nData += MAX_FRAME + 1;
+			nData += MAX_FRAME;
 		}
 
 		m_pEgg[2]->SetPosition(D3DXVECTOR3((sinf(m_OldEggRot[nData].y + D3DX_PI) * EGG_RANGE * 3) + m_pos.x,
@@ -1337,29 +1319,80 @@ void CPlayer::BulletEgg(void)
 	{// 卵を持っているとき
 		if (m_pEgg[0] != NULL && m_pEgg[0]->GetState() == CEgg::EGGSTATE_CHASE)
 		{// 一個目の卵に情報が入っていて、プレイヤーについてくる時
-			CInputKeyBoard * pInputKeyboard = CManager::GetInput();		//キーボードの取得
-			CInputXPad * pXpad = CManager::GetXInput();					//ジョイパットの取得
+			m_pEgg[0]->SetState(CEgg::EGGSTATE_BULLET);	// 状態を弾にする
 
-			if (pInputKeyboard->GetKeyboardTrigger(DIK_SPACE) == true || pXpad->GetTrigger(XINPUT_GAMEPAD_B, m_nControllerNum) == true)
-			{// 弾発射
-				m_pEgg[0]->SetState(CEgg::EGGSTATE_BULLET);	// 状態を弾にする
+			m_nNumEgg--;	// 所持数を減らす
 
-				m_nNumEgg--;	// 所持数を減らす
+			if (m_pEgg[0]->GetType() == CEgg::EGGTYPE_SPEED)
+			{
+				m_State =  PLAYERSTATE_SPEEDUP;
+				m_fSpeed += SPEED;
 
-				if (m_pEgg[0]->GetType() == CEgg::EGGTYPE_SPEED)
-				{
-					m_fSpeed += SPEED;
-
-					m_bSpeed = true;
-
-					m_pEgg[0]->Uninit();
-				}
-
-				// 情報入れ替え
-				m_pEgg[0] = m_pEgg[1];
-				m_pEgg[1] = m_pEgg[2];
-				m_pEgg[2] = NULL;
+				m_pEgg[0]->Uninit();
+				m_pEgg[0] = NULL;
 			}
+
+			// 情報入れ替え
+			m_pEgg[0] = m_pEgg[1];
+			m_pEgg[1] = m_pEgg[2];
+			m_pEgg[2] = NULL;
+		}
+	}
+}
+
+//=============================================================================
+// 卵との当たり判定
+//=============================================================================
+void CPlayer::CollisionEgg(void)
+{
+	CSound *pSound = CManager::GetSound();
+	CScene *pScene;
+
+	for (int nCntPriority = 2; nCntPriority <= EGG_PRIOTITY; nCntPriority++)
+	{
+		// プライオリティーチェック
+		pScene = CScene::GetTop(nCntPriority);
+		while (pScene != NULL)
+		{// プライオリティー内のリスト構造を最後まで見る
+			CScene *pSceneNext = pScene->GetNext();		// 次のオブジェクトを保存
+
+			if (pScene->GetObjType() == OBJTYPE_EGG)
+			{// タイプが障害物だったら
+				CEgg *pEgg = (CEgg*)pScene;	// オブジェクトクラスのポインタ変数にする
+
+				if (pEgg->GetState() == CEgg::EGGSTATE_BULLET)
+				{
+					if (pEgg->CollisionEgg(&m_pos, &m_OldPos) == true && pEgg->GetBulletType() != CEgg::BULLETTYPE_PLAYER)
+					{// 衝突した
+						switch (pEgg->GetType())
+						{
+							// 攻撃
+						case CEgg::EGGTYPE_ATTACK:
+							// ダメージ状態にする
+							if (m_bDamage == false)
+							{
+								m_bDamage = true;
+								m_State = PLAYERSTATE_DAMAGE;
+							}
+							pEgg->Uninit();	// 卵削除
+							break;
+
+							// 減速
+						case CEgg::EGGTYPE_ANNOY:
+							if (m_bDamage == false)
+							{
+								m_bDamage = true;
+								m_State = PLAYERSTATE_SPEEDDOWN;
+							}
+							pEgg->Uninit();	// 卵削除
+							break;
+						}
+					}
+				}
+			}
+
+			// Nextに次のSceneを入れる
+			pScene = pSceneNext;
 		}
 	}
 }
