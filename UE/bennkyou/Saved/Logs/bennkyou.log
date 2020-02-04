@@ -1,0 +1,1623 @@
+﻿Log file open, 01/30/20 09:53:36
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogInit: Display: Running engine for game: bennkyou
+LogPlatformFile: Not using cached read wrapper
+LogInit: Display: RandInit(1073635182) SRandInit(1073635182).
+LogInit: Read version file with build ID '3944462'
+LogInit: Overriding engine version to CL 4033788, compatible CL 3944462
+LogInit: Registered custom module enumerator with build ID '3944462'
+LogTaskGraph: Started task graph with 5 named threads and 23 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 0.289098
+LogD3D11RHI: Aftermath initialized
+LogICUInternationalization: Display: ICU TimeZone Detection - Raw Offset: +9:00, Platform Override: ''
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-Paper2D.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-Paper2DEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-PaperSpriteSheetImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-PaperTiledImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/2D/Paper2D/Binaries/Win64/UE4Editor-SmartSnapping.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Blendables/LightPropagationVolume/Binaries/Win64/UE4Editor-LightPropagationVolumeRuntime.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Blendables/LightPropagationVolume/Binaries/Win64/UE4Editor-LightPropagationVolumeEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/CLionSourceCodeAccess/Binaries/Win64/UE4Editor-CLionSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/GitSourceControl/Binaries/Win64/UE4Editor-GitSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/PerforceSourceControl/Binaries/Win64/UE4Editor-PerforceSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/SubversionSourceControl/Binaries/Win64/UE4Editor-SubversionSourceControl.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/UObjectPlugin/Binaries/Win64/UE4Editor-UObjectPlugin.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/VisualStudioCodeSourceCodeAccess/Binaries/Win64/UE4Editor-VisualStudioCodeSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Developer/VisualStudioSourceCodeAccess/Binaries/Win64/UE4Editor-VisualStudioSourceCodeAccess.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/AssetManagerEditor/Binaries/Win64/UE4Editor-AssetManagerEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/CryptoKeys/Binaries/Win64/UE4Editor-CryptoKeys.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/CryptoKeys/Binaries/Win64/UE4Editor-CryptoKeysOpenSSL.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/DataValidation/Binaries/Win64/UE4Editor-DataValidation.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/FacialAnimation/Binaries/Win64/UE4Editor-FacialAnimation.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/FacialAnimation/Binaries/Win64/UE4Editor-FacialAnimationEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/GameplayTagsEditor/Binaries/Win64/UE4Editor-GameplayTagsEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/MobileLauncherProfileWizard/Binaries/Win64/UE4Editor-MobileLauncherProfileWizard.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/PluginBrowser/Binaries/Win64/UE4Editor-PluginBrowser.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Editor/SpeedTreeImporter/Binaries/Win64/UE4Editor-SpeedTreeImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Enterprise/DatasmithContent/Binaries/Win64/UE4Editor-DatasmithContent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/AlembicImporter/Binaries/Win64/UE4Editor-AlembicImporter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/AlembicImporter/Binaries/Win64/UE4Editor-AlembicLibrary.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/CharacterAI/Binaries/Win64/UE4Editor-CharacterAI.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Experimental/HTML5Networking/Binaries/Win64/UE4Editor-HTML5Networking.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AndroidMedia/Binaries/Win64/UE4Editor-AndroidMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AndroidMedia/Binaries/Win64/UE4Editor-AndroidMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/AvfMedia/Binaries/Win64/UE4Editor-AvfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMedia.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-ImgMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/ImgMedia/Binaries/Win64/UE4Editor-OpenExrWrapper.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/LinearTimecode/Binaries/Win64/UE4Editor-LinearTimecode.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaCompositing/Binaries/Win64/UE4Editor-MediaCompositing.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaCompositing/Binaries/Win64/UE4Editor-MediaCompositingEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/MediaPlayerEditor/Binaries/Win64/UE4Editor-MediaPlayerEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMedia.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Media/WmfMedia/Binaries/Win64/UE4Editor-WmfMediaFactory.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Messaging/TcpMessaging/Binaries/Win64/UE4Editor-TcpMessaging.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Messaging/UdpMessaging/Binaries/Win64/UE4Editor-UdpMessaging.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/ActorSequence/Binaries/Win64/UE4Editor-ActorSequence.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/LevelSequenceEditor/Binaries/Win64/UE4Editor-LevelSequenceEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/MovieScene/MatineeToLevelSequence/Binaries/Win64/UE4Editor-MatineeToLevelSequence.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/NetcodeUnitTest/NetcodeUnitTest/Binaries/Win64/UE4Editor-NetcodeUnitTest.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/NetcodeUnitTest/NUTUnrealEngine4/Binaries/Win64/UE4Editor-NUTUnrealEngine4.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystem/Binaries/Win64/UE4Editor-OnlineSubsystem.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AndroidPermission/Binaries/Win64/UE4Editor-AndroidPermission.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemNull/Binaries/Win64/UE4Editor-OnlineSubsystemNull.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemUtils/Binaries/Win64/UE4Editor-OnlineSubsystemUtils.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Online/OnlineSubsystemUtils/Binaries/Win64/UE4Editor-OnlineBlueprintSupport.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AndroidDeviceProfileSelector/Binaries/Win64/UE4Editor-AndroidDeviceProfileSelector.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AppleARKit/Binaries/Win64/UE4Editor-AppleARKit.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ProceduralMeshComponent/Binaries/Win64/UE4Editor-ProceduralMeshComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ProceduralMeshComponent/Binaries/Win64/UE4Editor-ProceduralMeshComponentEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Animation/LiveLink/Binaries/Win64/UE4Editor-LiveLink.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Animation/LiveLink/Binaries/Win64/UE4Editor-LiveLinkEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ArchVisCharacter/Binaries/Win64/UE4Editor-ArchVisCharacter.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCapture.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/AudioCapture/Binaries/Win64/UE4Editor-AudioCaptureEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/CableComponent/Binaries/Win64/UE4Editor-CableComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/CustomMeshComponent/Binaries/Win64/UE4Editor-CustomMeshComponent.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ExampleDeviceProfileSelector/Binaries/Win64/UE4Editor-ExampleDeviceProfileSelector.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ImmediatePhysics/Binaries/Win64/UE4Editor-ImmediatePhysics.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/ImmediatePhysics/Binaries/Win64/UE4Editor-ImmediatePhysicsEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/LocationServicesBPLibrary/Binaries/Win64/UE4Editor-LocationServicesBPLibrary.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/MobilePatchingUtils/Binaries/Win64/UE4Editor-MobilePatchingUtils.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusHMD.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusInput.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Binaries/Win64/UE4Editor-OculusEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/PhysXVehicles/Binaries/Win64/UE4Editor-PhysXVehicles.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/PhysXVehicles/Binaries/Win64/UE4Editor-PhysXVehiclesEditor.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/RuntimePhysXCooking/Binaries/Win64/UE4Editor-RuntimePhysXCooking.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Steam/SteamVR/Binaries/Win64/UE4Editor-SteamVR.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/Steam/SteamVR/Binaries/Win64/UE4Editor-SteamVRController.dll (API version 3944462).
+LogModuleManager: Display: Found up-to-date module file ../../../Engine/Plugins/Runtime/WindowsMoviePlayer/Binaries/Win64/UE4Editor-WindowsMoviePlayer.dll (API version 3944462).
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin LiveLink
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin CLionSourceCodeAccess
+LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting plugin NullSourceCodeAccess
+LogPluginManager: Mounting plugin PerforceSourceControl
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin DataValidation
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GameplayTagsEditor
+LogPluginManager: Mounting plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting plugin PluginBrowser
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin HTML5Networking
+LogPluginManager: Mounting plugin AndroidMedia
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin LinearTimecode
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin MediaPlayerEditor
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin NetcodeUnitTest
+LogPluginManager: Mounting plugin NUTUnrealEngine4
+LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting plugin OnlineSubsystemIOS
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting plugin AndroidMoviePlayer
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleARKit
+LogPluginManager: Mounting plugin AppleMoviePlayer
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin GoogleCloudMessaging
+LogPluginManager: Mounting plugin ImmediatePhysics
+LogPluginManager: Mounting plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OculusVR
+LogPluginManager: Plugin shader directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders found
+LogPluginManager: Mapping shader source directory ../../../Engine/Plugins/Runtime/Oculus/OculusVR/Shaders to virtual directory /Plugin/OculusVR
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SteamVR
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogStreaming: Display: Took  1.779s to configure plugins.
+LogInit: Using libcurl 7.47.1
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.0.2g
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = false  - Libcurl will NOT verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogInit: WinSock: I am S-Jobi17-037 (172.16.12.143:0)
+LogInit: Build: ++UE4+Release-4.19-CL-4033788
+LogInit: Engine Version: 4.19.2-4033788+++UE4+Release-4.19
+LogInit: Compatible Engine Version: 4.19.0-3944462+++UE4+Release-4.19
+LogInit: Net CL: 3944462
+LogDevObjectVersion: Number of dev versions registered: 18
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 2
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 23
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 33
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 2
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 25
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 6
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 1
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 2
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 16
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogInit: Compiled (64-bit): Apr 27 2018 02:06:57
+LogInit: Compiled with Visual C++: 19.00.24215.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.19
+LogInit: Command Line: 
+LogInit: Base Directory: C:/Program Files/Epic Games/UE_4.19/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogStreaming: Display: Took  0.000s to delete old logs.
+LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+[2020.01.30-00.53.38:965][  0]LogInit: Selected Device Profile: [Windows]
+[2020.01.30-00.53.38:966][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2020.01.30-00.53.38:976][  0]LogInit: Computer: S-JOBI17-037
+[2020.01.30-00.53.38:976][  0]LogInit: User: game126
+[2020.01.30-00.53.38:976][  0]LogInit: CPU Page size=4096, Cores=4
+[2020.01.30-00.53.38:976][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2020.01.30-00.53.38:977][  0]LogMemory: Memory total: Physical=7.9GB (8GB approx)
+[2020.01.30-00.53.38:977][  0]LogMemory: Platform Memory Stats for Windows
+[2020.01.30-00.53.38:977][  0]LogMemory: Process Physical Memory: 275.10 MB used, 275.11 MB peak
+[2020.01.30-00.53.38:977][  0]LogMemory: Process Virtual Memory: 264.71 MB used, 264.71 MB peak
+[2020.01.30-00.53.38:977][  0]LogMemory: Physical Memory: 5389.43 MB used,  2649.59 MB free, 8039.02 MB total
+[2020.01.30-00.53.38:977][  0]LogMemory: Virtual Memory: 4778.83 MB used,  2649.59 MB free, 134217728.00 MB total
+[2020.01.30-00.53.39:013][  0]LogInit: Using OS detected language (ja-JP).
+[2020.01.30-00.53.39:013][  0]LogInit: Using OS detected locale (ja-JP).
+[2020.01.30-00.53.39:019][  0]LogTextLocalizationManager: No specific localization for 'ja-JP' exists, so the 'ja' localization will be used.
+[2020.01.30-00.53.39:242][  0]LogStreaming: Display: Took  0.228s to EndInitTextLocalization.
+[2020.01.30-00.53.39:242][  0]LogInit: Setting process to per monitor DPI aware
+[2020.01.30-00.53.39:325][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2020.01.30-00.53.39:325][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2020.01.30-00.53.39:822][  0]LogD3D11RHI: D3D11 adapters:
+[2020.01.30-00.53.39:926][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1060' (Feature Level 11_0)
+[2020.01.30-00.53.39:926][  0]LogD3D11RHI:       6052/0/4019 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
+[2020.01.30-00.53.39:962][  0]LogD3D11RHI:    1. 'Intel(R) HD Graphics 630' (Feature Level 11_0)
+[2020.01.30-00.53.39:962][  0]LogD3D11RHI:       128/0/4019 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x8086
+[2020.01.30-00.53.39:965][  0]LogD3D11RHI:    2. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2020.01.30-00.53.39:965][  0]LogD3D11RHI:       0/0/4019 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2020.01.30-00.53.39:965][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2020.01.30-00.53.39:996][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2020.01.30-00.53.39:996][  0]LogD3D11RHI:     GPU DeviceId: 0x1c20 (for the marketing name, search the web for "GPU Device Id")
+[2020.01.30-00.53.39:996][  0]LogWindows: EnumDisplayDevices:
+[2020.01.30-00.53.39:997][  0]LogWindows:    0. 'Intel(R) HD Graphics 630' (P:1 D:1)
+[2020.01.30-00.53.39:997][  0]LogWindows:    1. 'Intel(R) HD Graphics 630' (P:0 D:0)
+[2020.01.30-00.53.39:997][  0]LogWindows:    2. 'Intel(R) HD Graphics 630' (P:0 D:0)
+[2020.01.30-00.53.39:997][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1060' (P:0 D:0)
+[2020.01.30-00.53.39:998][  0]LogWindows:    4. 'NVIDIA GeForce GTX 1060' (P:0 D:0)
+[2020.01.30-00.53.39:998][  0]LogWindows:    5. 'NVIDIA GeForce GTX 1060' (P:0 D:0)
+[2020.01.30-00.53.39:998][  0]LogWindows:    6. 'NVIDIA GeForce GTX 1060' (P:0 D:0)
+[2020.01.30-00.53.39:998][  0]LogWindows: DebugString: GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter GetVideoDriverDetailsInvalid PrimaryIsNotTheChoosenAdapter FoundDriverCount:0 
+[2020.01.30-00.53.39:998][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1060
+[2020.01.30-00.53.39:998][  0]LogD3D11RHI:   Driver Version: Unknown (internal:Unknown, unified:Unknown)
+[2020.01.30-00.53.39:998][  0]LogD3D11RHI:      Driver Date: Unknown
+[2020.01.30-00.53.39:998][  0]LogRHI: Texture pool is 4236 MB (70% of 6052 MB)
+[2020.01.30-00.53.40:052][  0]LogD3D11RHI: [Aftermath] Aftermath enabled and primed
+[2020.01.30-00.53.40:052][  0]LogD3D11RHI: [Aftermath] Aftermath enabled and primed
+[2020.01.30-00.53.40:052][  0]LogD3D11RHI: Async texture creation enabled
+[2020.01.30-00.53.40:071][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 2)
+[2020.01.30-00.53.40:072][  0]LogShaderCompilers: Guid format shader working directory is -18 characters bigger than the processId version (../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Intermediate/Shaders/WorkingDirectory/9984/).
+[2020.01.30-00.53.40:072][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/game126/AppData/Local/Temp/UnrealShaderWorkingDir/0410291D4E1D477C8AF9DD865F1D38AD/'.
+[2020.01.30-00.53.40:389][  0]LogTemp: Display: Loaded TP AllDesktopTargetPlatform
+[2020.01.30-00.53.40:406][  0]LogTemp: Display: Loaded TP MacClientTargetPlatform
+[2020.01.30-00.53.40:424][  0]LogTemp: Display: Loaded TP MacNoEditorTargetPlatform
+[2020.01.30-00.53.40:441][  0]LogTemp: Display: Loaded TP MacServerTargetPlatform
+[2020.01.30-00.53.40:458][  0]LogTemp: Display: Loaded TP MacTargetPlatform
+[2020.01.30-00.53.40:474][  0]LogTemp: Display: Loaded TP WindowsClientTargetPlatform
+[2020.01.30-00.53.40:493][  0]LogTemp: Display: Loaded TP WindowsNoEditorTargetPlatform
+[2020.01.30-00.53.40:512][  0]LogTemp: Display: Loaded TP WindowsServerTargetPlatform
+[2020.01.30-00.53.40:520][  0]LogTemp: Display: Loaded TP WindowsTargetPlatform
+[2020.01.30-00.53.40:537][  0]LogTemp: Display: Loaded TP Android_ASTCTargetPlatform
+[2020.01.30-00.53.40:552][  0]LogTemp: Display: Loaded TP Android_ATCTargetPlatform
+[2020.01.30-00.53.40:571][  0]LogTemp: Display: Loaded TP Android_DXTTargetPlatform
+[2020.01.30-00.53.40:585][  0]LogTemp: Display: Loaded TP Android_ETC1aTargetPlatform
+[2020.01.30-00.53.40:607][  0]LogTemp: Display: Loaded TP Android_ETC1TargetPlatform
+[2020.01.30-00.53.40:627][  0]LogTemp: Display: Loaded TP Android_ETC2TargetPlatform
+[2020.01.30-00.53.40:665][  0]LogTemp: Display: Loaded TP Android_MultiTargetPlatform
+[2020.01.30-00.53.40:665][  0]LogTemp: Display: Loaded TP Android_PVRTCTargetPlatform
+[2020.01.30-00.53.40:683][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2020.01.30-00.53.40:686][  0]LogTemp: Display: Loaded TP HTML5TargetPlatform
+[2020.01.30-00.53.40:732][  0]LogTemp: Display: Loaded TP IOSTargetPlatform
+[2020.01.30-00.53.40:748][  0]LogTemp: Display: Loaded TP TVOSTargetPlatform
+[2020.01.30-00.53.40:763][  0]LogTemp: Display: Loaded TP LinuxClientTargetPlatform
+[2020.01.30-00.53.40:780][  0]LogTemp: Display: Loaded TP LinuxNoEditorTargetPlatform
+[2020.01.30-00.53.40:795][  0]LogTemp: Display: Loaded TP LinuxServerTargetPlatform
+[2020.01.30-00.53.40:815][  0]LogTemp: Display: Loaded TP LinuxTargetPlatform
+[2020.01.30-00.53.40:815][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2020.01.30-00.53.41:024][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2020.01.30-00.53.41:024][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+[2020.01.30-00.53.41:024][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2020.01.30-00.53.42:064][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2020.01.30-00.53.42:138][  0]LogDerivedDataCache: Loaded boot cache 0.07s 74MB C:/Users/game126/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc.
+[2020.01.30-00.53.42:139][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/game126/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc
+[2020.01.30-00.53.42:139][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2020.01.30-00.53.42:139][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2020.01.30-00.53.42:139][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2020.01.30-00.53.42:139][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2020.01.30-00.53.42:155][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2020.01.30-00.53.42:169][  0]LogDerivedDataCache: Using Local data cache path C:/Users/game126/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2020.01.30-00.53.42:169][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2020.01.30-00.53.42:169][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
+[2020.01.30-00.53.42:180][  0]LogMaterial: Verifying Global Shaders for PCD3D_SM5
+[2020.01.30-00.53.42:181][  0]LogSlate: Using Freetype 2.6.0
+[2020.01.30-00.53.42:182][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2020.01.30-00.53.42:182][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2020.01.30-00.53.42:432][  0]LogAssetRegistry: FAssetRegistry took 0.0280 seconds to start up
+[2020.01.30-00.53.42:875][  0]LogInit: Selected Device Profile: [Windows]
+[2020.01.30-00.53.43:104][  0]LogSimplygon: Simplygon DLL not present - disabling.
+[2020.01.30-00.53.43:108][  0]LogMeshReduction: Using SimplygonSwarm for distributed automatic mesh merging
+[2020.01.30-00.53.43:108][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2020.01.30-00.53.43:108][  0]LogMeshReduction: No automatic skeletal mesh reduction module available
+[2020.01.30-00.53.43:108][  0]LogMeshReduction: No automatic mesh merging module available
+[2020.01.30-00.53.43:108][  0]LogMeshMerging: No automatic mesh merging module available
+[2020.01.30-00.53.43:176][  0]LogNetVersion: bennkyou , NetCL: 3944462, EngineNetVer: 2, GameNetVer: 0 (Checksum: 4085683316)
+[2020.01.30-00.53.43:871][  0]LogPackageLocalizationCache: Processed 9 localized package path(s) for 2 prioritized culture(s) in 0.121984 seconds
+[2020.01.30-00.53.43:881][  0]LogUObjectArray: 36728 objects as part of root set at end of initial load.
+[2020.01.30-00.53.43:881][  0]LogUObjectAllocator: 7314304 out of 0 bytes used by permanent object pool.
+[2020.01.30-00.53.43:881][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2020.01.30-00.53.46:595][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2020.01.30-00.53.46:650][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2020.01.30-00.53.47:216][  0]SourceControl: ソースコントロールは無効です
+[2020.01.30-00.53.47:216][  0]SourceControl: ソースコントロールは無効です
+[2020.01.30-00.53.47:247][  0]SourceControl: ソースコントロールは無効です
+[2020.01.30-00.53.47:279][  0]SourceControl: ソースコントロールは無効です
+[2020.01.30-00.53.48:087][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2020.01.30-00.53.48:351][  0]LogOcInput: OculusInput pre-init called
+[2020.01.30-00.53.48:514][  0]LogEngine: Initializing Engine...
+[2020.01.30-00.53.48:516][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2020.01.30-00.53.48:518][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2020.01.30-00.53.48:518][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2020.01.30-00.53.48:795][  0]LogAIModule: Creating AISystem for world Untitled
+[2020.01.30-00.53.48:872][  0]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-00.53.48:958][  0]LogInit: FAudioDevice initialized.
+[2020.01.30-00.53.49:601][  0]LogDerivedDataCache: Saved boot cache 0.64s 74MB C:/Users/game126/AppData/Local/UnrealEngine/4.19/DerivedDataCache/Boot.ddc.
+[2020.01.30-00.53.49:608][  0]LogInit: Texture streaming: Enabled
+[2020.01.30-00.53.49:634][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2020.01.30-00.53.49:661][  0]LogInit: Transaction tracking system initialized
+[2020.01.30-00.53.49:699][  0]BlueprintLog: New page: エディタの読み込み
+[2020.01.30-00.53.49:911][  0]LocalizationService: ローカライズのサービスが無効になりました
+[2020.01.30-00.53.50:081][  0]LogConsoleResponse: Display: 
+[2020.01.30-00.53.50:308][  0]LogFileCache: Scanning file cache for directory 'C:/Users/game126/Documents/Unreal Projects/bennkyou/Content/' took 0.01s
+[2020.01.30-00.53.50:308][  0]LogCook: Display: Max memory allowance for cook 16384mb min free memory 0mb
+[2020.01.30-00.53.50:308][  0]LogCook: Display: Mobile HDR setting 1
+[2020.01.30-00.53.50:308][  0]LogGameplayTags: Display: UGameplayTagsManager::DoneAddingNativeTags. DelegateIsBound: 0
+[2020.01.30-00.53.50:308][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2020.01.30-00.53.50:308][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2020.01.30-00.53.50:941][  0]SourceControl: ソースコントロールは無効です
+[2020.01.30-00.53.50:941][  0]Cmd: MAP LOAD FILE="../../../Engine/Content/Maps/Templates/Template_Default.umap" TEMPLATE=1 SHOWPROGRESS=1 FEATURELEVEL=3
+[2020.01.30-00.53.50:942][  0]LightingResults: New page: ライティングのビルド
+[2020.01.30-00.53.50:945][  0]MapCheck: New page: マップをチェック
+[2020.01.30-00.53.50:945][  0]LightingResults: New page: <何も選択されていません>
+[2020.01.30-00.53.51:163][  0]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-00.53.51:172][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2020.01.30-00.53.51:185][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2020.01.30-00.53.51:349][  0]MapCheck: マップチェックが完了: 0 エラー、 0 警告、完了に 164.945ミリ秒かかりました。
+[2020.01.30-00.53.51:350][  0]LogFileHelpers: Loading map 'Template_Default' took 0.409
+[2020.01.30-00.53.51:511][  0]LogCollectionManager: Loaded 0 collections in 0.002671 seconds
+[2020.01.30-00.53.51:559][  0]LogFileCache: Scanning file cache for directory 'C:/Users/game126/Documents/Unreal Projects/bennkyou/Saved/Collections/' took 0.01s
+[2020.01.30-00.53.51:559][  0]LogFileCache: Scanning file cache for directory 'C:/Users/game126/Documents/Unreal Projects/bennkyou/Content/Developers/game126/Collections/' took 0.01s
+[2020.01.30-00.53.51:559][  0]LogFileCache: Scanning file cache for directory 'C:/Users/game126/Documents/Unreal Projects/bennkyou/Content/Collections/' took 0.01s
+[2020.01.30-00.53.51:559][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000000 seconds
+[2020.01.30-00.53.51:568][  0]LogContentBrowser: Native class hierarchy populated in 0.0091 seconds. Added 2452 classes and 558 folders.
+[2020.01.30-00.53.51:580][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0002 seconds. Added 0 classes and 0 folders.
+[2020.01.30-00.53.51:670][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0003 seconds. Added 0 classes and 0 folders.
+[2020.01.30-00.53.51:676][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0002 seconds. Added 1 classes and 2 folders.
+[2020.01.30-00.53.51:686][  0]LogContentBrowser: Native class hierarchy updated for 'WorldBrowser' in 0.0003 seconds. Added 2 classes and 3 folders.
+[2020.01.30-00.53.51:761][  0]LogSlate: Took 0.000866 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2020.01.30-00.53.51:766][  0]LogSlate: Took 0.002925 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/GenEiGothicPro-Regular.otf' (707K)
+[2020.01.30-00.53.51:768][  0]LogSlate: Took 0.001272 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/GenEiGothicPro-Bold.otf' (698K)
+[2020.01.30-00.53.51:769][  0]LogSlate: Took 0.000621 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2020.01.30-00.53.51:776][  0]LogSlate: Took 0.000659 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2020.01.30-00.53.51:896][  0]LogRenderer: Reallocating scene render targets to support 872x436 Format 10 NumSamples 1 (Frame:1).
+[2020.01.30-00.53.52:101][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0004 seconds. Added 0 classes and 0 folders.
+[2020.01.30-00.53.52:101][  0]LogLoad: (Engine Initialization) Total time: 16.67 seconds
+[2020.01.30-00.53.52:101][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2020.01.30-00.53.52:147][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2020.01.30-00.53.52:193][  1]LogAssetRegistry: Asset discovery search completed in 9.7842 seconds
+[2020.01.30-00.53.52:195][  1]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000000 seconds (found 0 objects)
+[2020.01.30-00.53.52:195][  1]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000105 seconds (updated 0 objects)
+[2020.01.30-00.54.13:115][249]LogEditorViewport: Clicking on Actor (LMB): PlayerStart (Player Start)
+[2020.01.30-00.54.17:240][494]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-00.54.17:374][502]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-00.54.17:383][502]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-00.54.17:384][502]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 18:54:17)
+[2020.01.30-00.54.17:384][502]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-00.54.17:387][502]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002899s)
+[2020.01.30-00.54.17:387][502]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-00.54.17:388][502]LogPlayLevel: PIE: World Init took: (0.000999s)
+[2020.01.30-00.54.17:388][502]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004116s)
+[2020.01.30-00.54.17:406][502]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-00.54.17:440][502]LogInit: FAudioDevice initialized.
+[2020.01.30-00.54.17:487][502]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-00.54.17:489][502]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-09.54.17
+[2020.01.30-00.54.17:489][502]LogWorld: Bringing up level for play took: 0.000670
+[2020.01.30-00.54.17:494][502]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0003 seconds. Added 11 classes and 0 folders.
+[2020.01.30-00.54.17:495][502]PIE: /Temp/UEDPIE_0_Untitled_1 0.362のプレイ イン エディタの開始時間
+[2020.01.30-00.54.21:215][721]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-00.54.21:224][721]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-00.54.21:224][721]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 18:54:21)
+[2020.01.30-00.54.21:224][721]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-00.54.21:226][721]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001890s)
+[2020.01.30-00.54.21:227][721]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-00.54.21:227][721]LogPlayLevel: PIE: World Init took: (0.001106s)
+[2020.01.30-00.54.21:227][721]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003221s)
+[2020.01.30-00.54.21:246][721]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-00.54.21:279][721]LogInit: FAudioDevice initialized.
+[2020.01.30-00.54.21:315][721]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-00.54.21:316][721]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-09.54.21
+[2020.01.30-00.54.21:317][721]LogWorld: Bringing up level for play took: 0.000693
+[2020.01.30-00.54.21:317][721]PIE: /Temp/UEDPIE_0_Untitled_1 0.184のプレイ イン エディタの開始時間
+[2020.01.30-00.54.25:044][941]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.54.29:936][232]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2020.01.30-00.54.30:650][271]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2020.01.30-00.54.31:411][316]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2020.01.30-00.54.32:119][358]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.54.35:334][549]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-00.54.50:568][458]LogEditorActor: Deleted Actor: PlayerStart
+[2020.01.30-00.54.50:578][458]LogEditorActor: Deleted 1 Actors (0.011 secs)
+[2020.01.30-00.54.55:129][728]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-00.54.55:266][736]LogActorFactory: Actor Factory created Sphere
+[2020.01.30-00.54.56:058][782]LogActorFactory: Actor Factory created Sphere
+[2020.01.30-00.55.14:910][902]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-00.55.37:470][241]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-00.55.58:990][525]LogEditorViewport: Clicking on Actor (context menu): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.55.59:051][525]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-00.55.59:754][565]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.56.12:492][320]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-00.56.12:592][326]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-00.56.12:603][326]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-00.56.12:603][326]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 18:56:12)
+[2020.01.30-00.56.12:603][326]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-00.56.12:606][326]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002926s)
+[2020.01.30-00.56.12:608][326]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-00.56.12:608][326]LogPlayLevel: PIE: World Init took: (0.001815s)
+[2020.01.30-00.56.12:608][326]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004988s)
+[2020.01.30-00.56.12:627][326]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-00.56.12:658][326]LogInit: FAudioDevice initialized.
+[2020.01.30-00.56.12:695][326]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-00.56.12:697][326]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-09.56.12
+[2020.01.30-00.56.12:697][326]LogWorld: Bringing up level for play took: 0.000722
+[2020.01.30-00.56.12:698][326]PIE: /Temp/UEDPIE_0_Untitled_1 -0.435のプレイ イン エディタの開始時間
+[2020.01.30-00.56.33:989][764]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.56.34:286][780]LogEditorViewport: Clicking on Actor (context menu): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.56.34:310][780]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-00.56.35:007][822]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.56.35:619][858]LogEditorViewport: Clicking on Actor (LMB): CameraActor (CameraActor)
+[2020.01.30-00.56.36:301][893]LogEditorViewport: Clicking on Actor (context menu): CameraActor (CameraActor)
+[2020.01.30-00.56.36:322][893]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-00.56.41:200][184]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.56.42:342][248]LogEditorViewport: Clicking on Actor (LMB): CameraActor (CameraActor)
+[2020.01.30-00.56.58:344][201]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-00.57.07:446][740]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.57.08:208][782]LogEditorViewport: Clicking on Actor (LMB): CameraActor (CameraActor)
+[2020.01.30-00.57.09:854][874]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-00.57.17:054][305]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-00.57.19:253][436]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-00.57.21:285][557]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-00.57.21:353][560]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-00.57.29:217][ 32]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-00.57.30:448][102]LogEditorViewport: Clicking on Actor (LMB): CameraActor (CameraActor)
+[2020.01.30-00.57.32:723][232]LogEditorViewport: Clicking on Actor (context menu): CameraActor (CameraActor)
+[2020.01.30-00.57.32:743][232]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-00.57.48:606][176]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-00.58.13:602][276]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-00.58.43:183][ 33]LogSlate: Took 0.000823 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/GenEiGothicPro-Light.otf' (713K)
+[2020.01.30-00.58.43:184][ 33]LogSlate: Took 0.000759 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2020.01.30-00.59.16:375][  9]LogSlate: Took 0.000360 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2020.01.30-00.59.32:478][  9]LogSlate: Window '親クラスを選択' being destroyed
+[2020.01.30-01.01.19:171][259]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0006 seconds. Added 116 classes and 0 folders.
+[2020.01.30-01.01.19:523][259]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b696448b8, Size=4, Default__SKEL_PROTO_BP_AnimBlueprint_0_C Function /Engine/Transient.SKEL_PROTO_BP_AnimBlueprint_0_C:ExecuteUbergraph_PROTO_BP_AnimBlueprint_0
+[2020.01.30-01.01.19:524][259]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b696448b0, Size=4, Default__PROTO_BP_AnimBlueprint_0_C Function /Engine/Transient.PROTO_BP_AnimBlueprint_0_C:ExecuteUbergraph_PROTO_BP_AnimBlueprint_0
+[2020.01.30-01.01.19:997][259]LogSlate: Took 0.004246 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/GenEiGothicPro-SemiBold.otf' (703K)
+[2020.01.30-01.01.19:997][259]LogSlate: Took 0.000400 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2020.01.30-01.03.57:566][656]LogSavePackage: Save=50.32ms
+[2020.01.30-01.03.57:566][656]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Untitled_1_Auto10D4513CB4749047E3EB6C882ECBC4CA4.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto1.umap'
+[2020.01.30-01.03.57:569][656]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto1.umap
+[2020.01.30-01.03.57:575][656]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.090
+[2020.01.30-01.03.57:575][656]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.090
+[2020.01.30-01.09.00:544][ 68]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b879eb5c8, Size=4, Default__SKEL_Untitled_C Function /Temp/Untitled_1.SKEL_Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-01.09.00:602][ 69]LogSlate: Took 0.002758 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2020.01.30-01.13.57:904][ 72]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b879eb5c8, Size=4
+[2020.01.30-01.13.57:904][ 72]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b87b11ec8, Size=4, Default__SKEL_Untitled_C Function /Engine/Transient.REINST_SKEL_Untitled_C_25:ExecuteUbergraph_Untitled
+[2020.01.30-01.13.57:910][ 72]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b87b11f30, Size=4, Default__Untitled_C Function /Temp/Untitled_1.Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-01.13.58:037][ 72]LogSavePackage: Save=134.03ms
+[2020.01.30-01.13.58:037][ 72]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Untitled_1_Auto224DD1CEE48A6CFF5183AE9A2580B8AF3.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto2.umap'
+[2020.01.30-01.13.58:040][ 72]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto2.umap
+[2020.01.30-01.13.58:045][ 72]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.166
+[2020.01.30-01.13.58:045][ 72]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.166
+[2020.01.30-01.15.30:761][479]BlueprintLog: New page: Untitled をコンパイル
+[2020.01.30-01.15.30:765][479]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b87b11f30, Size=4
+[2020.01.30-01.15.30:765][479]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b87e732f0, Size=4, Untitled_C_0 Function /Engine/Transient.REINST_Untitled_C_31:ExecuteUbergraph_Untitled
+[2020.01.30-01.15.30:767][479]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b8f711c10, Size=16, Default__Untitled_C Function /Temp/Untitled_1.Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-01.15.30:849][479]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b87b11ec8, Size=4
+[2020.01.30-01.15.48:040][486]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b87593ee8, Size=4, Default__SKEL_Untitled_C Function /Temp/Untitled_1.SKEL_Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-01.16.02:848][360]BlueprintLog: New page: Untitled をコンパイル
+[2020.01.30-01.16.02:850][360]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b87593ee8, Size=4
+[2020.01.30-01.16.02:850][360]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b8bad2238, Size=4, Default__SKEL_Untitled_C Function /Engine/Transient.REINST_SKEL_Untitled_C_35:ExecuteUbergraph_Untitled
+[2020.01.30-01.16.02:852][360]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b8f711c10, Size=16
+[2020.01.30-01.16.02:852][360]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b87a82870, Size=16, Default__Untitled_C Function /Engine/Transient.REINST_Untitled_C_37:ExecuteUbergraph_Untitled
+[2020.01.30-01.16.02:853][360]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b87a83fb0, Size=16, Default__Untitled_C Function /Temp/Untitled_1.Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-01.16.02:935][360]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b8bad2238, Size=4
+[2020.01.30-01.16.02:935][360]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b87e732f0, Size=4
+[2020.01.30-01.16.10:167][792]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-01.16.10:266][798]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-01.16.10:281][798]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-01.16.10:281][798]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-01.16.10:281][798]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 19:16:10)
+[2020.01.30-01.16.10:281][798]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-01.16.10:284][798]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002959s)
+[2020.01.30-01.16.10:286][798]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-01.16.10:286][798]LogPlayLevel: PIE: World Init took: (0.001277s)
+[2020.01.30-01.16.10:286][798]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004493s)
+[2020.01.30-01.16.10:307][798]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b87a82870, Size=16
+[2020.01.30-01.16.10:352][798]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-01.16.10:387][798]LogInit: FAudioDevice initialized.
+[2020.01.30-01.16.10:421][798]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-01.16.10:424][798]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-10.16.10
+[2020.01.30-01.16.10:424][798]LogWorld: Bringing up level for play took: 0.001239
+[2020.01.30-01.16.10:426][798]PIE: /Temp/UEDPIE_0_Untitled_1 -0.707のプレイ イン エディタの開始時間
+[2020.01.30-01.16.10:427][798]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-01.16.12:648][930]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-01.16.12:687][930]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-01.16.15:569][101]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-01.16.20:105][266]LogSlate: Window '親クラスを選択' being destroyed
+[2020.01.30-01.16.43:453][660]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-01.16.43:553][666]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-01.16.43:561][666]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-01.16.43:561][666]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-01.16.43:562][666]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 19:16:43)
+[2020.01.30-01.16.43:562][666]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-01.16.43:564][666]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002219s)
+[2020.01.30-01.16.43:565][666]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-01.16.43:566][666]LogPlayLevel: PIE: World Init took: (0.001819s)
+[2020.01.30-01.16.43:566][666]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004339s)
+[2020.01.30-01.16.43:595][666]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-01.16.43:627][666]LogInit: FAudioDevice initialized.
+[2020.01.30-01.16.43:661][666]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-01.16.43:662][666]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-10.16.43
+[2020.01.30-01.16.43:662][666]LogWorld: Bringing up level for play took: 0.000643
+[2020.01.30-01.16.43:663][666]PIE: /Temp/UEDPIE_0_Untitled_1 0.53のプレイ イン エディタの開始時間
+[2020.01.30-01.16.43:664][666]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-01.16.47:982][924]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-01.16.48:021][924]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-01.24.05:053][141]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-01.24.05:100][141]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b87a83fb0, Size=16
+[2020.01.30-01.24.05:100][141]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b3c391860, Size=16, Default__Untitled_C Function /Engine/Transient.REINST_Untitled_C_43:ExecuteUbergraph_Untitled
+[2020.01.30-01.24.05:101][141]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b3c390410, Size=16, Default__Untitled_C Function /Temp/Untitled_1.Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-01.24.05:212][141]LogSavePackage: Save=114.97ms
+[2020.01.30-01.24.05:212][141]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Untitled_1_Auto35DADD0854D47B8953D9A05A53211DBC4.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto3.umap'
+[2020.01.30-01.24.05:215][141]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto3.umap
+[2020.01.30-01.24.05:221][141]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.146
+[2020.01.30-01.24.05:221][141]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.146
+[2020.01.30-01.24.05:225][141]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/game/BluePrint/PlayerMove] ([1] browsable assets)...
+[2020.01.30-01.24.05:225][141]OBJ SavePackage: Finished generating thumbnails for package [/Game/game/BluePrint/PlayerMove]
+[2020.01.30-01.24.05:239][141]LogSavePackage: Save=9.90ms
+[2020.01.30-01.24.05:239][141]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/PlayerMove_Auto32A04AF30470D652E8E7E3CBBA7005BF3.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/PlayerMove_Auto3.uasset'
+[2020.01.30-01.24.05:243][141]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/PlayerMove_Auto3.uasset
+[2020.01.30-01.24.05:243][141]LogFileHelpers: Auto-saving content packages took 0.021
+[2020.01.30-02.10.52:181][536]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.10.52:896][548]LogRenderer: Reallocating scene render targets to support 916x540 Format 10 NumSamples 1 (Frame:1).
+[2020.01.30-02.11.12:541][711]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Sphere)
+[2020.01.30-02.11.13:967][790]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Sphere)
+[2020.01.30-02.11.13:999][790]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.11.38:529][308]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.11.45:567][718]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b3c391860, Size=16
+[2020.01.30-02.11.45:572][718]LogMetaData: Removing '/Game/game/BluePrint/Move.Move:UserConstructionScript.K2Node_FunctionEntry_0' ref from Metadata '/Game/game/BluePrint/PlayerMove.PackageMetaData'
+[2020.01.30-02.11.45:572][718]LogMetaData: Removing '/Game/game/BluePrint/Move.SKEL_Move_C' ref from Metadata '/Game/game/BluePrint/PlayerMove.PackageMetaData'
+[2020.01.30-02.11.45:572][718]LogMetaData: Removing '/Game/game/BluePrint/Move.Move_C' ref from Metadata '/Game/game/BluePrint/PlayerMove.PackageMetaData'
+[2020.01.30-02.11.45:572][718]LogMetaData: Removing '/Game/game/BluePrint/Move.Move:EventGraph.K2Node_Event_0' ref from Metadata '/Game/game/BluePrint/PlayerMove.PackageMetaData'
+[2020.01.30-02.11.45:573][718]LogMetaData: Removing '/Game/game/BluePrint/Move.Move:EventGraph.K2Node_Event_1' ref from Metadata '/Game/game/BluePrint/PlayerMove.PackageMetaData'
+[2020.01.30-02.11.45:573][718]LogMetaData: Removing '/Game/game/BluePrint/Move.Move:EventGraph.K2Node_Event_2' ref from Metadata '/Game/game/BluePrint/PlayerMove.PackageMetaData'
+[2020.01.30-02.11.45:597][718]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.11.45:628][718]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/game/BluePrint/Move" FILE="../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/Move.uasset" SILENT=true
+[2020.01.30-02.11.45:640][718]LogSavePackage: Save=8.27ms
+[2020.01.30-02.11.45:640][718]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Move677195FE42261749F150FB87D631B833.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/Move.uasset'
+[2020.01.30-02.11.45:648][718]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/Move.uasset
+[2020.01.30-02.11.45:660][718]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.11.45:744][718]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.11.45:845][718]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.12.20:241][773]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.12.20:293][773]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b3c390410, Size=16
+[2020.01.30-02.12.20:293][773]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b4c1b75b0, Size=16, Default__Untitled_C Function /Engine/Transient.REINST_Untitled_C_51:ExecuteUbergraph_Untitled
+[2020.01.30-02.12.20:294][773]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b4c1b7e30, Size=16, Default__Untitled_C Function /Temp/Untitled_1.Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-02.12.20:415][773]LogSavePackage: Save=125.30ms
+[2020.01.30-02.12.20:415][773]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Untitled_1_Auto45FC0F93343470EFEF3EA0EADC09BC40D.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto4.umap'
+[2020.01.30-02.12.20:418][773]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto4.umap
+[2020.01.30-02.12.20:423][773]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.157
+[2020.01.30-02.12.20:423][773]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.157
+[2020.01.30-02.13.59:076][691]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.14.02:803][914]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-02.14.03:266][940]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-02.14.03:663][963]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (Sky Sphere mesh)
+[2020.01.30-02.14.03:923][976]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (Sky Sphere mesh)
+[2020.01.30-02.14.05:765][ 86]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.14.16:513][722]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Sphere)
+[2020.01.30-02.15.14:628][940]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.18.32:084][989]BlueprintLog: New page: Move をコンパイル
+[2020.01.30-02.18.32:093][989]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b91fb9e40, Size=156, Default__Move_C Function /Game/game/BluePrint/Move.Move_C:ExecuteUbergraph_Move
+[2020.01.30-02.18.32:254][989]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b4c1b75b0, Size=16
+[2020.01.30-02.18.38:361][352]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-02.18.40:494][477]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.18.45:116][729]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.18.47:258][857]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.18.48:384][857]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2020.01.30-02.18.48:560][858]LogTemp: Executing iPhonePackager certificates Engine -bundlename com.YourCompany.bennkyou
+[2020.01.30-02.18.48:560][858]LogTemp: CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2020.01.30-02.18.48:560][858]LogTemp: Initial Dir: C:\Program Files\Epic Games\UE_4.19
+[2020.01.30-02.18.48:560][858]LogTemp: Env CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2020.01.30-02.18.48:560][858]LogTemp: BranchPath = S-JOBI17-037/C/Program Files/Epic Games/UE_4.19/Engine/Binaries --- GameBranchPath = S-JOBI17-037/C/Program Files/Epic Games/UE_4.19/Engine/Binaries
+[2020.01.30-02.18.48:560][858]LogTemp: IPP ERROR: Could not find provision directory 'C:\Users\game126\AppData\Local/Apple Computer/MobileDevice/Provisioning Profiles/'.
+[2020.01.30-02.22.20:560][  5]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.026
+[2020.01.30-02.22.20:563][  5]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/game/BluePrint/Move] ([1] browsable assets)...
+[2020.01.30-02.22.20:563][  5]OBJ SavePackage: Finished generating thumbnails for package [/Game/game/BluePrint/Move]
+[2020.01.30-02.22.20:580][  5]LogSavePackage: Save=9.92ms
+[2020.01.30-02.22.20:580][  5]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Move_Auto58DB5B40A4A003055ED4D2DA1913875DA.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/Move_Auto5.uasset'
+[2020.01.30-02.22.20:584][  5]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/Move_Auto5.uasset
+[2020.01.30-02.22.20:584][  5]LogFileHelpers: Auto-saving content packages took 0.023
+[2020.01.30-02.22.25:077][274]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.25.23:898][642]LogSlate: Window 'プロジェクト設定' being destroyed
+[2020.01.30-02.25.23:905][642]LogSlate: Window 'プロジェクト設定' being destroyed
+[2020.01.30-02.43.21:329][837]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.44.03:540][257]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.44.58:304][450]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.021
+[2020.01.30-02.44.58:307][450]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/game/BluePrint/Move] ([1] browsable assets)...
+[2020.01.30-02.44.58:307][450]OBJ SavePackage: Finished generating thumbnails for package [/Game/game/BluePrint/Move]
+[2020.01.30-02.44.58:324][450]LogSavePackage: Save=10.41ms
+[2020.01.30-02.44.58:324][450]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Move_Auto6CAB2AA334861789E476365870C469FF5.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/Move_Auto6.uasset'
+[2020.01.30-02.44.58:333][450]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/Move_Auto6.uasset
+[2020.01.30-02.44.58:334][450]LogFileHelpers: Auto-saving content packages took 0.029
+[2020.01.30-02.45.49:290][504]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.45.49:388][510]BlueprintLog: New page: Move をコンパイル
+[2020.01.30-02.45.49:397][510]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b91fb9e40, Size=156
+[2020.01.30-02.45.49:397][510]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b91fbbb00, Size=156, Default__Move_C Function /Engine/Transient.REINST_Move_C_59:ExecuteUbergraph_Move
+[2020.01.30-02.45.49:400][510]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b39083d58, Size=40, Default__Move_C Function /Game/game/BluePrint/Move.Move_C:ExecuteUbergraph_Move
+[2020.01.30-02.45.53:366][735]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Sphere)
+[2020.01.30-02.45.56:914][944]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.45.59:564][ 98]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.48.04:640][710]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.48.29:928][216]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.48.54:758][135]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.49.19:085][579]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba2ef9f70, Size=4, Default__SKEL_Move_C Function /Game/game/BluePrint/Move.SKEL_Move_C:ExecuteUbergraph_Move
+[2020.01.30-02.49.24:794][905]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba2ef9f70, Size=4
+[2020.01.30-02.49.24:794][905]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba2ef9f70, Size=4, Default__SKEL_Move_C Function /Engine/Transient.REINST_SKEL_Move_C_63:ExecuteUbergraph_Move
+[2020.01.30-02.49.24:795][905]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba2ef8418, Size=4, Default__SKEL_Move_C Function /Game/game/BluePrint/Move.SKEL_Move_C:ExecuteUbergraph_Move
+[2020.01.30-02.49.43:716][ 21]BlueprintLog: New page: Move をコンパイル
+[2020.01.30-02.49.43:721][ 21]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba2ef8418, Size=4
+[2020.01.30-02.49.43:721][ 21]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba2ef8418, Size=4, Default__SKEL_Move_C Function /Engine/Transient.REINST_SKEL_Move_C_65:ExecuteUbergraph_Move
+[2020.01.30-02.49.43:724][ 21]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b39083d58, Size=40
+[2020.01.30-02.49.43:724][ 21]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b39083d58, Size=40, Move_C_31 Function /Engine/Transient.REINST_Move_C_67:ExecuteUbergraph_Move
+[2020.01.30-02.49.43:725][ 21]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b39081378, Size=40, Default__Move_C Function /Game/game/BluePrint/Move.Move_C:ExecuteUbergraph_Move
+[2020.01.30-02.49.43:978][ 21]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b91fbbb00, Size=156
+[2020.01.30-02.49.43:978][ 21]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba2ef9f70, Size=4
+[2020.01.30-02.49.43:978][ 21]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba2ef8418, Size=4
+[2020.01.30-02.49.49:652][353]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.49.50:934][430]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-02.49.51:997][492]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Sphere)
+[2020.01.30-02.49.53:296][567]Cmd: DELETE
+[2020.01.30-02.49.53:296][567]Cmd: ACTOR DELETE
+[2020.01.30-02.49.53:298][567]LogEditorActor: Deleted Actor: StaticMeshActor
+[2020.01.30-02.49.53:321][567]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b39083d58, Size=40
+[2020.01.30-02.49.53:322][567]LogEditorActor: Deleted 1 Actors (0.025 secs)
+[2020.01.30-02.49.54:280][625]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.49.57:042][784]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.50.04:997][259]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b39081378, Size=40
+[2020.01.30-02.50.04:997][259]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b24c19dc8, Size=40, Default__BP_Player_C Function /Engine/Transient.REINST_BP_Player_C_71:ExecuteUbergraph_Move
+[2020.01.30-02.50.04:999][259]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b24c19198, Size=40, Default__BP_Player_C Function /Game/game/BluePrint/BP_Player.BP_Player_C:ExecuteUbergraph_BP_Player
+[2020.01.30-02.50.05:309][259]LogMetaData: Removing '/Game/game/BluePrint/BP_Player.BP_Player_C' ref from Metadata '/Game/game/BluePrint/Move.PackageMetaData'
+[2020.01.30-02.50.05:309][259]LogMetaData: Removing '/Game/game/BluePrint/BP_Player.SKEL_BP_Player_C' ref from Metadata '/Game/game/BluePrint/Move.PackageMetaData'
+[2020.01.30-02.50.05:309][259]LogMetaData: Removing '/Game/game/BluePrint/BP_Player.BP_Player:UserConstructionScript.K2Node_FunctionEntry_0' ref from Metadata '/Game/game/BluePrint/Move.PackageMetaData'
+[2020.01.30-02.50.05:309][259]LogMetaData: Removing '/Game/game/BluePrint/BP_Player.BP_Player:EventGraph.K2Node_Event_0' ref from Metadata '/Game/game/BluePrint/Move.PackageMetaData'
+[2020.01.30-02.50.05:309][259]LogMetaData: Removing '/Game/game/BluePrint/BP_Player.BP_Player:EventGraph.K2Node_Event_1' ref from Metadata '/Game/game/BluePrint/Move.PackageMetaData'
+[2020.01.30-02.50.05:309][259]LogMetaData: Removing '/Game/game/BluePrint/BP_Player.BP_Player:EventGraph.K2Node_Event_2' ref from Metadata '/Game/game/BluePrint/Move.PackageMetaData'
+[2020.01.30-02.50.05:323][259]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.50.05:387][259]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/game/BluePrint/BP_Player" FILE="../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/BP_Player.uasset" SILENT=true
+[2020.01.30-02.50.05:412][259]LogSavePackage: Save=22.13ms
+[2020.01.30-02.50.05:412][259]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/BP_Player230AD1C6430745EF2CC6D8A3FFD90893.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/BP_Player.uasset'
+[2020.01.30-02.50.05:417][259]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/BP_Player.uasset
+[2020.01.30-02.50.05:430][259]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.50.05:558][259]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.50.05:594][259]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b24c19dc8, Size=40
+[2020.01.30-02.50.05:662][259]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.50.08:300][417]LogEditorViewport: Clicking on Actor (LMB): BP_Player_C (Move)
+[2020.01.30-02.50.09:176][469]Cmd: DELETE
+[2020.01.30-02.50.09:176][469]Cmd: ACTOR DELETE
+[2020.01.30-02.50.09:178][469]LogEditorActor: Deleted Actor: BP_Player_C
+[2020.01.30-02.50.09:198][469]LogEditorActor: Deleted 1 Actors (0.021 secs)
+[2020.01.30-02.50.10:472][546]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.50.13:058][694]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.50.13:158][700]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-02.50.13:169][700]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.50.13:169][700]BlueprintLog: New page: プレイ前に自動再コンパイル
+[2020.01.30-02.50.13:171][700]LogPlayLevel: [PlayLevel] Compiling Untitled before play...
+[2020.01.30-02.50.13:173][700]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b4c1b7e30, Size=16
+[2020.01.30-02.50.13:173][700]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b824b2000, Size=16, Default__Untitled_C Function /Engine/Transient.REINST_Untitled_C_75:ExecuteUbergraph_Untitled
+[2020.01.30-02.50.13:175][700]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b824b01e0, Size=16, Default__Untitled_C Function /Temp/Untitled_1.Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-02.50.13:271][700]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b824b2000, Size=16
+[2020.01.30-02.50.13:272][700]LogPlayLevel: PlayLevel: Blueprint regeneration took 103 ms (1 blueprints)
+[2020.01.30-02.50.13:273][700]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 20:50:13)
+[2020.01.30-02.50.13:273][700]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-02.50.13:276][700]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002729s)
+[2020.01.30-02.50.13:277][700]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-02.50.13:277][700]LogPlayLevel: PIE: World Init took: (0.001306s)
+[2020.01.30-02.50.13:277][700]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004296s)
+[2020.01.30-02.50.13:310][700]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-02.50.13:346][700]LogInit: FAudioDevice initialized.
+[2020.01.30-02.50.13:380][700]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-02.50.13:382][700]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-11.50.13
+[2020.01.30-02.50.13:383][700]LogWorld: Bringing up level for play took: 0.000860
+[2020.01.30-02.50.13:384][700]PIE: /Temp/UEDPIE_0_Untitled_1 0.251のプレイ イン エディタの開始時間
+[2020.01.30-02.50.13:384][700]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.50.29:594][671]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.50.29:634][671]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.50.32:443][760]LogSlate: Window '名前を付けてレベルを保存する' being destroyed
+[2020.01.30-02.50.33:978][852]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.50.45:275][511]BlueprintLog: New page: BP_Player をコンパイル
+[2020.01.30-02.50.45:280][511]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b24c19198, Size=40
+[2020.01.30-02.50.45:280][511]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba6f47c40, Size=40, Default__BP_Player_C Function /Engine/Transient.REINST_BP_Player_C_79:ExecuteUbergraph_BP_Player
+[2020.01.30-02.50.45:282][511]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba6f45e68, Size=40, Default__BP_Player_C Function /Game/game/BluePrint/BP_Player.BP_Player_C:ExecuteUbergraph_BP_Player
+[2020.01.30-02.50.47:901][639]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-02.50.47:914][639]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.50.47:914][639]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-02.50.47:915][639]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 20:50:47)
+[2020.01.30-02.50.47:915][639]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-02.50.47:917][639]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002583s)
+[2020.01.30-02.50.47:918][639]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-02.50.47:919][639]LogPlayLevel: PIE: World Init took: (0.001195s)
+[2020.01.30-02.50.47:919][639]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003967s)
+[2020.01.30-02.50.47:946][639]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-02.50.47:978][639]LogInit: FAudioDevice initialized.
+[2020.01.30-02.50.48:010][639]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-02.50.48:012][639]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-11.50.48
+[2020.01.30-02.50.48:012][639]LogWorld: Bringing up level for play took: 0.000669
+[2020.01.30-02.50.48:013][639]PIE: /Temp/UEDPIE_0_Untitled_1 0.88のプレイ イン エディタの開始時間
+[2020.01.30-02.50.48:013][639]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.50.59:198][309]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.50.59:238][309]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.51.03:337][553]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.51.03:470][561]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-02.51.03:480][561]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.51.03:480][561]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-02.51.03:481][561]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 20:51:03)
+[2020.01.30-02.51.03:481][561]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-02.51.03:484][561]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003259s)
+[2020.01.30-02.51.03:485][561]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-02.51.03:485][561]LogPlayLevel: PIE: World Init took: (0.000988s)
+[2020.01.30-02.51.03:485][561]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004479s)
+[2020.01.30-02.51.03:514][561]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-02.51.03:547][561]LogInit: FAudioDevice initialized.
+[2020.01.30-02.51.03:582][561]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-02.51.03:583][561]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-11.51.03
+[2020.01.30-02.51.03:584][561]LogWorld: Bringing up level for play took: 0.000741
+[2020.01.30-02.51.03:585][561]PIE: /Temp/UEDPIE_0_Untitled_1 0.451のプレイ イン エディタの開始時間
+[2020.01.30-02.51.03:585][561]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.51.11:806][ 53]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.51.11:848][ 53]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.51.19:818][529]LogEditorViewport: Clicking on Actor (LMB): BP_Player_C (BP_Player)
+[2020.01.30-02.52.15:488][845]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.52.19:155][ 65]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-02.52.19:167][ 65]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.19:167][ 65]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-02.52.19:167][ 65]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 20:52:19)
+[2020.01.30-02.52.19:167][ 65]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-02.52.19:169][ 65]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002232s)
+[2020.01.30-02.52.19:171][ 65]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-02.52.19:171][ 65]LogPlayLevel: PIE: World Init took: (0.001495s)
+[2020.01.30-02.52.19:171][ 65]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003973s)
+[2020.01.30-02.52.19:201][ 65]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-02.52.19:237][ 65]LogInit: FAudioDevice initialized.
+[2020.01.30-02.52.19:273][ 65]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-02.52.19:275][ 65]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-11.52.19
+[2020.01.30-02.52.19:275][ 65]LogWorld: Bringing up level for play took: 0.000778
+[2020.01.30-02.52.19:276][ 65]PIE: /Temp/UEDPIE_0_Untitled_1 0.143のプレイ イン エディタの開始時間
+[2020.01.30-02.52.19:276][ 65]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.25:029][409]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.25:067][409]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.26:601][499]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.52.26:751][508]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-02.52.26:762][508]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.26:762][508]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-02.52.26:762][508]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 20:52:26)
+[2020.01.30-02.52.26:762][508]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-02.52.26:765][508]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002478s)
+[2020.01.30-02.52.26:766][508]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-02.52.26:766][508]LogPlayLevel: PIE: World Init took: (0.001025s)
+[2020.01.30-02.52.26:766][508]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003731s)
+[2020.01.30-02.52.26:793][508]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-02.52.26:824][508]LogInit: FAudioDevice initialized.
+[2020.01.30-02.52.26:861][508]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-02.52.26:863][508]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-11.52.26
+[2020.01.30-02.52.26:863][508]LogWorld: Bringing up level for play took: 0.000608
+[2020.01.30-02.52.26:864][508]PIE: /Temp/UEDPIE_0_Untitled_1 -0.27のプレイ イン エディタの開始時間
+[2020.01.30-02.52.26:864][508]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.30:019][696]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.30:060][696]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.32:230][824]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-02.52.32:239][824]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.32:240][824]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-02.52.32:240][824]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 20:52:32)
+[2020.01.30-02.52.32:240][824]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-02.52.32:243][824]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002777s)
+[2020.01.30-02.52.32:244][824]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-02.52.32:244][824]LogPlayLevel: PIE: World Init took: (0.001293s)
+[2020.01.30-02.52.32:244][824]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004332s)
+[2020.01.30-02.52.32:271][824]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-02.52.32:303][824]LogInit: FAudioDevice initialized.
+[2020.01.30-02.52.32:340][824]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-02.52.32:342][824]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-11.52.32
+[2020.01.30-02.52.32:342][824]LogWorld: Bringing up level for play took: 0.000821
+[2020.01.30-02.52.32:343][824]PIE: /Temp/UEDPIE_0_Untitled_1 -0.789のプレイ イン エディタの開始時間
+[2020.01.30-02.52.32:344][824]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.37:231][116]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.37:269][116]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.38:876][210]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.52.38:992][217]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-02.52.39:001][217]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.39:002][217]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-02.52.39:002][217]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 20:52:39)
+[2020.01.30-02.52.39:002][217]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-02.52.39:005][217]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002887s)
+[2020.01.30-02.52.39:006][217]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-02.52.39:007][217]LogPlayLevel: PIE: World Init took: (0.001501s)
+[2020.01.30-02.52.39:007][217]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004645s)
+[2020.01.30-02.52.39:035][217]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-02.52.39:068][217]LogInit: FAudioDevice initialized.
+[2020.01.30-02.52.39:099][217]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-02.52.39:101][217]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-11.52.39
+[2020.01.30-02.52.39:101][217]LogWorld: Bringing up level for play took: 0.000808
+[2020.01.30-02.52.39:103][217]PIE: /Temp/UEDPIE_0_Untitled_1 -0.03のプレイ イン エディタの開始時間
+[2020.01.30-02.52.39:103][217]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.53:679][ 86]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.53:723][ 86]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.57:434][306]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.57:434][306]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-02.52.57:434][306]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 20:52:57)
+[2020.01.30-02.52.57:434][306]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-02.52.57:438][306]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003648s)
+[2020.01.30-02.52.57:439][306]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-02.52.57:439][306]LogPlayLevel: PIE: World Init took: (0.001013s)
+[2020.01.30-02.52.57:439][306]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004928s)
+[2020.01.30-02.52.57:468][306]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-02.52.57:501][306]LogInit: FAudioDevice initialized.
+[2020.01.30-02.52.57:617][306]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-02.52.57:619][306]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-11.52.57
+[2020.01.30-02.52.57:619][306]LogWorld: Bringing up level for play took: 0.000972
+[2020.01.30-02.52.57:625][306]PIE: /Temp/UEDPIE_0_Untitled_1 0.492のプレイ イン エディタの開始時間
+[2020.01.30-02.52.57:626][306]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.52.57:679][306]LogRenderer: Reallocating scene render targets to support 1024x576 Format 10 NumSamples 1 (Frame:1).
+[2020.01.30-02.53.01:186][498]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.53.01:196][498]LogSlate: Window 'bennkyou ゲームプレビュー Standalone (64-ビット/PCD3D_SM5)' being destroyed
+[2020.01.30-02.53.01:239][498]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.53.06:234][793]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.53.06:234][793]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-02.53.06:234][793]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 20:53:06)
+[2020.01.30-02.53.06:234][793]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-02.53.06:237][793]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002386s)
+[2020.01.30-02.53.06:237][793]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-02.53.06:238][793]LogPlayLevel: PIE: World Init took: (0.001068s)
+[2020.01.30-02.53.06:238][793]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003693s)
+[2020.01.30-02.53.06:267][793]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-02.53.06:298][793]LogInit: FAudioDevice initialized.
+[2020.01.30-02.53.06:332][793]LogLoad: Game class is 'GameModeBase'
+[2020.01.30-02.53.06:334][793]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-11.53.06
+[2020.01.30-02.53.06:334][793]LogWorld: Bringing up level for play took: 0.000590
+[2020.01.30-02.53.06:335][793]PIE: /Temp/UEDPIE_0_Untitled_1 -0.798のプレイ イン エディタの開始時間
+[2020.01.30-02.53.06:335][793]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.53.14:608][288]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.53.14:647][288]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-02.53.23:489][815]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.53.28:322][ 77]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.53.28:345][ 77]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.53.28:745][100]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.53.30:138][183]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.53.37:431][560]LogSlate: Window 'エディタの環境設定' being destroyed
+[2020.01.30-02.53.37:438][560]LogSlate: Window 'エディタの環境設定' being destroyed
+[2020.01.30-02.53.38:631][616]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-02.53.39:828][685]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.53.41:352][773]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-02.53.58:523][793]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-02.54.21:320][ 40]LogSlate: Window '親クラスを選択' being destroyed
+[2020.01.30-02.54.26:668][294]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2020.01.30-02.54.26:847][295]LogTemp: Executing iPhonePackager certificates Engine -bundlename com.YourCompany.bennkyou
+[2020.01.30-02.54.26:847][295]LogTemp: CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2020.01.30-02.54.26:847][295]LogTemp: Initial Dir: C:\Program Files\Epic Games\UE_4.19
+[2020.01.30-02.54.26:847][295]LogTemp: Env CWD: C:\Program Files\Epic Games\UE_4.19\Engine\Binaries\DotNET\IOS
+[2020.01.30-02.54.26:847][295]LogTemp: BranchPath = S-JOBI17-037/C/Program Files/Epic Games/UE_4.19/Engine/Binaries --- GameBranchPath = S-JOBI17-037/C/Program Files/Epic Games/UE_4.19/Engine/Binaries
+[2020.01.30-02.54.26:847][295]LogTemp: IPP ERROR: Could not find provision directory 'C:\Users\game126\AppData\Local/Apple Computer/MobileDevice/Provisioning Profiles/'.
+[2020.01.30-02.58.53:771][869]LogSlate: Window '親クラスを選択' being destroyed
+[2020.01.30-02.59.31:557][800]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b824b01e0, Size=16
+[2020.01.30-02.59.31:557][800]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b1fab9bc0, Size=16, Default__Untitled_C Function /Engine/Transient.REINST_Untitled_C_85:ExecuteUbergraph_Untitled
+[2020.01.30-02.59.31:558][800]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b1fabbe90, Size=16, Default__Untitled_C Function /Temp/Untitled_1.Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-02.59.31:670][800]LogSavePackage: Save=118.01ms
+[2020.01.30-02.59.31:670][800]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Untitled_1_Auto79469ED3846DF23CD07BCA3A301020927.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto7.umap'
+[2020.01.30-02.59.31:673][800]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto7.umap
+[2020.01.30-02.59.31:679][800]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.150
+[2020.01.30-02.59.31:679][800]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.150
+[2020.01.30-02.59.31:684][800]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/game/BluePrint/BP_GameMode] ([1] browsable assets)...
+[2020.01.30-02.59.31:684][800]OBJ SavePackage: Finished generating thumbnails for package [/Game/game/BluePrint/BP_GameMode]
+[2020.01.30-02.59.31:695][800]LogSavePackage: Save=7.05ms
+[2020.01.30-02.59.31:695][800]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/BP_GameMode_Auto738839E684B459722B8C3A3816EDEAF19.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/BP_GameMode_Auto7.uasset'
+[2020.01.30-02.59.31:698][800]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/BP_GameMode_Auto7.uasset
+[2020.01.30-02.59.31:698][800]LogFileHelpers: Auto-saving content packages took 0.016
+[2020.01.30-03.04.44:972][807]LogSlate: Prevented a slow task dialog from being summoned while a context menu was open
+[2020.01.30-03.04.52:785][270]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.04.52:795][270]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.04.52:795][270]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.04.52:795][270]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:04:52)
+[2020.01.30-03.04.52:795][270]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.04.52:798][270]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002744s)
+[2020.01.30-03.04.52:799][270]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.04.52:800][270]LogPlayLevel: PIE: World Init took: (0.001381s)
+[2020.01.30-03.04.52:800][270]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004359s)
+[2020.01.30-03.04.52:830][270]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.04.52:864][270]LogInit: FAudioDevice initialized.
+[2020.01.30-03.04.52:900][270]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.04.52:902][270]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.04.52
+[2020.01.30-03.04.52:902][270]LogWorld: Bringing up level for play took: 0.000862
+[2020.01.30-03.04.52:921][270]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.04.52:922][270]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.04.52:922][270]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.04.52:923][270]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.04.52:923][270]PIE: /Temp/UEDPIE_0_Untitled_1 -0.21のプレイ イン エディタの開始時間
+[2020.01.30-03.04.52:923][270]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.04.57:095][519]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.04.57:140][519]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.04.57:897][561]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.04.58:013][568]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.04.58:022][568]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.04.58:022][568]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.04.58:022][568]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:04:58)
+[2020.01.30-03.04.58:022][568]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.04.58:025][568]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003096s)
+[2020.01.30-03.04.58:026][568]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.04.58:026][568]LogPlayLevel: PIE: World Init took: (0.000820s)
+[2020.01.30-03.04.58:026][568]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004089s)
+[2020.01.30-03.04.58:054][568]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.04.58:085][568]LogInit: FAudioDevice initialized.
+[2020.01.30-03.04.58:122][568]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.04.58:123][568]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.04.58
+[2020.01.30-03.04.58:124][568]LogWorld: Bringing up level for play took: 0.000864
+[2020.01.30-03.04.58:124][568]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.04.58:124][568]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.04.58:124][568]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.04.58:125][568]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.04.58:125][568]PIE: /Temp/UEDPIE_0_Untitled_1 0.992のプレイ イン エディタの開始時間
+[2020.01.30-03.04.58:125][568]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.05.06:766][ 85]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.05.06:804][ 85]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.05.08:743][199]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.05.18:041][752]LogEditorViewport: Clicking on Actor (LMB): BP_Player_C (BP_Player)
+[2020.01.30-03.05.19:353][829]Cmd: DELETE
+[2020.01.30-03.05.19:353][829]Cmd: ACTOR DELETE
+[2020.01.30-03.05.19:355][829]LogEditorActor: Deleted Actor: BP_Player_C
+[2020.01.30-03.05.19:379][829]LogEditorActor: Deleted 1 Actors (0.026 secs)
+[2020.01.30-03.05.21:087][932]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.05.21:220][940]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.05.21:231][940]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.05.21:232][940]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.05.21:232][940]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:05:21)
+[2020.01.30-03.05.21:232][940]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.05.21:236][940]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003414s)
+[2020.01.30-03.05.21:237][940]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.05.21:237][940]LogPlayLevel: PIE: World Init took: (0.000974s)
+[2020.01.30-03.05.21:237][940]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004614s)
+[2020.01.30-03.05.21:264][940]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.05.21:296][940]LogInit: FAudioDevice initialized.
+[2020.01.30-03.05.21:333][940]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.05.21:335][940]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.05.21
+[2020.01.30-03.05.21:335][940]LogWorld: Bringing up level for play took: 0.000519
+[2020.01.30-03.05.21:335][940]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.05.21:335][940]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.05.21:336][940]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.05.21:336][940]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.05.21:336][940]PIE: /Temp/UEDPIE_0_Untitled_1 0.203のプレイ イン エディタの開始時間
+[2020.01.30-03.05.21:336][940]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.05.23:853][ 90]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.05.23:889][ 90]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.05.31:454][542]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.05.52:280][780]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.05.52:397][787]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.05.52:409][787]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.05.52:410][787]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.05.52:410][787]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:05:52)
+[2020.01.30-03.05.52:410][787]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.05.52:413][787]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002923s)
+[2020.01.30-03.05.52:414][787]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.05.52:414][787]LogPlayLevel: PIE: World Init took: (0.001140s)
+[2020.01.30-03.05.52:415][787]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004287s)
+[2020.01.30-03.05.52:475][787]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.05.52:507][787]LogInit: FAudioDevice initialized.
+[2020.01.30-03.05.52:541][787]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.05.52:542][787]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.05.52
+[2020.01.30-03.05.52:542][787]LogWorld: Bringing up level for play took: 0.000693
+[2020.01.30-03.05.52:543][787]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.05.52:543][787]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.05.52:543][787]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.05.52:544][787]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.05.52:544][787]PIE: /Temp/UEDPIE_0_Untitled_1 -0.589のプレイ イン エディタの開始時間
+[2020.01.30-03.05.52:544][787]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.06.04:564][502]LogEditorViewport: Clicking on Actor (LMB): DefaultPawn (DefaultPawn)
+[2020.01.30-03.06.18:703][342]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.06.27:246][854]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.06.27:292][854]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.06.36:096][381]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.06.36:111][381]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.06.36:112][381]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.06.36:112][381]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:06:36)
+[2020.01.30-03.06.36:112][381]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.06.36:114][381]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002535s)
+[2020.01.30-03.06.36:115][381]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.06.36:116][381]LogPlayLevel: PIE: World Init took: (0.001162s)
+[2020.01.30-03.06.36:116][381]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003912s)
+[2020.01.30-03.06.36:146][381]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.06.36:178][381]LogInit: FAudioDevice initialized.
+[2020.01.30-03.06.36:210][381]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.06.36:212][381]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.06.36
+[2020.01.30-03.06.36:212][381]LogWorld: Bringing up level for play took: 0.000749
+[2020.01.30-03.06.36:213][381]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.06.36:213][381]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.06.36:213][381]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.06.36:214][381]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.06.36:214][381]PIE: /Temp/UEDPIE_0_Untitled_1 1.082のプレイ イン エディタの開始時間
+[2020.01.30-03.06.36:214][381]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.06.48:096][ 90]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.06.48:137][ 90]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.07.12:303][530]LogUObjectGlobals: Warning: オブジェクト 'Class なし.None' が見つかりませんでした
+[2020.01.30-03.07.17:059][815]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.07.17:071][815]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.07.17:071][815]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.07.17:071][815]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:07:17)
+[2020.01.30-03.07.17:071][815]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.07.17:074][815]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002853s)
+[2020.01.30-03.07.17:075][815]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.07.17:075][815]LogPlayLevel: PIE: World Init took: (0.001058s)
+[2020.01.30-03.07.17:075][815]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004087s)
+[2020.01.30-03.07.17:104][815]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.07.17:135][815]LogInit: FAudioDevice initialized.
+[2020.01.30-03.07.17:170][815]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.07.17:172][815]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.07.17
+[2020.01.30-03.07.17:173][815]LogWorld: Bringing up level for play took: 0.001095
+[2020.01.30-03.07.17:173][815]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.07.17:174][815]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.07.17:174][815]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.07.17:180][815]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.07.17:180][815]PIE: /Temp/UEDPIE_0_Untitled_1 0.047のプレイ イン エディタの開始時間
+[2020.01.30-03.07.17:180][815]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.07.26:181][354]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.07.26:217][354]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.07.40:985][227]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.07.41:102][234]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.07.41:113][234]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.07.41:114][234]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.07.41:114][234]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:07:41)
+[2020.01.30-03.07.41:114][234]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.07.41:117][234]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002472s)
+[2020.01.30-03.07.41:118][234]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.07.41:118][234]LogPlayLevel: PIE: World Init took: (0.001342s)
+[2020.01.30-03.07.41:118][234]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004037s)
+[2020.01.30-03.07.41:147][234]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.07.41:178][234]LogInit: FAudioDevice initialized.
+[2020.01.30-03.07.41:216][234]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.07.41:218][234]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.07.41
+[2020.01.30-03.07.41:218][234]LogWorld: Bringing up level for play took: 0.001038
+[2020.01.30-03.07.41:219][234]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.07.41:220][234]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.07.41:220][234]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.07.41:220][234]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.07.41:220][234]PIE: /Temp/UEDPIE_0_Untitled_1 0.087のプレイ イン エディタの開始時間
+[2020.01.30-03.07.41:220][234]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.08.06:637][758]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.08.06:679][758]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.08.11:452][ 43]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.08.11:462][ 43]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.08.11:463][ 43]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.08.11:463][ 43]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:08:11)
+[2020.01.30-03.08.11:463][ 43]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.08.11:465][ 43]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002189s)
+[2020.01.30-03.08.11:466][ 43]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.08.11:466][ 43]LogPlayLevel: PIE: World Init took: (0.001306s)
+[2020.01.30-03.08.11:467][ 43]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003718s)
+[2020.01.30-03.08.11:498][ 43]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.08.11:535][ 43]LogInit: FAudioDevice initialized.
+[2020.01.30-03.08.11:570][ 43]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.08.11:571][ 43]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.08.11
+[2020.01.30-03.08.11:572][ 43]LogWorld: Bringing up level for play took: 0.000698
+[2020.01.30-03.08.11:572][ 43]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.08.11:572][ 43]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.08.11:572][ 43]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.08.11:572][ 43]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.08.11:573][ 43]PIE: /Temp/UEDPIE_0_Untitled_1 0.44のプレイ イン エディタの開始時間
+[2020.01.30-03.08.11:573][ 43]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.10.03:608][391]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.10.03:649][391]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.10.04:425][436]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2020.01.30-03.10.06:680][570]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.10.06:812][578]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.10.06:825][578]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.10.06:825][578]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.10.06:825][578]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:10:06)
+[2020.01.30-03.10.06:825][578]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.10.06:828][578]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002210s)
+[2020.01.30-03.10.06:829][578]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.10.06:829][578]LogPlayLevel: PIE: World Init took: (0.001381s)
+[2020.01.30-03.10.06:829][578]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003908s)
+[2020.01.30-03.10.06:861][578]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.10.06:896][578]LogInit: FAudioDevice initialized.
+[2020.01.30-03.10.06:931][578]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.10.06:933][578]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.10.06
+[2020.01.30-03.10.06:933][578]LogWorld: Bringing up level for play took: 0.000770
+[2020.01.30-03.10.06:934][578]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.10.06:934][578]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.10.06:934][578]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.10.06:934][578]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.10.06:934][578]PIE: /Temp/UEDPIE_0_Untitled_1 -0.199のプレイ イン エディタの開始時間
+[2020.01.30-03.10.06:934][578]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.10.11:120][828]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.10.11:157][828]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.10.49:468][123]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.10.50:403][178]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.11.11:447][425]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.11.15:500][668]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.11.15:513][668]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.11.15:513][668]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.11.15:513][668]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:11:15)
+[2020.01.30-03.11.15:514][668]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.11.15:518][668]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003926s)
+[2020.01.30-03.11.15:519][668]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.11.15:519][668]LogPlayLevel: PIE: World Init took: (0.001216s)
+[2020.01.30-03.11.15:519][668]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.005387s)
+[2020.01.30-03.11.15:556][668]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.11.15:588][668]LogInit: FAudioDevice initialized.
+[2020.01.30-03.11.15:626][668]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.11.15:627][668]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.11.15
+[2020.01.30-03.11.15:627][668]LogWorld: Bringing up level for play took: 0.000608
+[2020.01.30-03.11.15:628][668]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.11.15:628][668]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.11.15:628][668]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.11.15:628][668]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.11.15:628][668]PIE: /Temp/UEDPIE_0_Untitled_1 0.495のプレイ イン エディタの開始時間
+[2020.01.30-03.11.15:628][668]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.11.19:019][870]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.11.19:057][870]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.11.30:147][229]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.11.34:732][494]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.11.38:731][734]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2020.01.30-03.11.39:545][780]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.11.40:613][844]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.11.54:551][670]LogUObjectGlobals: Warning: オブジェクト 'Class なし.None' が見つかりませんでした
+[2020.01.30-03.12.20:845][767]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.12.21:911][831]LogEditorViewport: Clicking on Actor (LMB): BP_Player_C (BP_Player)
+[2020.01.30-03.12.23:143][904]Cmd: DELETE
+[2020.01.30-03.12.23:143][904]Cmd: ACTOR DELETE
+[2020.01.30-03.12.23:145][904]LogEditorActor: Deleted Actor: BP_Player_C
+[2020.01.30-03.12.23:168][904]LogEditorActor: Deleted 1 Actors (0.024 secs)
+[2020.01.30-03.12.24:311][973]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.12.26:671][ 99]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba5da4ee8, Size=4, Default__SKEL_BP_Player_C Function /Game/game/BluePrint/BP_Player.SKEL_BP_Player_C:ExecuteUbergraph_BP_Player
+[2020.01.30-03.12.33:289][493]BlueprintLog: New page: BP_Player をコンパイル
+[2020.01.30-03.12.33:294][493]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba5da4ee8, Size=4
+[2020.01.30-03.12.33:294][493]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba5da4ee8, Size=4, Default__SKEL_BP_Player_C Function /Engine/Transient.REINST_SKEL_BP_Player_C_89:ExecuteUbergraph_BP_Player
+[2020.01.30-03.12.33:297][493]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba6f45e68, Size=40
+[2020.01.30-03.12.33:297][493]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b24c1bb78, Size=40, BP_Player_C_44 Function /Engine/Transient.REINST_BP_Player_C_91:ExecuteUbergraph_BP_Player
+[2020.01.30-03.12.33:300][493]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b24c19fa8, Size=40, Default__BP_Player_C Function /Game/game/BluePrint/BP_Player.BP_Player_C:ExecuteUbergraph_BP_Player
+[2020.01.30-03.12.33:619][493]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba5da4ee8, Size=4
+[2020.01.30-03.13.09:198][625]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.13.09:246][625]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b1fabbe90, Size=16
+[2020.01.30-03.13.09:246][625]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b81c5ffd0, Size=16, Untitled_C_1 Function /Engine/Transient.REINST_Untitled_C_95:ExecuteUbergraph_Untitled
+[2020.01.30-03.13.09:247][625]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b81c5f3e0, Size=16, Default__Untitled_C Function /Temp/Untitled_1.Untitled_C:ExecuteUbergraph_Untitled
+[2020.01.30-03.13.09:353][625]LogSavePackage: Save=111.23ms
+[2020.01.30-03.13.09:353][625]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Untitled_1_Auto800D5C1B64235A0FD09ABECA341EF6C20.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto8.umap'
+[2020.01.30-03.13.09:356][625]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Temp/Untitled_1_Auto8.umap
+[2020.01.30-03.13.09:361][625]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.143
+[2020.01.30-03.13.09:361][625]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.143
+[2020.01.30-03.13.09:366][625]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/game/BluePrint/BP_Player] ([1] browsable assets)...
+[2020.01.30-03.13.09:366][625]OBJ SavePackage: Finished generating thumbnails for package [/Game/game/BluePrint/BP_Player]
+[2020.01.30-03.13.09:390][625]LogSavePackage: Save=9.46ms
+[2020.01.30-03.13.09:390][625]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/BP_Player_Auto8D430CC8448256965DC4E9393CD39055A.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/BP_Player_Auto8.uasset'
+[2020.01.30-03.13.09:393][625]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/BP_Player_Auto8.uasset
+[2020.01.30-03.13.09:395][625]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/game/BluePrint/BP_GameMode] ([1] browsable assets)...
+[2020.01.30-03.13.09:395][625]OBJ SavePackage: Finished generating thumbnails for package [/Game/game/BluePrint/BP_GameMode]
+[2020.01.30-03.13.09:406][625]LogSavePackage: Save=8.39ms
+[2020.01.30-03.13.09:406][625]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/BP_GameMode_Auto8798F26BE43F2A504F2404EA2FF4E9649.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/BP_GameMode_Auto8.uasset'
+[2020.01.30-03.13.09:409][625]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/Autosaves/Game/game/BluePrint/BP_GameMode_Auto8.uasset
+[2020.01.30-03.13.09:409][625]LogFileHelpers: Auto-saving content packages took 0.046
+[2020.01.30-03.13.26:760][665]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.13.27:900][732]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.13.46:726][856]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.13.51:229][121]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.14.03:306][838]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.14.03:423][845]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.14.03:441][845]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.14.03:442][845]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.14.03:442][845]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:14:03)
+[2020.01.30-03.14.03:442][845]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.14.03:444][845]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002158s)
+[2020.01.30-03.14.03:445][845]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.14.03:445][845]LogPlayLevel: PIE: World Init took: (0.001039s)
+[2020.01.30-03.14.03:445][845]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003392s)
+[2020.01.30-03.14.03:467][845]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b81c5ffd0, Size=16
+[2020.01.30-03.14.03:479][845]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.14.03:513][845]LogInit: FAudioDevice initialized.
+[2020.01.30-03.14.03:555][845]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.14.03:557][845]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.14.03
+[2020.01.30-03.14.03:557][845]LogWorld: Bringing up level for play took: 0.000796
+[2020.01.30-03.14.03:558][845]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.14.03:558][845]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.14.03:558][845]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.14.03:558][845]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.14.03:558][845]PIE: /Temp/UEDPIE_0_Untitled_1 0.425のプレイ イン エディタの開始時間
+[2020.01.30-03.14.03:559][845]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.14.09:865][222]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.14.09:905][222]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.14.35:521][756]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.14.36:936][841]LogEditorViewport: Clicking on Actor (LMB): BP_Player_C (BP_Player)
+[2020.01.30-03.14.38:390][927]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.14.39:209][976]LogEditorActor: Deleted Actor: BP_Player_C
+[2020.01.30-03.14.39:230][976]LogEditorActor: Deleted 1 Actors (0.023 secs)
+[2020.01.30-03.14.46:339][391]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.14.50:508][631]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba5da7e80, Size=4, Default__SKEL_BP_Player_C Function /Game/game/BluePrint/BP_Player.SKEL_BP_Player_C:ExecuteUbergraph_BP_Player
+[2020.01.30-03.14.50:532][631]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2020.01.30-03.14.55:064][894]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba5da7e80, Size=4
+[2020.01.30-03.14.55:064][894]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba5da7e80, Size=4, Default__SKEL_BP_Player_C Function /Engine/Transient.REINST_SKEL_BP_Player_C_99:ExecuteUbergraph_BP_Player
+[2020.01.30-03.14.55:066][894]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba5da41a8, Size=4, Default__SKEL_BP_Player_C Function /Game/game/BluePrint/BP_Player.SKEL_BP_Player_C:ExecuteUbergraph_BP_Player
+[2020.01.30-03.14.56:383][966]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.14.56:483][972]BlueprintLog: New page: BP_Player をコンパイル
+[2020.01.30-03.14.56:485][972]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba5da41a8, Size=4
+[2020.01.30-03.14.56:485][972]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba5da41a8, Size=4, Default__SKEL_BP_Player_C Function /Engine/Transient.REINST_SKEL_BP_Player_C_101:ExecuteUbergraph_BP_Player
+[2020.01.30-03.14.56:488][972]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b24c19fa8, Size=40
+[2020.01.30-03.14.56:488][972]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b99e0c0e0, Size=40, BP_Player_C_81 Function /Engine/Transient.REINST_BP_Player_C_103:ExecuteUbergraph_BP_Player
+[2020.01.30-03.14.56:489][972]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b99e0c0b8, Size=40, Default__BP_Player_C Function /Game/game/BluePrint/BP_Player.BP_Player_C:ExecuteUbergraph_BP_Player
+[2020.01.30-03.14.56:800][972]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba5da41a8, Size=4
+[2020.01.30-03.14.56:800][972]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba5da7e80, Size=4
+[2020.01.30-03.15.44:737][800]BlueprintLog: New page: BP_Player をコンパイル
+[2020.01.30-03.15.44:745][800]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b99e0c0b8, Size=40
+[2020.01.30-03.15.44:745][800]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba4e75738, Size=40, BP_Player_C_155 Function /Engine/Transient.REINST_BP_Player_C_107:ExecuteUbergraph_BP_Player
+[2020.01.30-03.15.44:747][800]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017ba4e75698, Size=40, Default__BP_Player_C Function /Game/game/BluePrint/BP_Player.BP_Player_C:ExecuteUbergraph_BP_Player
+[2020.01.30-03.15.45:707][829]LogTemp: Repeating last play command: 選択ビューポート
+[2020.01.30-03.15.45:725][829]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.15.45:725][829]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2020.01.30-03.15.45:725][829]PIE: New page: PIEセッション: Untitled_1 (2020/01/30 21:15:45)
+[2020.01.30-03.15.45:726][829]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2020.01.30-03.15.45:728][829]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002232s)
+[2020.01.30-03.15.45:729][829]LogAIModule: Creating AISystem for world Untitled_1
+[2020.01.30-03.15.45:729][829]LogPlayLevel: PIE: World Init took: (0.001204s)
+[2020.01.30-03.15.45:729][829]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003627s)
+[2020.01.30-03.15.45:750][829]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba4e75738, Size=40
+[2020.01.30-03.15.45:760][829]LogInit: XAudio2 using 'スピーカー (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2020.01.30-03.15.45:795][829]LogInit: FAudioDevice initialized.
+[2020.01.30-03.15.45:834][829]LogLoad: Game class is 'BP_GameMode_C'
+[2020.01.30-03.15.45:836][829]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2020.01.30-12.15.45
+[2020.01.30-03.15.45:836][829]LogWorld: Bringing up level for play took: 0.001282
+[2020.01.30-03.15.45:837][829]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.15.45:837][829]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2020.01.30-03.15.45:837][829]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.15.45:838][829]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2020.01.30-03.15.45:838][829]PIE: /Temp/UEDPIE_0_Untitled_1 0.705のプレイ イン エディタの開始時間
+[2020.01.30-03.15.45:838][829]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.15.49:702][ 58]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.15.49:738][ 58]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Temp/Untitled_1.Untitled_1:PersistentLevel' has LevelScriptBlueprint '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled' with GeneratedClass '/Temp/Untitled_1.Untitled_C' with ClassGeneratedBy '/Temp/Untitled_1.Untitled_1:PersistentLevel.Untitled'
+[2020.01.30-03.16.19:478][355]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.16.21:769][492]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2020.01.30-03.16.50:781][603]LogSlate: Window '親クラスを選択' being destroyed
+[2020.01.30-03.17.03:343][224]LogSlate: Window 'Delete Assets' being destroyed
+[2020.01.30-03.17.43:318][489]LogSlate: Window '親クラスを選択' being destroyed
+[2020.01.30-03.18.01:498][ 19]LogSlate: Window '名前を付けてレベルを保存する' being destroyed
+[2020.01.30-03.18.01:737][ 19]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b81c5f3e0, Size=16
+[2020.01.30-03.18.01:737][ 19]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b6dd83940, Size=16, Default__game_C Function /Engine/Transient.REINST_game_C_113:ExecuteUbergraph_Untitled
+[2020.01.30-03.18.01:739][ 19]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b6dd83ab0, Size=16, Default__game_C Function /Game/game.game_C:ExecuteUbergraph_game
+[2020.01.30-03.18.01:835][ 19]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/game" FILE="../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2020.01.30-03.18.01:861][ 19]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b6dd83ab0, Size=16
+[2020.01.30-03.18.01:861][ 19]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b6dd83ab0, Size=16, game_C_0 Function /Engine/Transient.REINST_game_C_117:ExecuteUbergraph_game
+[2020.01.30-03.18.01:862][ 19]LogUObjectGlobals: Created PersistentFrame Addr=0x0000017b6dd80100, Size=16, Default__game_C Function /Game/game.game_C:ExecuteUbergraph_game
+[2020.01.30-03.18.01:973][ 19]LogSavePackage: Save=115.04ms
+[2020.01.30-03.18.01:973][ 19]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/gameCC0362B74B5332FBD21A9EA59AC64DBF.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game.umap'
+[2020.01.30-03.18.01:978][ 19]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game.umap
+[2020.01.30-03.18.01:994][ 19]LogFileHelpers: Saving map 'game' took 0.487
+[2020.01.30-03.18.02:023][ 19]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/game/BluePrint/BP_Player" FILE="../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/BP_Player.uasset" SILENT=true
+[2020.01.30-03.18.02:046][ 19]LogSavePackage: Save=18.16ms
+[2020.01.30-03.18.02:047][ 19]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/BP_Player87E145C9447D395619AC3CA62DF23AA1.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/BP_Player.uasset'
+[2020.01.30-03.18.02:053][ 19]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/BP_Player.uasset
+[2020.01.30-03.18.02:061][ 19]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/game/BluePrint/BP_GameMode" FILE="../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/BP_GameMode.uasset" SILENT=true
+[2020.01.30-03.18.02:073][ 19]LogSavePackage: Save=8.31ms
+[2020.01.30-03.18.02:073][ 19]LogSavePackage: Moving '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Saved/BP_GameMode2C5950154D58C1B5F0A15698F4AF94B5.tmp' to '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/BP_GameMode.uasset'
+[2020.01.30-03.18.02:079][ 19]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/game/BluePrint/BP_GameMode.uasset
+[2020.01.30-03.18.03:437][ 99]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b99e0c0e0, Size=40
+[2020.01.30-03.18.03:437][ 99]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba6f47c40, Size=40
+[2020.01.30-03.18.03:437][ 99]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b1fab9bc0, Size=16
+[2020.01.30-03.18.03:437][ 99]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b6dd83ab0, Size=16
+[2020.01.30-03.18.03:437][ 99]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b24c1bb78, Size=40
+[2020.01.30-03.18.03:437][ 99]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b6dd83940, Size=16
+[2020.01.30-03.18.03:643][ 99]LogSlate: Window 'BP_GameMode' being destroyed
+[2020.01.30-03.18.03:654][ 99]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2020.01.30-03.18.03:714][ 99]LogSlate: Window 'プロジェクト設定' being destroyed
+[2020.01.30-03.18.03:751][ 99]LogSlate: Window 'bennkyou - アンリアルエディタ' being destroyed
+[2020.01.30-03.18.03:769][ 99]LogWindowsTextInputMethodSystem: Display: IME system now activated using TSF (Microsoft IME).
+[2020.01.30-03.18.04:096][100]Cmd: QUIT_EDITOR
+[2020.01.30-03.18.04:437][100]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2020.01.30-03.18.04:438][100]LogExit: Preparing to exit.
+[2020.01.30-03.18.05:367][100]LogDirectoryWatcher: A directory notification for 'C:/Users/game126/Documents/Unreal Projects/bennkyou/Content/' was aborted.
+[2020.01.30-03.18.05:524][100]LogExit: Editor shut down
+[2020.01.30-03.18.05:551][100]LogExit: Transaction tracking system shut down
+[2020.01.30-03.18.05:565][100]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b696448b8, Size=4
+[2020.01.30-03.18.05:566][100]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b696448b0, Size=4
+[2020.01.30-03.18.05:573][100]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017ba4e75698, Size=40
+[2020.01.30-03.18.05:574][100]LogUObjectGlobals: Destroyed PersistentFrame Addr=0x0000017b6dd80100, Size=16
+[2020.01.30-03.18.05:770][100]LogDirectoryWatcher: A directory notification for '../../../Engine/Content/' was aborted.
+[2020.01.30-03.18.05:770][100]LogDirectoryWatcher: A directory notification for '../../../../../../Users/game126/Documents/Unreal Projects/bennkyou/Content/' was aborted.
+[2020.01.30-03.18.05:770][100]LogDirectoryWatcher: A directory notification for '../../Plugins/2D/Paper2D/Content/' was aborted.
+[2020.01.30-03.18.05:770][100]LogDirectoryWatcher: A directory notification for '../../Plugins/Enterprise/DatasmithContent/Content/' was aborted.
+[2020.01.30-03.18.05:770][100]LogDirectoryWatcher: A directory notification for '../../Plugins/Media/MediaCompositing/Content/' was aborted.
+[2020.01.30-03.18.05:770][100]LogDirectoryWatcher: A directory notification for '../../Plugins/Runtime/AppleARKit/Content/' was aborted.
+[2020.01.30-03.18.05:770][100]LogDirectoryWatcher: A directory notification for '../../Plugins/Runtime/Oculus/OculusVR/Content/' was aborted.
+[2020.01.30-03.18.05:770][100]LogDirectoryWatcher: A directory notification for '../../Plugins/Runtime/Steam/SteamVR/Content/' was aborted.
+[2020.01.30-03.18.05:952][100]LogExit: Object subsystem successfully closed.
+[2020.01.30-03.18.05:994][100]LogShaderCompilers: Display: Shaders left to compile 0
+[2020.01.30-03.18.06:002][100]LogD3D11RHI: Shutdown
+[2020.01.30-03.18.06:002][100]LogD3D11RHI: CleanupD3DDevice
+[2020.01.30-03.18.06:011][100]LogD3D11RHI: ~FD3D11DynamicRHI
+[2020.01.30-03.18.06:119][100]LogModuleManager: Shutting down and abandoning module ExternalImagePicker (584)
+[2020.01.30-03.18.06:119][100]LogModuleManager: Shutting down and abandoning module BlueprintGraph (582)
+[2020.01.30-03.18.06:119][100]LogModuleManager: Shutting down and abandoning module MovieSceneCapture (580)
+[2020.01.30-03.18.06:120][100]LogModuleManager: Shutting down and abandoning module HierarchicalLODOutliner (578)
+[2020.01.30-03.18.06:120][100]LogModuleManager: Shutting down and abandoning module WorldBrowser (576)
+[2020.01.30-03.18.06:120][100]LogModuleManager: Shutting down and abandoning module SceneOutliner (574)
+[2020.01.30-03.18.06:120][100]LogModuleManager: Shutting down and abandoning module AddContentDialog (572)
+[2020.01.30-03.18.06:121][100]LogDirectoryWatcher: A directory notification for 'C:/Program Files/Epic Games/UE_4.19/FeaturePacks/' was aborted.
+[2020.01.30-03.18.06:130][100]LogModuleManager: Shutting down and abandoning module WidgetCarousel (571)
+[2020.01.30-03.18.06:130][100]LogModuleManager: Shutting down and abandoning module EditorWidgets (568)
+[2020.01.30-03.18.06:130][100]LogModuleManager: Shutting down and abandoning module CollectionManager (566)
+[2020.01.30-03.18.06:131][100]LogDirectoryWatcher: A directory notification for 'C:/Users/game126/Documents/Unreal Projects/bennkyou/Content/Collections/' was aborted.
+[2020.01.30-03.18.06:131][100]LogDirectoryWatcher: A directory notification for 'C:/Users/game126/Documents/Unreal Projects/bennkyou/Content/Developers/game126/Collections/' was aborted.
+[2020.01.30-03.18.06:131][100]LogDirectoryWatcher: A directory notification for 'C:/Users/game126/Documents/Unreal Projects/bennkyou/Saved/Collections/' was aborted.
+[2020.01.30-03.18.06:131][100]LogModuleManager: Shutting down and abandoning module HierarchicalLODUtilities (564)
+[2020.01.30-03.18.06:131][100]LogModuleManager: Shutting down and abandoning module StatsViewer (562)
+[2020.01.30-03.18.06:131][100]LogModuleManager: Shutting down and abandoning module FoliageEdit (560)
+[2020.01.30-03.18.06:131][100]LogModuleManager: Shutting down and abandoning module LandscapeEditor (558)
+[2020.01.30-03.18.06:132][100]LogModuleManager: Shutting down and abandoning module MeshPaintMode (556)
+[2020.01.30-03.18.06:132][100]LogModuleManager: Shutting down and abandoning module SceneDepthPickerMode (554)
+[2020.01.30-03.18.06:132][100]LogModuleManager: Shutting down and abandoning module ActorPickerMode (552)
+[2020.01.30-03.18.06:132][100]LogModuleManager: Shutting down and abandoning module GeometryMode (550)
+[2020.01.30-03.18.06:133][100]LogModuleManager: Shutting down and abandoning module TextureAlignMode (548)
+[2020.01.30-03.18.06:133][100]LogModuleManager: Shutting down and abandoning module BspMode (546)
+[2020.01.30-03.18.06:133][100]LogModuleManager: Shutting down and abandoning module PIEPreviewDeviceProfileSelector (544)
+[2020.01.30-03.18.06:133][100]LogModuleManager: Shutting down and abandoning module HardwareSurvey (542)
+[2020.01.30-03.18.06:133][100]LogModuleManager: Shutting down and abandoning module SequenceRecorderSections (540)
+[2020.01.30-03.18.06:133][100]LogModuleManager: Shutting down and abandoning module AutomationWorker (538)
+[2020.01.30-03.18.06:133][100]LogModuleManager: Shutting down and abandoning module AudioCaptureEditor (536)
+[2020.01.30-03.18.06:133][100]LogModuleManager: Shutting down and abandoning module SequenceRecorder (535)
+[2020.01.30-03.18.06:134][100]LogModuleManager: Shutting down and abandoning module MatineeToLevelSequence (532)
+[2020.01.30-03.18.06:134][100]LogModuleManager: Shutting down and abandoning module LevelSequenceEditor (530)
+[2020.01.30-03.18.06:136][100]LogModuleManager: Shutting down and abandoning module PlacementMode (529)
+[2020.01.30-03.18.06:136][100]LogModuleManager: Shutting down and abandoning module MaterialEditor (528)
+[2020.01.30-03.18.06:137][100]LogModuleManager: Shutting down and abandoning module WmfMediaFactory (524)
+[2020.01.30-03.18.06:137][100]LogModuleManager: Shutting down and abandoning module WmfMediaEditor (522)
+[2020.01.30-03.18.06:137][100]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (520)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module OpenExrWrapper (518)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module ImgMediaFactory (516)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module ImgMediaEditor (514)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module AvfMediaFactory (512)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module AvfMediaEditor (510)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module AndroidMediaFactory (508)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module AndroidMediaEditor (506)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module CharacterAI (504)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module SmartSnapping (502)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module SessionServices (500)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module ViewportSnapping (498)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module ViewportInteraction (496)
+[2020.01.30-03.18.06:139][100]LogModuleManager: Shutting down and abandoning module ClothPainter (494)
+[2020.01.30-03.18.06:140][100]LogModuleManager: Shutting down and abandoning module SkeletalMeshEditor (493)
+[2020.01.30-03.18.06:142][100]LogModuleManager: Shutting down and abandoning module LogVisualizer (490)
+[2020.01.30-03.18.06:144][100]LogModuleManager: Shutting down and abandoning module IntroTutorials (488)
+[2020.01.30-03.18.06:146][100]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (487)
+[2020.01.30-03.18.06:147][100]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (484)
+[2020.01.30-03.18.06:147][100]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (482)
+[2020.01.30-03.18.06:147][100]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (480)
+[2020.01.30-03.18.06:147][100]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (479)
+[2020.01.30-03.18.06:825][100]LogModuleManager: Shutting down and abandoning module WindowsPlatformEditor (476)
+[2020.01.30-03.18.06:825][100]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (474)
+[2020.01.30-03.18.06:825][100]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (472)
+[2020.01.30-03.18.06:825][100]LogModuleManager: Shutting down and abandoning module InputBindingEditor (470)
+[2020.01.30-03.18.06:825][100]LogModuleManager: Shutting down and abandoning module MergeActors (468)
+[2020.01.30-03.18.06:830][100]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (466)
+[2020.01.30-03.18.06:831][100]LogModuleManager: Shutting down and abandoning module LocalizationService (465)
+[2020.01.30-03.18.06:832][100]LogModuleManager: Shutting down and abandoning module HardwareTargeting (462)
+[2020.01.30-03.18.06:832][100]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (460)
+[2020.01.30-03.18.06:832][100]LogModuleManager: Shutting down and abandoning module UndoHistory (458)
+[2020.01.30-03.18.06:832][100]LogModuleManager: Shutting down and abandoning module XmlParser (456)
+[2020.01.30-03.18.06:833][100]LogModuleManager: Shutting down and abandoning module Blutility (454)
+[2020.01.30-03.18.06:833][100]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (452)
+[2020.01.30-03.18.06:833][100]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (451)
+[2020.01.30-03.18.06:833][100]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (448)
+[2020.01.30-03.18.06:833][100]LogModuleManager: Shutting down and abandoning module SettingsEditor (446)
+[2020.01.30-03.18.06:835][100]LogModuleManager: Shutting down and abandoning module ProjectLauncher (444)
+[2020.01.30-03.18.06:835][100]LogModuleManager: Shutting down and abandoning module SessionFrontend (442)
+[2020.01.30-03.18.06:835][100]LogModuleManager: Shutting down and abandoning module ProfilerClient (440)
+[2020.01.30-03.18.06:835][100]LogModuleManager: Shutting down and abandoning module DeviceManager (438)
+[2020.01.30-03.18.06:836][100]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (437)
+[2020.01.30-03.18.06:892][100]LogModuleManager: Shutting down and abandoning module AutomationController (434)
+[2020.01.30-03.18.06:892][100]LogModuleManager: Shutting down and abandoning module AutomationWindow (432)
+[2020.01.30-03.18.06:894][100]LogModuleManager: Shutting down and abandoning module Layers (430)
+[2020.01.30-03.18.06:896][100]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (428)
+[2020.01.30-03.18.06:896][100]LogModuleManager: Shutting down and abandoning module DetailCustomizations (426)
+[2020.01.30-03.18.06:897][100]LogModuleManager: Shutting down and abandoning module PackagesDialog (424)
+[2020.01.30-03.18.06:897][100]LogModuleManager: Shutting down and abandoning module Persona (422)
+[2020.01.30-03.18.06:898][100]LogModuleManager: Shutting down and abandoning module AdvancedPreviewScene (421)
+[2020.01.30-03.18.06:898][100]LogModuleManager: Shutting down and abandoning module AnimGraph (419)
+[2020.01.30-03.18.06:899][100]LogModuleManager: Shutting down and abandoning module Kismet (416)
+[2020.01.30-03.18.06:907][100]LogModuleManager: Shutting down and abandoning module GraphEditor (414)
+[2020.01.30-03.18.06:907][100]LogModuleManager: Shutting down and abandoning module ClassViewer (412)
+[2020.01.30-03.18.06:908][100]LogModuleManager: Shutting down and abandoning module Toolbox (410)
+[2020.01.30-03.18.06:908][100]LogModuleManager: Shutting down and abandoning module ModuleUI (408)
+[2020.01.30-03.18.06:909][100]LogModuleManager: Shutting down and abandoning module MovieSceneTools (406)
+[2020.01.30-03.18.06:910][100]LogModuleManager: Shutting down and abandoning module OutputLog (404)
+[2020.01.30-03.18.06:910][100]LogModuleManager: Shutting down and abandoning module GammaUI (402)
+[2020.01.30-03.18.06:911][100]LogModuleManager: Shutting down and abandoning module Documentation (400)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module MovieSceneTracks (398)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module MovieScene (396)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (394)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module LauncherPlatform (392)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module AnalyticsET (390)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module PortalServices (388)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module PortalRpc (386)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module MessagingRpc (384)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module AIModule (382)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module GameplayDebugger (381)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module AITestSuite (379)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module DesktopPlatform (376)
+[2020.01.30-03.18.06:913][100]LogModuleManager: Shutting down and abandoning module ProfilerService (374)
+[2020.01.30-03.18.07:057][100]LogModuleManager: Shutting down and abandoning module TaskGraph (372)
+[2020.01.30-03.18.07:058][100]LogModuleManager: Shutting down and abandoning module SteamVRController (370)
+[2020.01.30-03.18.07:058][100]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponentEditor (368)
+[2020.01.30-03.18.07:058][100]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (366)
+[2020.01.30-03.18.07:059][100]LogModuleManager: Shutting down and abandoning module OculusInput (364)
+[2020.01.30-03.18.07:059][100]LogModuleManager: Shutting down and abandoning module MobilePatchingUtils (362)
+[2020.01.30-03.18.07:059][100]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (360)
+[2020.01.30-03.18.07:060][100]LogModuleManager: Shutting down and abandoning module CableComponent (358)
+[2020.01.30-03.18.07:061][100]LogModuleManager: Shutting down and abandoning module AudioCapture (356)
+[2020.01.30-03.18.07:061][100]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (354)
+[2020.01.30-03.18.07:061][100]LogModuleManager: Shutting down and abandoning module AndroidPermission (352)
+[2020.01.30-03.18.07:061][100]LogModuleManager: Shutting down and abandoning module NUTUnrealEngine4 (348)
+[2020.01.30-03.18.07:061][100]LogModuleManager: Shutting down and abandoning module NetcodeUnitTest (346)
+[2020.01.30-03.18.07:065][100]LogModuleManager: Shutting down and abandoning module MediaCompositingEditor (344)
+[2020.01.30-03.18.07:066][100]LogModuleManager: Shutting down and abandoning module MediaCompositing (342)
+[2020.01.30-03.18.07:066][100]LogModuleManager: Shutting down and abandoning module LinearTimecode (340)
+[2020.01.30-03.18.07:066][100]LogModuleManager: Shutting down and abandoning module ImgMedia (338)
+[2020.01.30-03.18.07:075][100]LogModuleManager: Shutting down and abandoning module HTML5Networking (336)
+[2020.01.30-03.18.07:076][100]LogModuleManager: Shutting down and abandoning module AlembicImporter (334)
+[2020.01.30-03.18.07:077][100]LogModuleManager: Shutting down and abandoning module AlembicLibrary (333)
+[2020.01.30-03.18.07:077][100]LogModuleManager: Shutting down and abandoning module GeometryCache (332)
+[2020.01.30-03.18.07:077][100]LogModuleManager: Shutting down and abandoning module GeometryCacheEd (331)
+[2020.01.30-03.18.07:077][100]LogModuleManager: Shutting down and abandoning module DatasmithContent (326)
+[2020.01.30-03.18.07:077][100]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (324)
+[2020.01.30-03.18.07:077][100]LogModuleManager: Shutting down and abandoning module PluginBrowser (322)
+[2020.01.30-03.18.07:082][100]LogModuleManager: Shutting down and abandoning module MobileLauncherProfileWizard (320)
+[2020.01.30-03.18.07:084][100]LogModuleManager: Shutting down and abandoning module CryptoKeysOpenSSL (318)
+[2020.01.30-03.18.07:085][100]LogModuleManager: Shutting down and abandoning module CryptoKeys (316)
+[2020.01.30-03.18.07:085][100]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (314)
+[2020.01.30-03.18.07:085][100]LogModuleManager: Shutting down and abandoning module VisualStudioCodeSourceCodeAccess (312)
+[2020.01.30-03.18.07:086][100]LogModuleManager: Shutting down and abandoning module UObjectPlugin (310)
+[2020.01.30-03.18.07:086][100]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (308)
+[2020.01.30-03.18.07:088][100]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (306)
+[2020.01.30-03.18.07:092][100]LogModuleManager: Shutting down and abandoning module GitSourceControl (304)
+[2020.01.30-03.18.07:093][100]LogModuleManager: Shutting down and abandoning module SourceControl (303)
+[2020.01.30-03.18.07:094][100]LogModuleManager: Shutting down and abandoning module CLionSourceCodeAccess (300)
+[2020.01.30-03.18.07:094][100]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (298)
+[2020.01.30-03.18.07:094][100]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (296)
+[2020.01.30-03.18.07:094][100]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (294)
+[2020.01.30-03.18.07:095][100]LogModuleManager: Shutting down and abandoning module Paper2DEditor (292)
+[2020.01.30-03.18.07:096][100]LogModuleManager: Shutting down and abandoning module MeshPaint (291)
+[2020.01.30-03.18.07:097][100]LogModuleManager: Shutting down and abandoning module RuntimePhysXCooking (288)
+[2020.01.30-03.18.07:098][100]LogModuleManager: Shutting down and abandoning module PhysXVehiclesEditor (286)
+[2020.01.30-03.18.07:098][100]LogModuleManager: Shutting down and abandoning module PhysXVehicles (284)
+[2020.01.30-03.18.07:098][100]LogModuleManager: Shutting down and abandoning module OculusEditor (282)
+[2020.01.30-03.18.07:098][100]LogModuleManager: Shutting down and abandoning module LocationServicesBPLibrary (280)
+[2020.01.30-03.18.07:098][100]LogModuleManager: Shutting down and abandoning module ImmediatePhysicsEditor (278)
+[2020.01.30-03.18.07:098][100]LogModuleManager: Shutting down and abandoning module ImmediatePhysics (276)
+[2020.01.30-03.18.07:099][100]LogModuleManager: Shutting down and abandoning module ActorSequence (274)
+[2020.01.30-03.18.07:099][100]LogModuleManager: Shutting down and abandoning module UdpMessaging (272)
+[2020.01.30-03.18.07:199][100]LogModuleManager: Shutting down and abandoning module TcpMessaging (270)
+[2020.01.30-03.18.07:301][100]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (268)
+[2020.01.30-03.18.07:301][100]LogModuleManager: Shutting down and abandoning module FacialAnimationEditor (266)
+[2020.01.30-03.18.07:301][100]LogModuleManager: Shutting down and abandoning module FacialAnimation (264)
+[2020.01.30-03.18.07:301][100]LogModuleManager: Shutting down and abandoning module DataValidation (262)
+[2020.01.30-03.18.07:301][100]LogModuleManager: Shutting down and abandoning module AssetManagerEditor (260)
+[2020.01.30-03.18.07:302][100]LogModuleManager: Shutting down and abandoning module LevelEditor (259)
+[2020.01.30-03.18.07:303][100]LogModuleManager: Shutting down and abandoning module PixelInspectorModule (258)
+[2020.01.30-03.18.07:304][100]LogModuleManager: Shutting down and abandoning module CommonMenuExtensions (256)
+[2020.01.30-03.18.07:304][100]LogModuleManager: Shutting down and abandoning module MainFrame (254)
+[2020.01.30-03.18.07:304][100]LogModuleManager: Shutting down and abandoning module HotReload (253)
+[2020.01.30-03.18.07:305][100]LogModuleManager: Shutting down and abandoning module ContentBrowser (249)
+[2020.01.30-03.18.07:308][100]LogModuleManager: Shutting down and abandoning module TreeMap (247)
+[2020.01.30-03.18.07:309][100]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (244)
+[2020.01.30-03.18.07:309][100]LogModuleManager: Shutting down and abandoning module LiveLinkEditor (242)
+[2020.01.30-03.18.07:309][100]LogModuleManager: Shutting down and abandoning module LiveLink (240)
+[2020.01.30-03.18.07:936][100]LogModuleManager: Shutting down and abandoning module Paper2D (238)
+[2020.01.30-03.18.07:940][100]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (236)
+[2020.01.30-03.18.07:940][100]LogModuleManager: Shutting down and abandoning module WmfMedia (234)
+[2020.01.30-03.18.07:943][100]LogModuleManager: Shutting down and abandoning module Media (233)
+[2020.01.30-03.18.07:949][100]LogModuleManager: Shutting down and abandoning module PacketHandler (230)
+[2020.01.30-03.18.07:949][100]LogModuleManager: Shutting down and abandoning module ClothingSystemEditor (228)
+[2020.01.30-03.18.07:950][100]LogModuleManager: Shutting down and abandoning module ClothingSystemRuntime (226)
+[2020.01.30-03.18.07:951][100]LogModuleManager: Shutting down and abandoning module MediaAssets (224)
+[2020.01.30-03.18.07:951][100]LogModuleManager: Shutting down and abandoning module Overlay (222)
+[2020.01.30-03.18.07:951][100]LogModuleManager: Shutting down and abandoning module OverlayEditor (221)
+[2020.01.30-03.18.07:951][100]LogModuleManager: Shutting down and abandoning module VREditor (218)
+[2020.01.30-03.18.07:952][100]LogModuleManager: Shutting down and abandoning module StringTableEditor (216)
+[2020.01.30-03.18.07:952][100]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (214)
+[2020.01.30-03.18.07:952][100]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (212)
+[2020.01.30-03.18.07:955][100]LogModuleManager: Shutting down and abandoning module FunctionalTesting (210)
+[2020.01.30-03.18.07:955][100]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (208)
+[2020.01.30-03.18.07:956][100]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (207)
+[2020.01.30-03.18.07:956][100]LogModuleManager: Shutting down and abandoning module UMG (204)
+[2020.01.30-03.18.07:956][100]LogModuleManager: Shutting down and abandoning module UMGEditor (203)
+[2020.01.30-03.18.07:959][100]LogModuleManager: Shutting down and abandoning module Sequencer (202)
+[2020.01.30-03.18.07:960][100]LogModuleManager: Shutting down and abandoning module MessageLog (199)
+[2020.01.30-03.18.07:960][100]LogModuleManager: Shutting down and abandoning module SlateReflector (194)
+[2020.01.30-03.18.07:963][100]LogModuleManager: Shutting down and abandoning module Slate (192)
+[2020.01.30-03.18.07:963][100]LogModuleManager: Shutting down and abandoning module EditorStyle (190)
+[2020.01.30-03.18.07:966][100]LogModuleManager: Shutting down and abandoning module MRMesh (188)
+[2020.01.30-03.18.07:966][100]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (186)
+[2020.01.30-03.18.07:966][100]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (184)
+[2020.01.30-03.18.07:966][100]LogModuleManager: Shutting down and abandoning module XAudio2 (182)
+[2020.01.30-03.18.07:966][100]LogModuleManager: Shutting down and abandoning module Networking (180)
+[2020.01.30-03.18.07:966][100]LogModuleManager: Shutting down and abandoning module Core (178)
+[2020.01.30-03.18.07:966][100]LogModuleManager: Shutting down and abandoning module LevelSequence (176)
+[2020.01.30-03.18.07:966][100]LogModuleManager: Shutting down and abandoning module KismetCompiler (174)
+[2020.01.30-03.18.07:966][100]LogModuleManager: Shutting down and abandoning module MeshUtilities (172)
+[2020.01.30-03.18.07:967][100]LogModuleManager: Shutting down and abandoning module MeshMergeUtilities (171)
+[2020.01.30-03.18.07:967][100]LogModuleManager: Shutting down and abandoning module MeshReductionInterface (170)
+[2020.01.30-03.18.07:967][100]LogModuleManager: Shutting down and abandoning module SimplygonSwarm (169)
+[2020.01.30-03.18.07:967][100]LogModuleManager: Shutting down and abandoning module SimplygonMeshReduction (167)
+[2020.01.30-03.18.07:968][100]LogModuleManager: Shutting down and abandoning module QuadricMeshReduction (165)
+[2020.01.30-03.18.07:969][100]LogModuleManager: Shutting down and abandoning module MaterialBaking (161)
+[2020.01.30-03.18.07:969][100]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (157)
+[2020.01.30-03.18.07:973][100]LogModuleManager: Shutting down and abandoning module DerivedDataCache (154)
+[2020.01.30-03.18.08:037][100]LogDerivedDataCache: Shutdown
+[2020.01.30-03.18.08:037][100]LogModuleManager: Shutting down and abandoning module XGEController (152)
+[2020.01.30-03.18.08:037][100]LogModuleManager: Shutting down and abandoning module TargetPlatform (150)
+[2020.01.30-03.18.08:037][100]LogModuleManager: Shutting down and abandoning module VulkanShaderFormat (149)
+[2020.01.30-03.18.08:037][100]LogModuleManager: Shutting down and abandoning module ShaderFormatVectorVM (147)
+[2020.01.30-03.18.08:038][100]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (145)
+[2020.01.30-03.18.08:039][100]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (143)
+[2020.01.30-03.18.08:039][100]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (141)
+[2020.01.30-03.18.08:040][100]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (139)
+[2020.01.30-03.18.08:040][100]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (137)
+[2020.01.30-03.18.08:040][100]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (135)
+[2020.01.30-03.18.08:040][100]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (133)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (131)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module ImageWrapper (130)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (127)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (125)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (123)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (121)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (119)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (117)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (115)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module LinuxClientTargetPlatform (113)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module TVOSTargetPlatform (111)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module Messaging (109)
+[2020.01.30-03.18.08:041][100]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (107)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (105)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (103)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (101)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module Android_MultiTargetPlatform (99)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (97)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (95)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module Android_ETC1aTargetPlatform (93)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (91)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (89)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (87)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (85)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (83)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (81)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (79)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module MacTargetPlatform (77)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module MacServerTargetPlatform (75)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module MacNoEditorTargetPlatform (73)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module MacClientTargetPlatform (71)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (69)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module InputCore (66)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module Settings (64)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module PhysXCooking (62)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module SteamVR (60)
+[2020.01.30-03.18.08:042][100]LogModuleManager: Shutting down and abandoning module OculusHMD (58)
+[2020.01.30-03.18.08:043][100]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (56)
+[2020.01.30-03.18.08:043][100]LogModuleManager: Shutting down and abandoning module AppleARKit (54)
+[2020.01.30-03.18.08:043][100]LogModuleManager: Shutting down and abandoning module AugmentedReality (51)
+[2020.01.30-03.18.08:043][100]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (48)
+[2020.01.30-03.18.08:043][100]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (44)
+[2020.01.30-03.18.08:044][100]LogModuleManager: Shutting down and abandoning module XMPP (43)
+[2020.01.30-03.18.08:046][100]LogModuleManager: Shutting down and abandoning module HTTP (41)
+[2020.01.30-03.18.08:047][100]LogHttp: Display: Http module shutting down, but needs to wait on 1 outstanding Http requests:
+[2020.01.30-03.18.08:047][100]LogHttp: Display: 	verb=[POST] url=[https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7B8390DDD1-4452-9D2E-2280-85AFFEA73254%7D&AppID=UEEditor.Rocket.Release&AppVersion=4.19.2-4033788%2B%2B%2BUE4%2BRelease-4.19&UserID=9e75cd75422d40ed93bc728e40e1b8aa%7C78e9b25c7e0a441bab589e3d29d718b3%7C18e81287-495a-4d73-9105-844bc1bf5896&AppEnvironment=datacollector-binary&UploadType=eteventstream] status=Processing
+[2020.01.30-03.18.08:075][100]LogModuleManager: Shutting down and abandoning module SSL (40)
+[2020.01.30-03.18.08:078][100]LogModuleManager: Shutting down and abandoning module AnimationModifiers (36)
+[2020.01.30-03.18.08:079][100]LogModuleManager: Shutting down and abandoning module PropertyEditor (35)
+[2020.01.30-03.18.08:079][100]LogModuleManager: Shutting down and abandoning module AudioEditor (32)
+[2020.01.30-03.18.08:080][100]LogModuleManager: Shutting down and abandoning module TextureCompressor (30)
+[2020.01.30-03.18.08:082][100]LogModuleManager: Shutting down and abandoning module ShaderCore (28)
+[2020.01.30-03.18.08:082][100]LogModuleManager: Shutting down and abandoning module Landscape (26)
+[2020.01.30-03.18.08:083][100]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (24)
+[2020.01.30-03.18.08:099][100]LogModuleManager: Shutting down and abandoning module OpenGLDrv (22)
+[2020.01.30-03.18.08:100][100]LogModuleManager: Shutting down and abandoning module D3D11RHI (20)
+[2020.01.30-03.18.08:100][100]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (18)
+[2020.01.30-03.18.08:100][100]LogModuleManager: Shutting down and abandoning module Renderer (16)
+[2020.01.30-03.18.08:100][100]LogModuleManager: Shutting down and abandoning module Engine (14)
+[2020.01.30-03.18.08:100][100]LogModuleManager: Shutting down and abandoning module CoreUObject (12)
+[2020.01.30-03.18.08:100][100]LogModuleManager: Shutting down and abandoning module NetworkFile (10)
+[2020.01.30-03.18.08:100][100]LogModuleManager: Shutting down and abandoning module CookedIterativeFile (8)
+[2020.01.30-03.18.08:100][100]LogModuleManager: Shutting down and abandoning module StreamingFile (6)
+[2020.01.30-03.18.08:100][100]LogModuleManager: Shutting down and abandoning module SandboxFile (4)
+[2020.01.30-03.18.08:101][100]LogModuleManager: Shutting down and abandoning module PakFile (2)
+[2020.01.30-03.18.08:111][100]LogExit: Exiting.
+[2020.01.30-03.18.08:131][100]Log file closed, 01/30/20 12:18:08
